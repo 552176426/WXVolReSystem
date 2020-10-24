@@ -1,0 +1,13 @@
+
+{
+  "usingComponents": {
+    "i-button":"../../iviewWeapp/dist/button/index",
+    "i-icon":"../../iviewWeapp/dist/icon/index",
+    "i-row": "../../iviewWeapp/dist/row/index",
+    "i-col": "../../iviewWeapp/dist/col/index",
+    "i-modal": "../../iviewWeapp/dist/modal/index",
+    "i-divider": "../../iviewWeapp/dist/divider/index",
+    "i-card":"../../iviewWeapp/dist/card/index"
+},
+  "navigationBarTitleText": "找大学"
+}

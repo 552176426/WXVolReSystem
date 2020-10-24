@@ -1,0 +1,285 @@
+/* pages/findSchool/findSchool.wxss */
+
+
+/* 搜索框样式 */
+.search {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 500rpx;
+    height: 60rpx;
+    background-color: whitesmoke;
+    border: 1rpx solid whitesmoke;
+    border-radius: 150rpx;
+}
+
+/* 搜索框提示文字样式 */
+.search input {
+    font-size: 27rpx;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 80rpx;
+}
+
+/* 搜索框小图标 */
+.search_icon {
+    width: 30rpx;
+    height: 30rpx;
+    margin-right: 50rpx;
+}
+
+/* 条件下拉 */
+.condition-group {
+    height: 50rpx;
+    width: 85%;
+    display: flex;
+    margin-top: 30rpx;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 条件字 */
+.condition-group-item-text {
+    width: 1rpx;
+    font-size: 24rpx;
+    font-weight: 550;
+}
+
+.condition-group-item-text-up {
+    width: 1rpx;
+    font-size: 24rpx;
+    font-weight: 550;
+    color: #1296db;
+}
+
+.condition-group-item-image {
+    width: 15rpx;
+    height: 15rpx;
+    margin-left: 5rpx;
+}
+
+/* 横着的分割View样式 */
+/*分割线样式*/
+.divLine {
+    background: #E0E3DA;
+    width: 100%;
+    height: 2rpx;
+    margin-top: 15rpx;
+}
+
+
+
+/* 学校样式 */
+.school-left-image {
+    width: 100rpx;
+    height: 100rpx;
+    margin-left: 20rpx;
+    margin-top: 15rpx;
+}
+
+.school-right-line3-image {
+    width: 30rpx;
+    height: 30rpx;
+}
+
+.school-right-line2-image {
+    width: 25rpx;
+    height: 25rpx;
+}
+
+.school-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #efeff4;
+
+}
+
+.school-item {
+    background-color: white;
+    border-radius: 30rpx;
+    width: 700rpx;
+    height: 179rpx;
+    margin-top: 30rpx;
+    margin-left: 25rpx;
+    margin-bottom: 30rpx;
+    display: flex;
+}
+
+.school-left {
+    width: 60rpx;
+    height: 60rpx;
+    margin-top: 20rpx;
+}
+
+.school-right {
+    margin-left: 80rpx;
+    margin-top: 30rpx;
+    height: 60rpx;
+    width: auto;
+}
+
+.school-right-line1-text {
+    font-size: 30rpx;
+}
+
+.school-right-line1 {
+
+}
+
+.school-right-line2 {
+    margin-top: 10rpx;
+    margin-bottom: 10rpx;
+    display: flex;
+    font-size: 23rpx;
+    opacity: 0.7;
+}
+
+.school-right-line3 {
+    display: flex;
+    font-size: 23rpx;
+
+}
+
+.school-right-line3-text {
+    color: #efb336;
+    margin-left: 10rpx;
+}
+
+.school-right-line2-text {
+    margin-right: 10rpx;
+}
+
+.school-right-line2-location {
+    margin-left: 110rpx;
+    display: flex;
+}
+
+
+
+/* 地区 */
+.location{
+    top: 156rpx;
+    width: 100%;
+    z-index: 1;
+    position: absolute;
+    background-color: white;
+    display: none;
+}
+.location-black{
+    width:100%;
+    height:253rpx;
+    background:rgba(0,0,0,0.5);
+    z-index: 1;
+    position: absolute;
+}
+
+/* 院校类型 */
+.school-type{
+    top: 156rpx;
+    width: 100%;
+    z-index: 1;
+    position: absolute;
+    background-color: white;
+    display: none;
+}
+.school-type-black{
+    width:100%;
+    height:572rpx;
+    background:rgba(0,0,0,0.5);
+    z-index: 1;
+    position: absolute;
+}
+
+/* 办学类型 */
+.banxue-type{
+    top: 156rpx;
+    width: 100%;
+    z-index: 1;
+    position: absolute;
+    background-color: white;
+    display: none;
+}
+
+.banxue-type-black{
+    width:100%;
+    /*height:731rpx;*/
+    background:rgba(0,0,0,0.5);
+    z-index: 1;
+    position: absolute;
+    height: 731rpx;
+}
+
+/* 高校层次 */
+.school-level{
+    width: 100%;
+    display: none;
+}
+
+.choose-group{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 57rpx;
+    margin-top: 25rpx;
+}
+.choose-item {
+    height: 60rpx;
+    width: 138rpx;
+    background-color: #efeff4;
+    margin-top: 20rpx;
+    margin-right: 30rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10rpx;
+}
+.choose-item-text{
+
+}
+.reset-confirm{
+    margin-left: 57rpx;
+    display: flex;
+    margin-bottom: 40rpx;
+    margin-top: 40rpx;
+}
+
+.reset-confirm-1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70rpx;
+    width: 313rpx;
+    margin-right: 15rpx;
+    background-color: #efeff4;
+    border-radius: 10rpx;
+}
+.reset-confirm-2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70rpx;
+    width: 313rpx;
+    background-color: #1296db;
+    border-radius: 10rpx;
+}
+
+.choose-item-text{
+    width: 1rpx;
+    font-size: 22rpx;
+}
+
+.reset-confirm-1-text{
+    opacity: 0.6;
+}
+.reset-confirm-2-text{
+    color: aliceblue;
+}
+
+/* 高校级别 */
+
+
+
+
+
+
+

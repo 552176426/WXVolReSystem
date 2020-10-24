@@ -1,0 +1,32 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/findSchool/findSchool",
+    "pages/logs/logs",
+    "pages/provinceScore/provinceScore"
+  ],
+  "window":{
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle":"black",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "selectedColor": "#D81e06",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "static/images/icon/首页.png",
+      "selectedIconPath": "static/images/icon/首页-1.png"
+    },
+    {
+      "pagePath": "pages/index/index",
+      "text": "我的",
+      "iconPath": "static/images/icon/我.png",
+      "selectedIconPath": "static/images/icon/我-1.png"
+    }]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
