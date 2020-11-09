@@ -1,9 +1,10 @@
 {
   "pages":[
-    "pages/index/index",
     "pages/findSchool/findSchool",
-    "pages/logs/logs",
-    "pages/provinceScore/provinceScore"
+    "pages/provinceScore/provinceScore",
+    "pages/test/test",
+    "pages/index/index",
+    "pages/logs/logs"
   ],
   "window":{
     "backgroundTextStyle":"dark",

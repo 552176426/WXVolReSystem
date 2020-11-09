@@ -1,59 +1,56 @@
 <!--index.wxml-->
 <view class="container">
- 
-  <view class='separate'></view>
-  
-  <view class='btn-group'>
-    <view class='btn-group_item' bindtap='goCoupon'>
-      <image class='btn-group_item_image' src='/static/images/icon/school.png'></image>
-      <view class='btn-group_item_text'>找大学</view>
-    </view>
-    <view class='btn-group_item' bindtap='goCollect'>
-      <image class='btn-group_item_image' src='/static/images/icon/school.png'></image>
-      <view class='btn-group_item_text'>查专业</view>
-    </view>
-    <view class='btn-group_item' bindtap='goFootprint'>
-      <image class='btn-group_item_image' src='/static/images/icon/school.png'></image>
-      <view class='btn-group_item_text'>排行榜</view>
-    </view>
-    <view class='btn-group_item' bindtap='goGroupon'>
-      <image class='btn-group_item_image' src='/static/images/icon/school.png'></image>
-      <view class='btn-group_item_text'>院校对比</view>
-    </view>
-  </view>
 
-  <view class='btn-group'>
-    <view class='btn-group_item' bindtap='goCoupon'>
-      <image class='btn-group_item_image' src='/static/images/icon/school.png'></image>
-      <view class='btn-group_item_text'>省控线</view>
-    </view>
-    <view class='btn-group_item' bindtap='goCollect'>
-      <image class='btn-group_item_image' src='/static/images/icon/school.png'></image>
-      <view class='btn-group_item_text'>XXX</view>
-    </view>
-    <view class='btn-group_item' bindtap='goFootprint'>
-      <image class='btn-group_item_image' src='/static/images/icon/school.png'></image>
-      <view class='btn-group_item_text'>XXXX</view>
-    </view>
-    <view class='btn-group_item' bindtap='goGroupon'>
-      <image class='btn-group_item_image' src='/static/images/icon/school.png'></image>
-      <view class='btn-group_item_text'>一分一段</view>
-    </view>
-  </view>
+    <view class='separate'></view>
 
-  
+    <view class='btn-group'>
+        <view class='btn-group_item' bindtap='goCoupon'>
+            <image class='btn-group_item_image' src='/static/images/icon/school.png'></image>
+            <view class='btn-group_item_text'>找大学</view>
+        </view>
+        <view class='btn-group_item' bindtap='goCollect'>
+            <image class='btn-group_item_image' src='/static/images/icon/school.png'></image>
+            <view class='btn-group_item_text'>查专业</view>
+        </view>
+        <view class='btn-group_item' bindtap='goFootprint'>
+            <image class='btn-group_item_image' src='/static/images/icon/school.png'></image>
+            <view class='btn-group_item_text'>排行榜</view>
+        </view>
+        <view class='btn-group_item' bindtap='goGroupon'>
+            <image class='btn-group_item_image' src='/static/images/icon/school.png'></image>
+            <view class='btn-group_item_text'>院校对比</view>
+        </view>
+    </view>
+
+    <view class='btn-group'>
+        <view class='btn-group_item' bindtap='goProvinceScore'>
+            <image class='btn-group_item_image' src='/static/images/icon/school.png'></image>
+            <view class='btn-group_item_text'>批次线</view>
+        </view>
+        <view class='btn-group_item' bindtap='goCollect'>
+            <image class='btn-group_item_image' src='/static/images/icon/school.png'></image>
+            <view class='btn-group_item_text'>XXX</view>
+        </view>
+        <view class='btn-group_item' bindtap='goFootprint'>
+            <image class='btn-group_item_image' src='/static/images/icon/school.png'></image>
+            <view class='btn-group_item_text'>XXXX</view>
+        </view>
+        <view class='btn-group_item' bindtap='goGroupon'>
+            <image class='btn-group_item_image' src='/static/images/icon/school.png'></image>
+            <view class='btn-group_item_text'>一分一段</view>
+        </view>
+    </view>
 
 
-
-  <!-- <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view> -->
-  <!-- <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view> -->
+    <!-- <view class="userinfo">
+      <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+      <block wx:else>
+        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      </block>
+    </view> -->
+    <!-- <view class="usermotto">
+      <text class="user-motto">{{motto}}</text>
+    </view> -->
 
 </view>

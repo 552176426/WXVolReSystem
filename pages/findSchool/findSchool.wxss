@@ -1,11 +1,24 @@
 /* pages/findSchool/findSchool.wxss */
+.content-container{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
 
+.header{
+    position: fixed;
+    width: 100%;
+    height: 150rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 /* 搜索框样式 */
 .search {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     width: 500rpx;
     height: 60rpx;
@@ -13,7 +26,6 @@
     border: 1rpx solid whitesmoke;
     border-radius: 150rpx;
 }
-
 /* 搜索框提示文字样式 */
 .search input {
     font-size: 27rpx;
@@ -21,87 +33,51 @@
     margin-left: 80rpx;
 }
 
-/* 搜索框小图标 */
-.search_icon {
-    width: 30rpx;
-    height: 30rpx;
-    margin-right: 50rpx;
-}
 
 /* 条件下拉 */
-.condition-group {
+.condition {
     height: 50rpx;
-    width: 85%;
+    width: 100%;
     display: flex;
     margin-top: 30rpx;
-    justify-content: space-between;
+}
+.condition-item{
+    width: 25%;
+    display: flex;
+    justify-content: center;
     align-items: center;
-}
-
-/* 条件字 */
-.condition-group-item-text {
-    width: 1rpx;
     font-size: 24rpx;
-    font-weight: 550;
+    font-weight: bold;
 }
 
-.condition-group-item-text-up {
-    width: 1rpx;
-    font-size: 24rpx;
-    font-weight: 550;
-    color: #1296db;
-}
-
-.condition-group-item-image {
-    width: 15rpx;
-    height: 15rpx;
-    margin-left: 5rpx;
-}
-
-/* 横着的分割View样式 */
-/*分割线样式*/
-.divLine {
-    background: #E0E3DA;
+/*遮罩层*/
+.shadow {
+    position: absolute;
+    top: 150rpx;
     width: 100%;
-    height: 2rpx;
-    margin-top: 15rpx;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 2;
 }
 
+/*学校容器*/
+.school-container {
+    border-top: 1.5rpx solid #E0E3DA;
+    position: absolute;
+    top: 150rpx;
+    bottom: 0rpx;
+    width: 100%;
+    display: flex;
+    background-color: #efeff4;
+    justify-content: center;
+    z-index: 1;
+}
 
 
 /* 学校样式 */
-.school-left-image {
-    width: 100rpx;
-    height: 100rpx;
-    margin-left: 20rpx;
-    margin-top: 15rpx;
-}
-
-.school-right-line3-image {
-    width: 30rpx;
-    height: 30rpx;
-}
-
-.school-right-line2-image {
-    width: 25rpx;
-    height: 25rpx;
-}
-
-.school-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background-color: #efeff4;
-
-}
-
 .school-item {
     background-color: white;
     border-radius: 30rpx;
-    width: 700rpx;
-    height: 179rpx;
     margin-top: 30rpx;
-    margin-left: 25rpx;
     margin-bottom: 30rpx;
     display: flex;
 }
@@ -109,111 +85,107 @@
 .school-left {
     width: 60rpx;
     height: 60rpx;
+    margin-top: 15rpx;
+}
+
+.school-left-image {
+    width: 100rpx;
+    height: 100rpx;
+    margin-left: 20rpx;
     margin-top: 20rpx;
 }
 
+
+
 .school-right {
-    margin-left: 80rpx;
+    margin-left: 90rpx;
     margin-top: 30rpx;
-    height: 60rpx;
-    width: auto;
+    width: 100%;
 }
-
-.school-right-line1-text {
-    font-size: 30rpx;
-}
-
-.school-right-line1 {
-
+.school-right-line1{
+    margin-bottom: 10rpx;
 }
 
 .school-right-line2 {
-    margin-top: 10rpx;
+    width: 100%;
     margin-bottom: 10rpx;
     display: flex;
     font-size: 23rpx;
     opacity: 0.7;
 }
 
-.school-right-line3 {
+.line2-type{
+    border-radius: 20rpx;
     display: flex;
-    font-size: 23rpx;
-
-}
-
-.school-right-line3-text {
-    color: #efb336;
-    margin-left: 10rpx;
-}
-
-.school-right-line2-text {
+    align-items: center;
+    padding-left: 15rpx;
+    padding-right: 15rpx;
     margin-right: 10rpx;
 }
-
-.school-right-line2-location {
-    margin-left: 110rpx;
-    display: flex;
+.line2-type text{
+    color: white;
+    font-size: 20rpx;
 }
 
 
+.school-right-line3 {
+    width: 100%;
+    margin-bottom: 10rpx;
+    display: flex;
+    font-size: 23rpx;
+    opacity: 0.7;
+}
+
+.school-right-line3-location {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.school-right-line4 {
+    display: flex;
+    font-size: 23rpx;
+    margin-bottom: 20rpx;
+}
 
 /* 地区 */
 .location{
-    top: 156rpx;
+    border-top: 1.5rpx solid #E0E3DA;
+    top: 150rpx;
     width: 100%;
-    z-index: 1;
+    z-index: 3;
     position: absolute;
     background-color: white;
-    display: none;
-}
-.location-black{
-    width:100%;
-    height:253rpx;
-    background:rgba(0,0,0,0.5);
-    z-index: 1;
-    position: absolute;
 }
 
 /* 院校类型 */
 .school-type{
-    top: 156rpx;
+    border-top: 1.5rpx solid #E0E3DA;
+    top: 150rpx;
     width: 100%;
-    z-index: 1;
+    z-index: 3;
     position: absolute;
     background-color: white;
-    display: none;
-}
-.school-type-black{
-    width:100%;
-    height:572rpx;
-    background:rgba(0,0,0,0.5);
-    z-index: 1;
-    position: absolute;
 }
 
 /* 办学类型 */
 .banxue-type{
-    top: 156rpx;
+    border-top: 1.5rpx solid #E0E3DA;
+    top: 150rpx;
     width: 100%;
-    z-index: 1;
+    z-index: 3;
     position: absolute;
     background-color: white;
-    display: none;
-}
-
-.banxue-type-black{
-    width:100%;
-    /*height:731rpx;*/
-    background:rgba(0,0,0,0.5);
-    z-index: 1;
-    position: absolute;
-    height: 731rpx;
 }
 
 /* 高校层次 */
 .school-level{
+    border-top: 1.5rpx solid #E0E3DA;
+    background-color: white;
+    position: absolute;
+    top: 150rpx;
     width: 100%;
-    display: none;
+    z-index: 3;
 }
 
 .choose-group{
@@ -233,9 +205,7 @@
     align-items: center;
     border-radius: 10rpx;
 }
-.choose-item-text{
 
-}
 .reset-confirm{
     margin-left: 57rpx;
     display: flex;
@@ -275,7 +245,14 @@
     color: aliceblue;
 }
 
-/* 高校级别 */
+.loadMore{
+    display: flex;
+    justify-content: center;
+    font-size: 25rpx;
+    opacity: 0.5;
+    margin-bottom: 5rpx;
+}
+
 
 
 

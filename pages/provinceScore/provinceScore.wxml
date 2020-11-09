@@ -1,0 +1,59 @@
+<!-- 带遮罩层的 下拉菜单 -->
+<view class="content-container">
+
+    <!--筛选条件-->
+    <view class="header">
+        <view class="header-view" bindtap="openProvince">
+            <text style="font-weight: bold;{{openProvince?'color:dodgerblue':''}}">{{chooseProvince}}</text>
+            <i-icon style="margin-left: 20rpx" type="{{openProvince?'packup':'unfold'}}" size="10" color="{{openProvince?'dodgerblue':'black'}}" />
+        </view>
+        <view class="header-view" bindtap="openYear">
+            <text style="font-weight: bold;{{openYear?'color:dodgerblue':''}}">{{chooseYear}}</text>
+            <i-icon style="margin-left: 20rpx" type="{{openYear?'packup':'unfold'}}" size="10" color="{{openYear?'dodgerblue':'black'}}" />
+        </view>
+    </view>
+
+    <!--遮罩层-->
+    <view bindtap="closeShadow" wx:if="{{openProvince || openYear}}" style="height: {{windowHeight-48}}rpx" class="shadow"></view>
+
+    <!--省份条件-->
+    <scroll-view wx:if="{{openProvince}}" class="scroll-province" enable-flex="true" scroll-y="true">
+            <view wx:for="{{provinceList}}" wx:for-index="id" wx:key="*this">
+                <view bindtap="setProvince" style="{{chooseProvince==item?'color:dodgerblue':''}}" data-sel="{{item}}" class="item">{{item}}</view>
+            </view>
+    </scroll-view>
+
+    <!--年份条件-->
+    <scroll-view wx:if="{{openYear}}" class="scroll-year" enable-flex scroll-y>
+        <view wx:for="{{yearList}}" wx:for-index="id" wx:key="*this">
+            <view bindtap="setYear" style="{{chooseYear==item?'color:dodgerblue':''}}" data-sel="{{item}}" class="item">{{item}}</view>
+        </view>
+    </scroll-view>
+
+
+    <!--查询结果-->
+    <scroll-view enable-flex="true" scroll-y="true" class="scroll-content">
+        <view style="width: 90%">
+            <view wx:for="{{provinceScoreList}}"
+                  wx:for-item="typeList" wx:key="*this">
+                <view style="padding-bottom: 50rpx;padding-top: 30rpx">
+                    <view style="padding-bottom: 20rpx;">
+                        <image style="width: 27rpx;height: 27rpx;border-radius: 100%;background-color: royalblue"></image>
+                        <text style="font-size: 33rpx;padding-left: 20rpx">{{typeList.type}}</text>
+                    </view>
+                    <view class="titleView">
+                        <text>批次</text>
+                        <text style="float: right;;margin-right: 50rpx;">分数</text>
+                    </view>
+
+                    <view wx:for="{{typeList.provinceScores}}" wx:key="*this" wx:for-item="provinceScore">
+                        <view style="padding-top: 20rpx">
+                            <text>{{provinceScore.batchName}}</text>
+                            <text style="float: right;margin-right: 50rpx">{{provinceScore.score}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view>

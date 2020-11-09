@@ -1,397 +1,132 @@
 <!--pages/findSchool/findSchool.wxml-->
-<view class="container">
+<view class="content-container">
 
-    <view class='search'>
-        <input type='text' placeholder='输入大学名称' confirm-type='search' value="{{inputValue}}" bindinput='inputBind'
-               bindconfirm='query'></input>
-        <image class="search_icon" src="/static/images/icon/搜索.png"></image>
+    <view class="header">
+        <!--搜索-->
+        <view class='search'>
+            <input type='text' placeholder='输入大学名称' confirm-type='search' value="{{inputValue}}" bindinput='inputBind'
+                   bindconfirm='query'></input>
+            <i-icon size="16" type="search"></i-icon>
+        </view>
+        <!-- 条件 -->
+        <view class="condition">
+            <view bindtap="openByCondition" data-idx="0" class="condition-item">
+                <text style="color: {{openByCondition[0]||TFArr[0]?'#1296db':''}}">地区</text>
+                <i-icon style="margin-left: 10rpx" type="{{openByCondition[0]?'packup':'unfold'}}" size="10"
+                        color="{{openByCondition[0]?'dodgerblue':'black'}}"/>
+            </view>
+            <view bindtap="openByCondition" data-idx="1" class="condition-item">
+                <text style="color: {{openByCondition[1]||TFArr[1]?'#1296db':''}}">院校类型</text>
+                <i-icon style="margin-left: 10rpx" type="{{openByCondition[1]?'packup':'unfold'}}" size="10"
+                        color="{{openByCondition[1]?'dodgerblue':'black'}}"/>
+            </view>
+            <view bindtap="openByCondition" data-idx="2" class="condition-item">
+                <text style="color: {{openByCondition[2]||TFArr[2]?'#1296db':''}}">办学类型</text>
+                <i-icon style="margin-left: 10rpx" type="{{openByCondition[2]?'packup':'unfold'}}" size="10"
+                        color="{{openByCondition[2]?'dodgerblue':'black'}}"/>
+            </view>
+            <view bindtap="openByCondition" data-idx="3" class="condition-item">
+                <text style="color: {{openByCondition[3]||TFArr[3]?'#1296db':''}}">高校层次</text>
+                <i-icon style="margin-left: 10rpx" type="{{openByCondition[3]?'packup':'unfold'}}" size="10"
+                        color="{{openByCondition[3]?'dodgerblue':'black'}}"/>
+            </view>
+        </view>
     </view>
 
-
-    <!-- 条件 -->
-    <view class="condition-group">
-        <view class="condition-group-item" bindtap="changeDirection" data-index="{{1}}">
-            <text class="{{index==1?condition_text2:condition_text1}}">地区</text>
-            <image class="condition-group-item-image"
-                   src="{{index==1?condition_image_url1:condition_image_url2}}"></image>
-        </view>
-        <view class="condition-group-item" bindtap="changeDirection" data-index="{{2}}">
-            <text class="{{index==2?condition_text2:condition_text1}}">院校类型</text>
-            <image class="condition-group-item-image"
-                   src="{{index==2?condition_image_url1:condition_image_url2}}"></image>
-        </view>
-        <view class="condition-group-item" bindtap="changeDirection" data-index="{{3}}">
-            <text class="{{index==3?condition_text2:condition_text1}}">办学类型</text>
-            <image class="condition-group-item-image"
-                   src="{{index==3?condition_image_url1:condition_image_url2}}"></image>
-        </view>
-        <view class="condition-group-item" bindtap="changeDirection" data-index="{{4}}">
-            <text class="{{index==4?condition_text2:condition_text1}}">高校层次</text>
-            <image class="condition-group-item-image"
-                   src="{{index==4?condition_image_url1:condition_image_url2}}"></image>
-        </view>
-        <!--<view class="condition-group-item" bindtap="changeDirection" data-index="{{5}}">
-            <text class="{{index==5?condition_text2:condition_text1}}">所属地区</text>
-            <image class="condition-group-item-image"
-                   src="{{index==5?condition_image_url1:condition_image_url2}}"></image>
-        </view>-->
-    </view>
-
-    <!-- 分隔符 -->
-    <view class="divLine"></view>
 
     <!--地区-->
-    <view class="location">
+    <view wx:if="{{openByCondition[0]}}" class="location">
         <view class="choose-group">
-            <view class="choose-item">
+            <view class="choose-item" wx:for="{{chooseList[0]}}" bindtap="chooseItem" wx:key="name" wx:for-index="idx" data-item="{{[idx,0]}}" style="background-color: {{item.checked?'rgb(222,243,254)':''}}">
                 <view>
-                    <text class="choose-item-text">北京</text>
-                </view>
-            </view>
-            <view class="choose-item">
-                <view>
-                    <text class="choose-item-text">天津</text>
-                </view>
-            </view>
-            <view class="choose-item">
-                <view>
-                    <text class="choose-item-text">河北</text>
-                </view>
-            </view>
-            <view class="choose-item">
-                <view>
-                    <text class="choose-item-text">河南</text>
-                </view>
-            </view>
-            <view class="choose-item">
-                <view>
-                    <text class="choose-item-text">山东</text>
-                </view>
-            </view>
-            <view class="choose-item">
-                <view>
-                    <text class="choose-item-text">山西</text>
-                </view>
-            </view>
-            <view class="choose-item">
-                <view>
-                    <text class="choose-item-text">陕西</text>
-                </view>
-            </view>
-            <view class="choose-item">
-                <view>
-                    <text class="choose-item-text">内蒙古</text>
-                </view>
-            </view>
-            <view class="choose-item">
-                <view>
-                    <text class="choose-item-text">辽宁</text>
-                </view>
-            </view>
-            <view class="choose-item">
-                <view>
-                    <text class="choose-item-text">吉林</text>
-                </view>
-            </view>
-            <view class="choose-item">
-                <view>
-                    <text class="choose-item-text">黑龙江</text>
-                </view>
-            </view>
-            <view class="choose-item">
-                <view>
-                    <text class="choose-item-text">上海</text>
-                </view>
-            </view>
-            <view class="choose-item">
-                <view>
-                    <text class="choose-item-text">江苏</text>
-                </view>
-            </view>
-            <view class="choose-item">
-                <view>
-                    <text class="choose-item-text">安徽</text>
-                </view>
-            </view>
-            <view class="choose-item">
-                <view>
-                    <text class="choose-item-text">江西</text>
-                </view>
-            </view>
-            <view class="choose-item">
-                <view>
-                    <text class="choose-item-text">湖北</text>
-                </view>
-            </view>
-            <view class="choose-item">
-                <view>
-                    <text class="choose-item-text">湖南</text>
-                </view>
-            </view>
-            <view class="choose-item">
-                <view>
-                    <text class="choose-item-text">重庆</text>
-                </view>
-            </view>
-            <view class="choose-item">
-                <view>
-                    <text class="choose-item-text">四川</text>
-                </view>
-            </view>
-            <view class="choose-item">
-                <view>
-                    <text class="choose-item-text">贵州</text>
-                </view>
-            </view>
-            <view class="choose-item">
-                <view>
-                    <text class="choose-item-text">云南</text>
-                </view>
-            </view>
-            <view class="choose-item">
-                <view>
-                    <text class="choose-item-text">广东</text>
-                </view>
-            </view>
-            <view class="choose-item">
-                <view>
-                    <text class="choose-item-text">广西</text>
-                </view>
-            </view>
-            <view class="choose-item">
-                <view>
-                    <text class="choose-item-text">福建</text>
-                </view>
-            </view>
-            <view class="choose-item">
-                <view>
-                    <text class="choose-item-text">甘肃</text>
-                </view>
-            </view>
-            <view class="choose-item">
-                <view>
-                    <text class="choose-item-text">宁夏</text>
-                </view>
-            </view>
-            <view class="choose-item">
-                <view>
-                    <text class="choose-item-text">新疆</text>
-                </view>
-            </view>
-            <view class="choose-item">
-                <view>
-                    <text class="choose-item-text">西藏</text>
-                </view>
-            </view>
-            <view class="choose-item">
-                <view>
-                    <text class="choose-item-text">海南</text>
-                </view>
-            </view>
-            <view class="choose-item">
-                <view>
-                    <text class="choose-item-text">浙江</text>
-                </view>
-            </view>
-            <view class="choose-item">
-                <view>
-                    <text class="choose-item-text">青海</text>
+                    <text class="choose-item-text">{{item.name}}</text>
                 </view>
             </view>
         </view>
 
         <view class="reset-confirm">
-            <view class="reset-confirm-1">
+            <view class="reset-confirm-1" bindtap="chooseReset">
                 <view>
-                    <text class="reset-confirm-1-text">重置</text>
+                    <text class="reset-confirm-1-text" data-name="location">重置</text>
                 </view>
             </view>
-            <view class="reset-confirm-2">
+            <view class="reset-confirm-2" bindtap="findSchoolsOrderByXyhRank">
                 <view>
-                    <text class="reset-confirm-2-text">确认</text>
+                    <text class="reset-confirm-2-text">确认 <text style="font-size: 25rpx;color: lightgray">({{schoolsCount}}所高校)</text></text>
                 </view>
             </view>
         </view>
 
-        <view class="location-black"></view>
     </view>
 
     <!--院校类型-->
-    <view class="school-type">
+    <view wx:if="{{openByCondition[1]}}" class="school-type">
         <view class="choose-group">
-            <view class="choose-item">
-                <view>
-                    <text class="choose-item-text">综合</text>
-                </view>
-            </view>
-            <view class="choose-item">
-                <view>
-                    <text class="choose-item-text">理工</text>
-                </view>
-            </view>
-            <view class="choose-item">
-                <view>
-                    <text class="choose-item-text">农林</text>
-                </view>
-            </view>
-            <view class="choose-item">
-                <view>
-                    <text class="choose-item-text">医药</text>
-                </view>
-            </view>
-            <view class="choose-item">
-                <view>
-                    <text class="choose-item-text">师范</text>
-                </view>
-            </view>
-            <view class="choose-item">
-                <view>
-                    <text class="choose-item-text">语言</text>
-                </view>
-            </view>
-            <view class="choose-item">
-                <view>
-                    <text class="choose-item-text">财经</text>
-                </view>
-            </view>
-            <view class="choose-item">
-                <view>
-                    <text class="choose-item-text">政法</text>
-                </view>
-            </view>
-            <view class="choose-item">
-                <view>
-                    <text class="choose-item-text">体育</text>
-                </view>
-            </view>
-            <view class="choose-item">
-                <view>
-                    <text class="choose-item-text">艺术</text>
-                </view>
-            </view>
-            <view class="choose-item">
-                <view>
-                    <text class="choose-item-text">民族</text>
-                </view>
-            </view>
-            <view class="choose-item">
-                <view>
-                    <text class="choose-item-text">军事</text>
-                </view>
-            </view>
-            <view class="choose-item">
-                <view>
-                    <text class="choose-item-text">其他</text>
+            <view class="choose-item" wx:for="{{chooseList[1]}}" bindtap="chooseItem" wx:key="name" wx:for-index="idx"  data-item="{{[idx,1]}}" style="background-color: {{item.checked?'rgb(222,243,254)':''}}">
+                <view >
+                    <text class="choose-item-text">{{item.name}}</text>
                 </view>
             </view>
         </view>
 
         <view class="reset-confirm">
-            <view class="reset-confirm-1">
+            <view class="reset-confirm-1" bindtap="chooseReset">
                 <view>
-                    <text class="reset-confirm-1-text">重置</text>
+                    <text class="reset-confirm-1-text" data-name="SchoolType">重置</text>
                 </view>
             </view>
-            <view class="reset-confirm-2">
+            <view class="reset-confirm-2"   bindtap="findSchoolsOrderByXyhRank">
                 <view>
-                    <text class="reset-confirm-2-text">确认</text>
+                    <text class="reset-confirm-2-text">确认<text style="font-size: 25rpx;color: lightgray">({{schoolsCount}}所高校)</text></text>
                 </view>
             </view>
         </view>
 
-        <view class="school-type-black"></view>
     </view>
 
     <!--办学类型-->
-    <view class="banxue-type">
+    <view wx:if="{{openByCondition[2]}}" class="banxue-type">
         <view class="choose-group">
-            <view class="choose-item">
+            <view class="choose-item" wx:for="{{chooseList[2]}}" bindtap="chooseItem" wx:key="name" wx:for-index="idx"  data-item="{{[idx,2]}}" style="background-color: {{item.checked?'rgb(222,243,254)':''}}">
                 <view>
-                    <text class="choose-item-text">普通本科</text>
-                </view>
-            </view>
-            <view class="choose-item">
-                <view>
-                    <text class="choose-item-text">独立学院</text>
-                </view>
-            </view>
-            <view class="choose-item">
-                <view>
-                    <text class="choose-item-text">专科(高职)</text>
-                </view>
-            </view>
-            <view class="choose-item">
-                <view>
-                    <text class="choose-item-text">中外合作办学</text>
-                </view>
-            </view>
-            <view class="choose-item">
-                <view>
-                    <text class="choose-item-text">其他</text>
+                    <text class="choose-item-text">{{item.name}}</text>
                 </view>
             </view>
         </view>
 
         <view class="reset-confirm">
-            <view class="reset-confirm-1">
+            <view class="reset-confirm-1" bindtap="chooseReset">
                 <view>
-                    <text class="reset-confirm-1-text">重置</text>
+                    <text class="reset-confirm-1-text" data-name="banxueType">重置</text>
                 </view>
             </view>
-            <view class="reset-confirm-2">
-                <view>
-                    <text class="reset-confirm-2-text">确认</text>
+            <view class="reset-confirm-2"  bindtap="findSchoolsOrderByXyhRank">
+                <view >
+                    <text class="reset-confirm-2-text">确认<text style="font-size: 25rpx;color: lightgray">({{schoolsCount}}所高校)</text></text>
                 </view>
             </view>
         </view>
-
-        <view class="banxue-type-black"></view>
     </view>
 
     <!--高校层次-->
-    <view class="school-level">
+    <view wx:if="{{openByCondition[3]}}" class="school-level">
         <view class="choose-group">
-            <view class="choose-item">
+            <view class="choose-item" wx:for="{{chooseList[3]}}" bindtap="chooseItem"  wx:key="name" wx:for-index="idx"  data-item="{{[idx,3]}}" style="background-color: {{item.checked?'rgb(222,243,254)':''}}">
                 <view>
-                    <text class="choose-item-text">985</text>
-                </view>
-            </view>
-            <view class="choose-item">
-                <view>
-                    <text class="choose-item-text">211</text>
-                </view>
-            </view>
-            <view class="choose-item">
-                <view>
-                    <text class="choose-item-text">双一流</text>
-                </view>
-            </view>
-            <view class="choose-item">
-                <view>
-                    <text class="choose-item-text">中央部委</text>
-                </view>
-            </view>
-            <view class="choose-item">
-                <view>
-                    <text class="choose-item-text">教育部直属</text>
-                </view>
-            </view>
-            <view class="choose-item">
-                <view>
-                    <text class="choose-item-text">强基计划</text>
+                    <text class="choose-item-text">{{item.name}}</text>
                 </view>
             </view>
         </view>
 
         <view class="reset-confirm">
-            <view class="reset-confirm-1">
+            <view class="reset-confirm-1" bindtap="chooseReset">
                 <view>
-                    <text class="reset-confirm-1-text">重置</text>
+                    <text class="reset-confirm-1-text" data-name="schoolLevel">重置</text>
                 </view>
             </view>
-            <view class="reset-confirm-2">
-                <view>
-                    <text class="reset-confirm-2-text">确认</text>
+            <view class="reset-confirm-2"  bindtap="findSchoolsOrderByXyhRank">
+                <view >
+                    <text class="reset-confirm-2-text">确认<text style="font-size: 25rpx;color: lightgray">({{schoolsCount}}所高校)</text></text>
                 </view>
             </view>
         </view>
@@ -401,436 +136,90 @@
 
 
     <!-- 学校区域 -->
-    <scroll-view enable-flex scroll-y class="school-container">
-        <!-- 学校item -->
-        <view class="school-item">
-            <!-- 左图  -->
-            <view class="school-left">
-                <view>
-                    <image class="school-left-image" src="https://static-data.eol.cn/upload/logo/39.jpg"></image>
+    <scroll-view enable-flex scroll-y class="school-container" bindscrolltolower="loadMore">
+        <view style="width: 90%">
+            <!--学校item -->
+            <view wx:for="{{schoolList}}" class="school-item" data-id="{{item.id}}" bindtap="findSchoolById" wx:key="index">
+                <!--左图-->
+                <view class="school-left">
+                    <view>
+                        <image class="school-left-image" src="{{item.badgeUrl}}"></image>
+                    </view>
                 </view>
-            </view>
-            <!-- 右介绍 -->
-            <view class="school-right">
-                <!-- 分三行显示 -->
-                <view class="school-right-line1">
-                    <text class="school-right-line1-text">北京大学1</text>
-                </view>
-                <view class="school-right-line2">
-                    <view class="school-right-line2-text">
-                        <text>综合</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>|</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>公办</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>|</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>985</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>|</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>211</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>|</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>双一流</text>
+                <!--右介绍-->
+                <view class="school-right">
+                    <!--第一行：校名-->
+                    <view class="school-right-line1">
+                        <view style="font-size: 30rpx">{{item.name}}</view>
                     </view>
 
-                    <view class="school-right-line2-location">
-                        <view>
-                            <image class="school-right-line2-image" src="/static/images/icon/位置.png"></image>
+                    <!--第二行：985 211 双一流-->
+                    <view class="school-right-line2">
+                        <view class="line2-type" style="background-color: royalblue" wx:if="{{item.f985==1}}">
+                            <text>985</text>
                         </view>
-                        <view>
-                            <text>上海市</text>
+                        <view class="line2-type" style="background-color: orange" wx:if="{{item.f211==1}}">
+                            <text>211</text>
                         </view>
-                    </view>
-                </view>
-                <view class="school-right-line3">
-                    <view>
-                        <image class="school-right-line3-image" src="/static/images/icon/排名.png"></image>
-                    </view>
-                    <view>
-                        <text class="school-right-line3-text">排名5</text>
-                    </view>
-                </view>
-            </view>
-        </view>
-        <view class="school-item">
-            <!-- 左图  -->
-            <view class="school-left">
-                <view>
-                    <image class="school-left-image" src="https://static-data.eol.cn/upload/logo/39.jpg"></image>
-                </view>
-            </view>
-            <!-- 右介绍 -->
-            <view class="school-right">
-                <!-- 分三行显示 -->
-                <view class="school-right-line1">
-                    <text class="school-right-line1-text">北京大学2</text>
-                </view>
-                <view class="school-right-line2">
-                    <view class="school-right-line2-text">
-                        <text>综合</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>|</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>公办</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>|</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>985</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>|</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>211</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>|</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>双一流</text>
+                        <view class="line2-type" style="background-color: darkred"
+                              wx:if="{{item.dualClass==38001 || item.dualClass==38000}}">
+                            <text>双一流</text>
+                        </view>
                     </view>
 
-                    <view class="school-right-line2-location">
-                        <view>
-                            <image class="school-right-line2-image" src="/static/images/icon/位置.png"></image>
+                    <!--第三行-->
+                    <view class="school-right-line3">
+                        <view style="display: flex;width: 45%">
+                            <view wx:if="{{(item.type!='')}}">
+                                <text>{{item.type}}</text>
+                            </view>
+                            <text wx:if="{{(item.type!=''&&item.nature==''&&item.schoolType!='')||(item.type!=''&&item.nature!=''&&item.schoolType=='')||(item.type!=''&&item.nature!=''&&item.schoolType!='')}}" style="margin-left: 10rpx;margin-right: 10rpx">|</text>
+
+                            <view wx:if="{{item.nature!=''}}">
+                                <text>{{item.nature}}</text>
+                            </view>
+                            <text wx:if="{{item.nature!=''&&item.schoolType!=''}}" style="margin-left: 10rpx;margin-right: 10rpx">|</text>
+
+                            <view wx:if="{{item.schoolType!=''}}">
+                                <text>{{item.schoolType}}</text>
+                            </view>
                         </view>
-                        <view>
-                            <text>上海市</text>
+
+
+                        <view class="school-right-line3-location">
+                            <view>
+                                <i-icon type="coordinates_fill"/>
+                            </view>
+                            <view>
+                                <text>{{item.city}}</text>
+                            </view>
                         </view>
-                    </view>
-                </view>
-                <view class="school-right-line3">
-                    <view>
-                        <image class="school-right-line3-image" src="/static/images/icon/排名.png"></image>
-                    </view>
-                    <view>
-                        <text class="school-right-line3-text">排名5</text>
-                    </view>
-                </view>
-            </view>
-        </view>
-        <view class="school-item">
-            <!-- 左图  -->
-            <view class="school-left">
-                <view>
-                    <image class="school-left-image" src="https://static-data.eol.cn/upload/logo/39.jpg"></image>
-                </view>
-            </view>
-            <!-- 右介绍 -->
-            <view class="school-right">
-                <!-- 分三行显示 -->
-                <view class="school-right-line1">
-                    <text class="school-right-line1-text">北京大学3</text>
-                </view>
-                <view class="school-right-line2">
-                    <view class="school-right-line2-text">
-                        <text>综合</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>|</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>公办</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>|</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>985</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>|</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>211</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>|</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>双一流</text>
                     </view>
 
-                    <view class="school-right-line2-location">
-                        <view>
-                            <image class="school-right-line2-image" src="/static/images/icon/位置.png"></image>
-                        </view>
-                        <view>
-                            <text>上海市</text>
-                        </view>
-                    </view>
-                </view>
-                <view class="school-right-line3">
-                    <view>
-                        <image class="school-right-line3-image" src="/static/images/icon/排名.png"></image>
-                    </view>
-                    <view>
-                        <text class="school-right-line3-text">排名5</text>
-                    </view>
-                </view>
-            </view>
-        </view>
-        <view class="school-item">
-            <!-- 左图  -->
-            <view class="school-left">
-                <view>
-                    <image class="school-left-image" src="https://static-data.eol.cn/upload/logo/39.jpg"></image>
-                </view>
-            </view>
-            <!-- 右介绍 -->
-            <view class="school-right">
-                <!-- 分三行显示 -->
-                <view class="school-right-line1">
-                    <text class="school-right-line1-text">北京大学4</text>
-                </view>
-                <view class="school-right-line2">
-                    <view class="school-right-line2-text">
-                        <text>综合</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>|</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>公办</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>|</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>985</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>|</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>211</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>|</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>双一流</text>
-                    </view>
 
-                    <view class="school-right-line2-location">
+                    <!--第四行-->
+                    <view class="school-right-line4">
                         <view>
-                            <image class="school-right-line2-image" src="/static/images/icon/位置.png"></image>
+                            <image style="width: 30rpx;height: 30rpx" src="/static/images/icon/排名.png"></image>
                         </view>
                         <view>
-                            <text>上海市</text>
+                            <text style="color: #efb336;margin-left: 10rpx;">排名{{item.xyhRank}}</text>
                         </view>
-                    </view>
-                </view>
-                <view class="school-right-line3">
-                    <view>
-                        <image class="school-right-line3-image" src="/static/images/icon/排名.png"></image>
-                    </view>
-                    <view>
-                        <text class="school-right-line3-text">排名5</text>
                     </view>
                 </view>
             </view>
-        </view>
-        <view class="school-item">
-            <!-- 左图  -->
-            <view class="school-left">
-                <view>
-                    <image class="school-left-image" src="https://static-data.eol.cn/upload/logo/39.jpg"></image>
-                </view>
-            </view>
-            <!-- 右介绍 -->
-            <view class="school-right">
-                <!-- 分三行显示 -->
-                <view class="school-right-line1">
-                    <text class="school-right-line1-text">北京大学5</text>
-                </view>
-                <view class="school-right-line2">
-                    <view class="school-right-line2-text">
-                        <text>综合</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>|</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>公办</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>|</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>985</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>|</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>211</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>|</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>双一流</text>
-                    </view>
 
-                    <view class="school-right-line2-location">
-                        <view>
-                            <image class="school-right-line2-image" src="/static/images/icon/位置.png"></image>
-                        </view>
-                        <view>
-                            <text>上海市</text>
-                        </view>
-                    </view>
-                </view>
-                <view class="school-right-line3">
-                    <view>
-                        <image class="school-right-line3-image" src="/static/images/icon/排名.png"></image>
-                    </view>
-                    <view>
-                        <text class="school-right-line3-text">排名5</text>
-                    </view>
-                </view>
-            </view>
-        </view>
-        <view class="school-item">
-            <!-- 左图  -->
-            <view class="school-left">
-                <view>
-                    <image class="school-left-image" src="https://static-data.eol.cn/upload/logo/39.jpg"></image>
-                </view>
-            </view>
-            <!-- 右介绍 -->
-            <view class="school-right">
-                <!-- 分三行显示 -->
-                <view class="school-right-line1">
-                    <text class="school-right-line1-text">北京大学5</text>
-                </view>
-                <view class="school-right-line2">
-                    <view class="school-right-line2-text">
-                        <text>综合</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>|</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>公办</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>|</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>985</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>|</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>211</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>|</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>双一流</text>
-                    </view>
-
-                    <view class="school-right-line2-location">
-                        <view>
-                            <image class="school-right-line2-image" src="/static/images/icon/位置.png"></image>
-                        </view>
-                        <view>
-                            <text>上海市</text>
-                        </view>
-                    </view>
-                </view>
-                <view class="school-right-line3">
-                    <view>
-                        <image class="school-right-line3-image" src="/static/images/icon/排名.png"></image>
-                    </view>
-                    <view>
-                        <text class="school-right-line3-text">排名5</text>
-                    </view>
-                </view>
-            </view>
-        </view>
-        <view class="school-item">
-            <!-- 左图  -->
-            <view class="school-left">
-                <view>
-                    <image class="school-left-image" src="https://static-data.eol.cn/upload/logo/39.jpg"></image>
-                </view>
-            </view>
-            <!-- 右介绍 -->
-            <view class="school-right">
-                <!-- 分三行显示 -->
-                <view class="school-right-line1">
-                    <text class="school-right-line1-text">北京大学5</text>
-                </view>
-                <view class="school-right-line2">
-                    <view class="school-right-line2-text">
-                        <text>综合</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>|</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>公办</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>|</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>985</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>|</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>211</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>|</text>
-                    </view>
-                    <view class="school-right-line2-text">
-                        <text>双一流</text>
-                    </view>
-
-                    <view class="school-right-line2-location">
-                        <view>
-                            <image class="school-right-line2-image" src="/static/images/icon/位置.png"></image>
-                        </view>
-                        <view>
-                            <text>上海市</text>
-                        </view>
-                    </view>
-                </view>
-                <view class="school-right-line3">
-                    <view>
-                        <image class="school-right-line3-image" src="/static/images/icon/排名.png"></image>
-                    </view>
-                    <view>
-                        <text class="school-right-line3-text">排名5</text>
-                    </view>
-                </view>
+            <view class="loadMore">
+                <text wx:if="{{moreData}}">加载中...</text>
+                <text wx:if="{{!moreData}}">---------无更多数据----------</text>
             </view>
         </view>
     </scroll-view>
+
+
+    <!--遮罩层-->
+    <view bindtap="closeShadow" wx:if="{{openByCondition[0]||openByCondition[1]||openByCondition[2]||openByCondition[3]}}" class="shadow"
+          style="height: {{windowHeight-147}}rpx"></view>
 
 
 </view>

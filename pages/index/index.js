@@ -1,4 +1,5 @@
 //index.js
+import request from "../../utils/request";
 //获取应用实例
 const app = getApp()
 
@@ -8,6 +9,11 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
+  },
+  goProvinceScore:function (){
+    wx.navigateTo({
+      url:"/pages/provinceScore/provinceScore"
+    })
   },
   //事件处理函数
   bindViewTap: function() {
