@@ -1,56 +1,167 @@
 <!--index.wxml-->
-<view class="container">
-
-    <view class='separate'></view>
-
-    <view class='btn-group'>
-        <view class='btn-group_item' bindtap='goCoupon'>
-            <image class='btn-group_item_image' src='/static/images/icon/school.png'></image>
-            <view class='btn-group_item_text'>找大学</view>
-        </view>
-        <view class='btn-group_item' bindtap='goCollect'>
-            <image class='btn-group_item_image' src='/static/images/icon/school.png'></image>
-            <view class='btn-group_item_text'>查专业</view>
-        </view>
-        <view class='btn-group_item' bindtap='goFootprint'>
-            <image class='btn-group_item_image' src='/static/images/icon/school.png'></image>
-            <view class='btn-group_item_text'>排行榜</view>
-        </view>
-        <view class='btn-group_item' bindtap='goGroupon'>
-            <image class='btn-group_item_image' src='/static/images/icon/school.png'></image>
-            <view class='btn-group_item_text'>院校对比</view>
+<view style="height: 300rpx;background-color: #1888f7">
+    <view class="container">
+        <ec-canvas id="mychart-dom-gauge" canvas-id="mychart-gauge" ec="{{ ec }}"></ec-canvas>
+    </view>
+</view>
+<view class="info-view">
+    <view style="display: flex;margin-right: 20rpx">
+        <text class="info-name">分数</text>
+        <view class="info">
+            <text class="info-value">600</text>
         </view>
     </view>
 
-    <view class='btn-group'>
-        <view class='btn-group_item' bindtap='goProvinceScore'>
-            <image class='btn-group_item_image' src='/static/images/icon/school.png'></image>
-            <view class='btn-group_item_text'>批次线</view>
-        </view>
-        <view class='btn-group_item' bindtap='goCollect'>
-            <image class='btn-group_item_image' src='/static/images/icon/school.png'></image>
-            <view class='btn-group_item_text'>XXX</view>
-        </view>
-        <view class='btn-group_item' bindtap='goFootprint'>
-            <image class='btn-group_item_image' src='/static/images/icon/school.png'></image>
-            <view class='btn-group_item_text'>XXXX</view>
-        </view>
-        <view class='btn-group_item' bindtap='goGroupon'>
-            <image class='btn-group_item_image' src='/static/images/icon/school.png'></image>
-            <view class='btn-group_item_text'>一分一段</view>
+    <view style="display: flex;margin-right: 20rpx">
+        <text class="info-name">名次</text>
+        <view class="info">
+            <text class="info-value">10000</text>
         </view>
     </view>
 
+    <view style="display: flex;margin-right: 20rpx">
+        <text class="info-name">省份</text>
+        <view class="info">
+            <text class="info-value">江西</text>
+        </view>
+    </view>
 
-    <!-- <view class="userinfo">
-      <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-      <block wx:else>
-        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-      </block>
-    </view> -->
-    <!-- <view class="usermotto">
-      <text class="user-motto">{{motto}}</text>
-    </view> -->
+    <view style="display: flex;margin-right: 20rpx">
+        <view class="info-image">
+            <i-icon type="brush" size="18" color="white"/>
+        </view>
+    </view>
+</view>
+
+
+<view class="two-button">
+    <view class="btn">
+        <view class="btn-1">
+            <text>智能推荐</text>
+        </view>
+        <view class="btn-2">
+            <text>个性推荐</text>
+        </view>
+    </view>
+</view>
+<view class="bg-view"></view>
+
+
+<view class="group-view">
+    <view class="group-item" bind:tap="goFindSchool">
+        <view style="width: 60rpx;height: 60rpx">
+            <image style="width: 55rpx;height: 55rpx" src="/static/images/icon/大学库.svg"></image>
+        </view>
+        <text>找大学</text>
+    </view>
+
+    <view class="group-item" bind:tap="goSpecial">
+        <view style="width: 60rpx;height: 60rpx">
+            <image style="width: 55rpx;height: 55rpx" src="/static/images/icon/查专业.svg"></image>
+        </view>
+        <text>查专业</text>
+    </view>
+
+    <view class="group-item" bind:tap="goProvinceScore">
+        <view style="width: 60rpx;height: 60rpx;">
+            <image style="width: 55rpx;height: 55rpx;" src="/static/images/icon/批次线.svg"></image>
+        </view>
+        <text>批次线</text>
+    </view>
+
+    <view class="group-item">
+        <view style="width: 60rpx;height: 60rpx">
+            <image style="width: 55rpx;height: 55rpx" src="/static/images/icon/更多.svg"></image>
+        </view>
+        <text>更多</text>
+    </view>
+</view>
+
+<view class="down-container">
+
+    <view class="gexing-view">
+        <view style="width: 92%">
+            <view class="header">
+                <view style="width: 8rpx;height: 30rpx;background-color: #1888f7;border-radius: 30rpx"></view>
+                <view style="font-weight: bold;margin-left: 13rpx">个性推荐</view>
+            </view>
+
+            <!--学校item -->
+            <view wx:for="{{schoolList}}" class="school-item" data-id="{{item.id}}" bindtap="findSchoolById"
+                  wx:key="index">
+                <!--左图-->
+                <view class="school-left">
+                    <view>
+                        <image class="school-left-image" src="{{item.badgeUrl}}"></image>
+                    </view>
+                </view>
+                <!--右介绍-->
+                <view class="school-right">
+                    <!--第一行：校名-->
+                    <view class="school-right-line1">
+                        <view style="font-size: 30rpx">{{item.name}}</view>
+                    </view>
+
+                    <!--第二行：985 211 双一流-->
+                    <view class="school-right-line2">
+                        <view class="line2-type" style="background-color: royalblue" wx:if="{{item.f985==1}}">
+                            <text>985</text>
+                        </view>
+                        <view class="line2-type" style="background-color: orange" wx:if="{{item.f211==1}}">
+                            <text>211</text>
+                        </view>
+                        <view class="line2-type" style="background-color: darkred"
+                              wx:if="{{item.dualClass==38001 || item.dualClass==38000}}">
+                            <text>双一流</text>
+                        </view>
+                    </view>
+
+                    <!--第三行-->
+                    <view class="school-right-line3">
+                        <view style="display: flex;width: 45%">
+                            <view wx:if="{{(item.type!='')}}">
+                                <text>{{item.type}}</text>
+                            </view>
+                            <text wx:if="{{(item.type!=''&&item.nature==''&&item.schoolType!='')||(item.type!=''&&item.nature!=''&&item.schoolType=='')||(item.type!=''&&item.nature!=''&&item.schoolType!='')}}"
+                                  style="margin-left: 10rpx;margin-right: 10rpx">|</text>
+
+                            <view wx:if="{{item.nature!=''}}">
+                                <text>{{item.nature}}</text>
+                            </view>
+                            <text wx:if="{{item.nature!=''&&item.schoolType!=''}}"
+                                  style="margin-left: 10rpx;margin-right: 10rpx">|</text>
+
+                            <view wx:if="{{item.schoolType!=''}}">
+                                <text>{{item.schoolType}}</text>
+                            </view>
+                        </view>
+
+
+                        <view class="school-right-line3-location">
+                            <view>
+                                <i-icon type="coordinates_fill"/>
+                            </view>
+                            <view>
+                                <text>{{item.city}}</text>
+                            </view>
+                        </view>
+                    </view>
+
+
+                    <!--第四行-->
+                    <!-- <view class="school-right-line4">
+                         <view>
+                             <image style="width: 30rpx;height: 30rpx" src="/static/images/icon/排名.png"></image>
+                         </view>
+                         <view>
+                             <text style="color: #efb336;margin-left: 10rpx;">排名{{item.xyhRank}}</text>
+                         </view>
+                     </view>-->
+                </view>
+            </view>
+
+
+        </view>
+    </view>
 
 </view>

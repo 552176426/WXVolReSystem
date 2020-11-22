@@ -1,0 +1,62 @@
+<!-- 带遮罩层的 下拉菜单 -->
+<view class="content-container">
+
+    <!--筛选条件-->
+    <view class="header">
+        <view class="header-view" bindtap="openProvince">
+            <text style="font-weight: bold;{{openProvince?'color:dodgerblue':''}}">{{chooseProvince}}</text>
+            <i-icon style="margin-left: 20rpx" type="{{openProvince?'packup':'unfold'}}" size="10"
+                    color="{{openProvince?'dodgerblue':'black'}}"/>
+        </view>
+        <view class="header-view" bindtap="openYear">
+            <text style="font-weight: bold;{{openYear?'color:dodgerblue':''}}">{{chooseYear}}</text>
+            <i-icon style="margin-left: 20rpx" type="{{openYear?'packup':'unfold'}}" size="10"
+                    color="{{openYear?'dodgerblue':'black'}}"/>
+        </view>
+    </view>
+
+    <!--遮罩层-->
+    <view bindtap="closeShadow" wx:if="{{openProvince || openYear}}" style="height: {{windowHeight-48}}rpx"
+          class="shadow"></view>
+
+    <!--省份条件-->
+    <scroll-view wx:if="{{chooseTF[0]}}" class="scroll-province" enable-flex="true" scroll-y="true">
+        <view wx:for="{{chooseList[0]}}" wx:for-index="id" wx:key="*this">
+            <view bindtap="setProvince" style="{{chooseProvince==item?'color:dodgerblue':''}}" data-sel="{{item}}"
+                  class="item">{{item}}
+            </view>
+        </view>
+    </scroll-view>
+
+    <!--年份条件-->
+    <scroll-view wx:if="{{chooseTF[1]}}" class="scroll-year" enable-flex scroll-y>
+        <view wx:for="{{chooseList[1]}}" wx:for-index="id" wx:key="*this">
+            <view bindtap="setYear" style="{{chooseYear==item?'color:dodgerblue':''}}" data-sel="{{item}}" class="item">
+                {{item}}
+            </view>
+        </view>
+    </scroll-view>
+
+
+    <!--查询结果-->
+    <scroll-view enable-flex="true" scroll-y="true" class="scroll-content">
+        <view style="width: 90%">
+            <view style="padding-bottom: 50rpx;padding-top: 30rpx">
+                <view class="titleView">
+                    <view style="width: 65%;margin-left: 30rpx">分数</view>
+                    <view style="width: 20%;">人数</view>
+                    <view style="width: 15%;">位次</view>
+                </view>
+
+                <view wx:for="{{scoreParagraphList}}" wx:for-index="idx" wx:key="id" wx:for-item="item">
+                    <view style="display: flex;justify-content: center;align-items: center;padding-top: 20rpx;font-size: 27rpx;background-color: {{idx%2==0?'rgb(247,247,247)':''}}">
+                        <view style="width: 65%;margin-left: 30rpx">{{item.score}}</view>
+                        <view style="width: 20%;">{{item.scoreNumber}}</view>
+                        <view style="width: 15%;">{{item.number}}</view>
+                    </view>
+                </view>
+            </view>
+
+        </view>
+    </scroll-view>
+</view>

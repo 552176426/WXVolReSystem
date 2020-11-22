@@ -1,0 +1,57 @@
+<view class="container" style="height: {{windowHeight}}rpx">
+    <i-tabs current="{{current}}" color="#1888f7" bindchange="handleChange">
+        <i-tab key="1" title="本科专业" ></i-tab>
+        <i-tab key="2" title="专科专业" ></i-tab>
+    </i-tabs>
+
+
+    <!--左边-->
+    <scroll-view style="height: {{windowHeight}}-84rpx"  scroll-y class="view-left">
+
+        <view wx:if="{{current==1}}" style="background-color: {{choose1Level1==key?'white':'rgb(245, 245, 245)'}}"
+              class="left-item" wx:for="{{specialMap[current]}}" wx:for-index="key" wx:key="key"
+              bindtap="choose" data-choose="{{[current,key]}}">
+
+            <view wx:if="{{choose1Level1==key}}" class="text-left"></view>
+            <text style="margin-top: 10rpx;margin-left: 35rpx;margin-right: 10rpx;line-height: 37rpx;">{{key}}</text>
+
+        </view>
+
+        <view wx:if="{{current==2}}" style="background-color:{{choose2Level1==key?'white':'rgb(245, 245, 245)'}}"
+              class="left-item1" wx:for="{{specialMap[current]}}" wx:for-index="key" wx:key="key"
+              bindtap="choose" data-choose="{{[current,key]}}">
+            <view wx:if="{{choose2Level1==key}}" class="text-left"></view>
+            <text style="margin-top: 10rpx;margin-left: 35rpx;margin-right: 10rpx;line-height: 37rpx;">{{key}}</text>
+        </view>
+    </scroll-view>
+
+
+    <!--右边-->
+    <scroll-view style="height: {{windowHeight}}-84rpx"  scroll-y wx:if="{{current==1}}" class="view-right">
+        <view class="header">{{choose1Level1}}</view>
+        <view class="right-items">
+            <view wx:for="{{specialMap[current][choose1Level1]}}"
+                  wx:key="key" wx:for-index="key"
+                  class="right-item" bindtap="chooseRight" data-ch="{{[current,choose1Level1,key]}}"
+                  style="background-color: {{backgroundColor.btnName==key?backgroundColor.color:white}}" bindtouchstart="start" bindtouchend="end">
+                <text style="font-size: 24rpx">{{key}}</text>
+            </view>
+        </view>
+    </scroll-view>
+
+    <!--右边-->
+    <scroll-view style="height: {{windowHeight}}-84rpx"  scroll-y wx:if="{{current==2}}" class="view-right">
+        <view class="header">{{choose2Level1}}</view>
+        <view class="right-items">
+            <view wx:for="{{specialMap[current][choose2Level1]}}"
+                  wx:key="key" wx:for-index="key"
+                  class="right-item" bindtap="chooseRight" data-ch="{{[current,choose2Level1,key]}}"
+                  style="background-color: {{backgroundColor.btnName==key?backgroundColor.color:white}}" bindtouchstart="start" bindtouchend="end">
+                <text style="font-size: 24rpx">{{key}}</text>
+            </view>
+        </view>
+    </scroll-view>
+</view>
+
+
+

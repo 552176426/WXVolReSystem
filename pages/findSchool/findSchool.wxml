@@ -37,7 +37,7 @@
     <!--地区-->
     <view wx:if="{{openByCondition[0]}}" class="location">
         <view class="choose-group">
-            <view class="choose-item" wx:for="{{chooseList[0]}}" bindtap="chooseItem" wx:key="name" wx:for-index="idx" data-item="{{[idx,0]}}" style="background-color: {{item.checked?'rgb(222,243,254)':''}}">
+            <view class="choose-item" wx:for="{{chooseList[0]}}" bindtap="chooseItem" wx:key="name" wx:for-index="idx" data-item="{{[idx,0]}}" style="background-color: {{item.checked?'rgb(222,243,254)':''}}"> <!--rgb(222,243,254)-->
                 <view>
                     <text class="choose-item-text">{{item.name}}</text>
                 </view>
@@ -136,7 +136,7 @@
 
 
     <!-- 学校区域 -->
-    <scroll-view enable-flex scroll-y class="school-container" bindscrolltolower="loadMore">
+    <scroll-view enable-flex scroll-y class="school-container" bindscrolltolower="loadMore" scroll-top="{{page == 1}}">
         <view style="width: 90%">
             <!--学校item -->
             <view wx:for="{{schoolList}}" class="school-item" data-id="{{item.id}}" bindtap="findSchoolById" wx:key="index">
@@ -200,7 +200,7 @@
                     <!--第四行-->
                     <view class="school-right-line4">
                         <view>
-                            <image style="width: 30rpx;height: 30rpx" src="/static/images/icon/排名.png"></image>
+                            <image style="margin-top: 5rpx;width: 25rpx;height: 25rpx" src="/static/images/icon/排名.svg"></image>
                         </view>
                         <view>
                             <text style="color: #efb336;margin-left: 10rpx;">排名{{item.xyhRank}}</text>

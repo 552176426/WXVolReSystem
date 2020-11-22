@@ -286,12 +286,11 @@ Page({
             chooseSchoolTypes: this.data.chooseSchoolTypes,
             chooseBanxueTypes: this.data.chooseBanxueTypes
         }
-        console.log()
-        console.log("查询参数为:{"
-            + ",chooseLocations：" + paramsMap.chooseLocations
-            + ",chooseSchoolLevels：" + paramsMap.chooseSchoolLevels
-            + ",chooseSchoolTypes：" + paramsMap.chooseSchoolTypes
-            + "，chooseBanxueTypes：" + paramsMap.chooseBanxueTypes + " }")
+        // console.log("查询参数为:{"
+        //     + ",chooseLocations：" + paramsMap.chooseLocations
+        //     + ",chooseSchoolLevels：" + paramsMap.chooseSchoolLevels
+        //     + ",chooseSchoolTypes：" + paramsMap.chooseSchoolTypes
+        //     + "，chooseBanxueTypes：" + paramsMap.chooseBanxueTypes + " }")
         postRequest("/school/findSchoolsCount", paramsMap).then(res => {
             let schoolsCount = this.processDataForRead(res.data)
             this.setData({
@@ -314,7 +313,6 @@ Page({
             chooseSchoolTypes: this.data.chooseSchoolTypes,
             chooseBanxueTypes: this.data.chooseBanxueTypes
         }
-        console.log()
         console.log("查询参数为:{"
             + " page：" + paramsMap.page
             + ",pageCount：" + paramsMap.pageCount
@@ -326,6 +324,7 @@ Page({
             let schoolList = this.processDataForRead(res.data)
             this.setData({
                 removeItem:[],
+                page:1,
                 schoolList: schoolList
             })
             if (schoolList.length < 10) {
@@ -399,7 +398,6 @@ Page({
                 });
             }
         })
-        this.findSchoolsCount()
         this.findSchoolsOrderByXyhRank()
     },
 
@@ -407,7 +405,6 @@ Page({
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady: function () {
-
     },
 
     /**

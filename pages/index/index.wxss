@@ -1,62 +1,285 @@
 /**index.wxss**/
 .userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+/**index.wxss**/
+ec-canvas {
+    width: 100%;
+    height: 290rpx;
+    display: flex;
+
+}
+.container {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+
+.info-view {
+    background-color: #1888f7;
+    height: 80rpx;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.info {
+    width: 100rpx;
+    height: 35rpx;
+    margin-left: 15rpx;
+    border-bottom: 2rpx solid white;
+    display: flex;
+    justify-content: center;
+}
+
+.info-image {
+    width: 40rpx;
+    height: 35rpx;
+    margin-left: 15rpx;
+    border-bottom: 2rpx solid white;
+}
+
+.info-name {
+    color: white;
+    font-size: 22rpx;
+}
+
+.info-value {
+    color: white;
+    font-size: 22rpx;
+    margin-bottom: 10rpx
+}
+
+.bg-view {
+    background-color: #1888f7;
+    width: 100%;
+    height: 80rpx;
+}
+
+.two-button {
+    background-color: #1888f7;
+    height: 100rpx;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    width: 60%;
+    height: 70rpx;
+    border-radius: 30rpx;
+    display: flex;
+}
+
+.btn text {
+    color: rgb(47, 136, 227);
+}
+
+.btn-1 {
+    border-top-left-radius: 30rpx;
+    border-bottom-left-radius: 30rpx;
+    background-color: whitesmoke;
+    width: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 3rpx solid rgb(50, 137, 211);
+}
+
+.btn-2 {
+    background-color: dodgerblue;
+    width: 35%;
+    border-top-right-radius: 30rpx;
+    border-bottom-right-radius: 30rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-2 text {
+    color: white;
+}
+
+
 .userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+    width: 128rpx;
+    height: 128rpx;
+    margin: 20rpx;
+    border-radius: 50%;
 }
 
 .userinfo-nickname {
-  color: #aaa;
+    color: #aaa;
 }
 
 .usermotto {
-  margin-top: 200px;
+    margin-top: 200px;
 }
 
-.container {
-  height: auto;
-  overflow: hidden;
-  width: 100%;
-}
+
 
 .btn-group {
-  /* border: 1px solid black; */
-  height: 140rpx;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    /* border: 1px solid black; */
+    height: 140rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .btn-group_item {
-  width: 70px;
-  height: 140rpx;
-  background: #fff;
-  text-align: center;
-  position: relative;
+    width: 70px;
+    height: 140rpx;
+    background: #fff;
+    text-align: center;
+    position: relative;
 }
 
 .btn-group_item_image {
-  width: 50rpx;
-  height: 50rpx;
-  margin-top: 30rpx;
+    width: 50rpx;
+    height: 50rpx;
+    margin-top: 30rpx;
 }
 
 .btn-group_item_text {
-  /* border: 1px solid black; */
-  margin-top: 10rpx;
-  font-size: 24rpx;
-  color: #555;
+    /* border: 1px solid black; */
+    margin-top: 10rpx;
+    font-size: 24rpx;
+    color: #555;
 }
 
-.separate {
-  background: #aa8f18;
-  width: 100%;
-  height: 3rpx;
+.down-container {
+    background-color: #2b2b2b;
+    background-color: rgb(240, 240, 240);
+    width: 100%;
+    height: 900rpx;
 }
+.gexing-view{
+    background-color: rgb(251, 251, 251);
+    position: absolute;
+    top: 670rpx;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.group-view {
+    position: absolute;
+    top: 490rpx;
+    height: 160rpx;
+    width: 92%;
+    border-radius: 30rpx;
+    background-color: white;
+    left: 0rpx;
+    right: 0rpx;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.group-item {
+    height: 130rpx;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.group-item text{
+    font-size: 23rpx;
+    opacity: 0.7;
+    margin-top: 15rpx
+}
+.header{
+    height: 50rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 20rpx;
+}
+
+
+/*学校相关*/
+/* 学校样式 */
+.school-item {
+    background-color: white;
+    border-radius: 30rpx;
+    margin-top: 30rpx;
+    margin-bottom: 30rpx;
+    display: flex;
+}
+
+.school-left {
+    width: 60rpx;
+    height: 60rpx;
+    margin-top: 15rpx;
+}
+
+.school-left-image {
+    width: 80rpx;
+    height: 80rpx;
+    margin-left: 20rpx;
+    margin-top: 20rpx;
+}
+
+
+
+.school-right {
+    margin-left: 90rpx;
+    margin-top: 30rpx;
+    width: 100%;
+}
+.school-right-line1{
+    margin-bottom: 10rpx;
+}
+
+.school-right-line2 {
+    width: 100%;
+    margin-bottom: 10rpx;
+    display: flex;
+    font-size: 23rpx;
+    opacity: 0.7;
+}
+
+.line2-type{
+    border-radius: 20rpx;
+    display: flex;
+    align-items: center;
+    padding-left: 15rpx;
+    padding-right: 15rpx;
+    margin-right: 10rpx;
+}
+.line2-type text{
+    color: white;
+    font-size: 20rpx;
+}
+
+
+.school-right-line3 {
+    width: 100%;
+    margin-bottom: 10rpx;
+    display: flex;
+    font-size: 23rpx;
+    opacity: 0.7;
+    margin-bottom: 25rpx;
+}
+
+.school-right-line3-location {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.school-right-line4 {
+    display: flex;
+    font-size: 23rpx;
+    margin-bottom: 20rpx;
+}
+

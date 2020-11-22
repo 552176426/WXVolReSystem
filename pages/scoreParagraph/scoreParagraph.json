@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "i-icon":"../../iviewWeapp/dist/icon/index"
+  },
+  "navigationBarTitleText": "一分一段"
+}

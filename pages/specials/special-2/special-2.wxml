@@ -1,0 +1,50 @@
+<view class="container">
+    <view class="header">
+        <view class="header-lines">
+            <view class="header-line1">{{choose2}}</view>
+            <view class="header-line2">
+                <text wx:if="{{current==1}}" style="margin-right: 8rpx">本科</text>
+                <text wx:if="{{current==2}}" style="margin-right: 8rpx">专科</text>
+               <image style="width: 15rpx;margin-right: 8rpx;margin-top:7rpx;height: 15rpx" src="../../../static/images/icon/右.svg"></image>
+                <text wx:if="{{current==1}}">{{type1Map[choose1][choose2][0].degree}}</text>
+                <text wx:if="{{current==2}}">{{choose1}}</text>
+            </view>
+        </view>
+    </view>
+
+
+    <view class="down" wx:if="{{current==1}}" wx:for="{{type1Map[choose1][choose2]}}" wx:key="name">
+        <view class="header-lines">
+            <view class="down-line1">{{item.name}}</view>
+            <view class="header-line2">
+                <view style="width: 70%;display: flex;flex-direction: row">
+                    <text style="margin-right: 35rpx">学制：{{item.limit_year}}</text>
+                    <text style="margin-right: 8rpx">本科</text>
+                    <image style="width: 15rpx;margin-right: 8rpx;margin-top:7rpx;height: 15rpx" src="../../../static/images/icon/右.svg"></image>
+                    <text>{{item.degree}}</text>
+                </view>
+                <view style="width:25%;">
+                    <image style="float: right;width: 25rpx;height: 25rpx" src="../../../static/images/icon/右.svg"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view class="down" wx:if="{{current==2}}" wx:for="{{type2Map[choose1][choose2]}}" wx:key="name">
+        <view class="header-lines">
+            <view class="down-line1">{{item.name}}</view>
+            <view class="header-line2">
+                <view style="width: 70%;display: flex;flex-direction: row">
+                    <text style="margin-right: 35rpx">学制：{{item.limit_year}}</text>
+                    <text style="margin-right: 8rpx">专科</text>
+                    <image style="width: 15rpx;margin-right: 8rpx;margin-top:7rpx;height: 15rpx" src="../../../static/images/icon/右.svg"></image>
+                    <text>{{choose1}}</text>
+                </view>
+                <view style="width:25%;">
+                    <image style="float: right;width: 25rpx;height: 25rpx" src="../../../static/images/icon/右.svg"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+
+</view>

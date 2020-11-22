@@ -38,18 +38,18 @@
                   wx:for-item="typeList" wx:key="*this">
                 <view style="padding-bottom: 50rpx;padding-top: 30rpx">
                     <view style="padding-bottom: 20rpx;">
-                        <image style="width: 27rpx;height: 27rpx;border-radius: 100%;background-color: royalblue"></image>
+                        <i-icon size="17" color="dodgerblue" type="enterinto_fill" />
                         <text style="font-size: 33rpx;padding-left: 20rpx">{{typeList.type}}</text>
                     </view>
-                    <view class="titleView">
-                        <text>批次</text>
-                        <text style="float: right;;margin-right: 50rpx;">分数</text>
+                    <view style="display: flex" class="titleView">
+                        <view style="width: 50%;margin-left: 10rpx">批次</view>
+                        <view style="width: 40%;display: flex;justify-content: flex-end;">分数</view>
                     </view>
 
-                    <view wx:for="{{typeList.provinceScores}}" wx:key="*this" wx:for-item="provinceScore">
-                        <view style="padding-top: 20rpx">
-                            <text>{{provinceScore.batchName}}</text>
-                            <text style="float: right;margin-right: 50rpx">{{provinceScore.score}}</text>
+                    <view  wx:for="{{typeList.provinceScores}}" wx:for-index="idx" wx:key="*this" wx:for-item="provinceScore">
+                        <view style="display: flex;height:60rpx;font-size: 27rpx;background-color: {{idx%2==1?'rgb(247,247,247)':''}}">
+                            <view style="width: 70%;margin-left: 10rpx;display: flex;align-items: center">{{provinceScore.batchName}}</view>
+                            <view style="width: 20%;display: flex;align-items: center;justify-content: flex-end">{{provinceScore.score}}</view>
                         </view>
                     </view>
                 </view>

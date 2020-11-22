@@ -1,0 +1,4 @@
+<view class="content-container">
+    <view bind:tap="remSchools">推荐学校</view>
+
+</view>

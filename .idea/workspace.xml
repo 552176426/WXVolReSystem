@@ -10,27 +10,86 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b6aa566-a68d-4f74-91b6-4d4918eb0655" name="Default Changelist" comment="第一次">
-      <change afterPath="$PROJECT_DIR$/pages/test/test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/test/test.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/test/test.wxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/test/test.wxss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/icons/icon.wxss" afterDir="false" />
+    <list default="true" id="2b6aa566-a68d-4f74-91b6-4d4918eb0655" name="Default Changelist" comment="基本功能实现">
+      <change afterPath="$PROJECT_DIR$/ec-canvas/ec-canvas.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ec-canvas/ec-canvas.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ec-canvas/ec-canvas.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ec-canvas/ec-canvas.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ec-canvas/echarts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ec-canvas/wx-canvas.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/inputInfo/inputInfo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/inputInfo/inputInfo.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/inputInfo/inputInfo.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/inputInfo/inputInfo.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/remSpecial/remSpecial.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/remSpecial/remSpecial.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/remSpecial/remSpecial.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/remSpecial/remSpecial.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/schoolFirst/schoolFirst.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/schoolFirst/schoolFirst.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/schoolFirst/schoolFirst.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/schoolFirst/schoolFirst.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/scoreParagraph/scoreParagraph.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/scoreParagraph/scoreParagraph.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/scoreParagraph/scoreParagraph.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/scoreParagraph/scoreParagraph.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/specials/special-1/special-1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/specials/special-1/special-1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/specials/special-1/special-1.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/specials/special-1/special-1.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/specials/special-2/special-2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/specials/special-2/special-2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/specials/special-2/special-2.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/specials/special-2/special-2.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/icon/右.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/icon/大学库.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/icon/我的-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/icon/我的-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/icon/批次线.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/icon/指纹-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/icon/指纹-1.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/icon/指纹-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/icon/指纹-2.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/icon/排名.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/icon/更多.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/icon/查专业.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/icon/查数据-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/icon/查数据-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/icon/筛选.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/icon/首页-2.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/app.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iviewWeapp/dist/drawer/index.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/iviewWeapp/dist/drawer/index.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iviewWeapp/dist/grid-icon/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iviewWeapp/dist/grid-icon/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iviewWeapp/dist/grid-icon/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iviewWeapp/dist/grid-icon/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iviewWeapp/dist/grid-item/index.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/iviewWeapp/dist/grid-item/index.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iviewWeapp/dist/grid/index.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/iviewWeapp/dist/grid/index.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iviewWeapp/dist/tab-bar-item/index.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/iviewWeapp/dist/tab-bar-item/index.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iviewWeapp/dist/tab/index.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/iviewWeapp/dist/tab/index.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iviewWeapp/dist/tabs/index.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/iviewWeapp/dist/tabs/index.wxss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/findSchool/findSchool.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/findSchool/findSchool.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/findSchool/findSchool.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/findSchool/findSchool.wxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/findSchool/findSchool.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/pages/findSchool/findSchool.wxss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index/index.json" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index/index.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index/index.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/provinceScore/provinceScore.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/provinceScore/provinceScore.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/provinceScore/provinceScore.json" beforeDir="false" afterPath="$PROJECT_DIR$/pages/provinceScore/provinceScore.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index/index.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index/index.wxss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/provinceScore/provinceScore.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/provinceScore/provinceScore.wxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/provinceScore/provinceScore.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/pages/provinceScore/provinceScore.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/project.config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/test/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/test/test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/test/test.json" beforeDir="false" afterPath="$PROJECT_DIR$/pages/test/test.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/test/test.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/test/test.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/test/test.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/pages/test/test.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/icon/school.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/icon/我-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/icon/我.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/icon/排名.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/icon/首页-1.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/icon/首页-1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/icon/首页.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/request.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/util.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,9 +100,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="HTML File" />
         <option value="Wechat mini program page js file(Page API)" />
         <option value="Wechat mini program page json file(Page API)" />
-        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -81,16 +140,21 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/images/icon" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.CommitDialog" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Develop\IdeaProjects\Volresystem\static\images\icon" />
+      <recent name="D:\Develop\IdeaProjects\Volresystem" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Develop\IdeaProjects\Volresystem\pages\specials\special-1" />
+      <recent name="D:\Develop\IdeaProjects\Volresystem\static\images\icon" />
       <recent name="D:\Develop\IdeaProjects\Volresystem\pages\test" />
       <recent name="D:\Develop\IdeaProjects\Volresystem\static\icons" />
       <recent name="D:\Develop\IdeaProjects\Volresystem\pages\scoreParagraph" />
-      <recent name="D:\Develop\IdeaProjects\Volresystem\static\images\icon" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -109,7 +173,8 @@
       <workItem from="1603092657210" duration="24758000" />
       <workItem from="1603530507440" duration="369000" />
       <workItem from="1603530887815" duration="3606000" />
-      <workItem from="1604197278650" duration="132707000" />
+      <workItem from="1604197278650" duration="289092000" />
+      <workItem from="1606040810705" duration="25000" />
     </task>
     <task id="LOCAL-00001" summary="第一次">
       <created>1603542104880</created>
@@ -125,7 +190,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603542605816</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="找大学初页和批次线">
+      <created>1604927375962</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1604927375962</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,22 +216,33 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <MESSAGE value="第一次" />
-    <option name="LAST_COMMIT_MESSAGE" value="第一次" />
+    <MESSAGE value="找大学初页和批次线" />
+    <MESSAGE value="基本功能实现" />
+    <option name="LAST_COMMIT_MESSAGE" value="基本功能实现" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="214" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1605835253832">
+      <screen x="0" y="0" width="1440" height="920" />
+    </state>
+    <state x="214" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1440.920@0.0.1440.920" timestamp="1605835253832" />
+    <state x="451" y="207" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605511744117">
+      <screen x="0" y="0" width="1440" height="920" />
+    </state>
+    <state x="451" y="207" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.920@0.0.1440.920" timestamp="1605511744117" />
     <state x="501" y="215" key="FileChooserDialogImpl" timestamp="1603542873764">
       <screen x="0" y="0" width="1440" height="920" />
     </state>
     <state x="501" y="215" key="FileChooserDialogImpl/0.0.1440.920@0.0.1440.920" timestamp="1603542873764" />
-    <state x="335" y="201" key="SettingsEditor" timestamp="1603530853154">
+    <state x="335" y="201" key="SettingsEditor" timestamp="1606040835993">
       <screen x="0" y="0" width="1440" height="920" />
     </state>
-    <state x="335" y="201" key="SettingsEditor/0.0.1440.920@0.0.1440.920" timestamp="1603530853154" />
-    <state x="313" y="193" key="Vcs.Push.Dialog.v2" timestamp="1603543784694">
+    <state x="335" y="201" key="SettingsEditor/0.0.1440.920@0.0.1440.920" timestamp="1606040835993" />
+    <state x="313" y="193" key="Vcs.Push.Dialog.v2" timestamp="1604927596012">
       <screen x="0" y="0" width="1440" height="920" />
     </state>
-    <state x="313" y="193" key="Vcs.Push.Dialog.v2/0.0.1440.920@0.0.1440.920" timestamp="1603543784694" />
+    <state x="313" y="193" key="Vcs.Push.Dialog.v2/0.0.1440.920@0.0.1440.920" timestamp="1604927596012" />
     <state x="528" y="373" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603543225923">
       <screen x="0" y="0" width="1440" height="920" />
     </state>
@@ -168,9 +251,13 @@
       <screen x="0" y="0" width="1440" height="920" />
     </state>
     <state x="489" y="359" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1440.920@0.0.1440.920" timestamp="1603543674393" />
-    <state x="383" y="195" width="672" height="678" key="search.everywhere.popup" timestamp="1604906372994">
+    <state x="377" y="211" key="run.anything.popup" timestamp="1605851925095">
       <screen x="0" y="0" width="1440" height="920" />
     </state>
-    <state x="383" y="195" width="672" height="678" key="search.everywhere.popup/0.0.1440.920@0.0.1440.920" timestamp="1604906372994" />
+    <state x="377" y="211" key="run.anything.popup/0.0.1440.920@0.0.1440.920" timestamp="1605851925095" />
+    <state x="383" y="195" width="672" height="678" key="search.everywhere.popup" timestamp="1605854548986">
+      <screen x="0" y="0" width="1440" height="920" />
+    </state>
+    <state x="383" y="195" width="672" height="678" key="search.everywhere.popup/0.0.1440.920@0.0.1440.920" timestamp="1605854548986" />
   </component>
 </project>

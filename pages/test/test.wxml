@@ -1,25 +1,63 @@
-<!--<view>scroll-view 横向</view>
-
-<scroll-view scroll-x="true" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-left="{{scrollTop}}">
-    <view class="scroll-x">
-        <view wx:for-items="{{scrolls}}" wx:key="name">
-            <view id="{{item.tag}}" class="{{item.tag}}">{{item.name}}</view>
-        </view>
-    </view>
-</scroll-view>-->
-<view class="content">
-
-    <view class="school-container">
-        <view class="item">1</view>
-        <view class="item">2</view>
-        <view class="item">3</view>
-        <view class="item">4</view>
-    </view>
+<view class="container">
+    <!-- tab导航栏 -->
+    <!-- scroll-left属性可以控制滚动条位置 -->
+    <!-- scroll-with-animation滚动添加动画过渡 -->
+    <i-tabs current="{{ currentTab }}" color="#1888f7" bindchange="handleChange">
+        <i-tab key="0" title="本科专业"></i-tab>
+        <i-tab key="1" title="专科专业"></i-tab>
+    </i-tabs>
 
 
+
+    <!-- 页面内容 -->
+    <swiper class="tab-box" current="{{currentTab}}" duration="300" bindchange="switchTab">
+        <swiper-item class="tab-content">
+            <!--左边-->
+            <scroll-view style="height: {{windowHeight}}-84rpx"  scroll-y class="view-left">
+                <view wx:if="{{currentTab==0}}" style="background-color: {{choose1Level1==key?'white':'rgb(245, 245, 245)'}}"
+                      class="left-item" wx:for="{{specialMap[currentTab+1]}}" wx:for-index="key" wx:key="key"
+                      bindtap="choose" data-choose="{{[current,key]}}">
+
+                    <view wx:if="{{choose1Level1==key}}" class="text-left"></view>
+                    <text style="margin-top: 10rpx;margin-left: 35rpx;margin-right: 10rpx;line-height: 37rpx;">{{key}}</text>
+                </view>
+            </scroll-view>
+            <!--右边-->
+            <scroll-view style="height: {{windowHeight}}-84rpx"  scroll-y wx:if="{{currentTab==0}}" class="view-right">
+                <view class="header">{{choose1Level1}}</view>
+                <view class="right-items">
+                    <view wx:for="{{specialMap[currentTab+1][choose1Level1]}}"
+                          wx:key="key" wx:for-index="key"
+                          class="right-item" bindtap="chooseRight" data-ch="{{[current,choose1Level1,key]}}"
+                          style="background-color: {{backgroundColor.btnName==key?backgroundColor.color:white}}" bindtouchstart="start" bindtouchend="end">
+                        <text style="font-size: 24rpx">{{key}}</text>
+                    </view>
+                </view>
+            </scroll-view>
+        </swiper-item>
+        <swiper-item>
+            <!--左边-->
+            <scroll-view style="height: {{windowHeight}}-84rpx"  scroll-y class="view-left">
+                <view wx:if="{{currentTab==1}}" style="background-color:{{choose2Level1==key?'white':'rgb(245, 245, 245)'}}"
+                      class="left-item1" wx:for="{{specialMap[currentTab+1]}}" wx:for-index="key" wx:key="key"
+                      bindtap="choose" data-choose="{{[current,key]}}">
+                    <view wx:if="{{choose2Level1==key}}" class="text-left"></view>
+                    <text style="margin-top: 10rpx;margin-left: 35rpx;margin-right: 10rpx;line-height: 37rpx;">{{key}}</text>
+                </view>
+            </scroll-view>
+            <!--右边-->
+            <scroll-view style="height: {{windowHeight}}-84rpx"  scroll-y wx:if="{{currentTab==1}}" class="view-right">
+                <view class="header">{{choose2Level1}}</view>
+                <view class="right-items">
+                    <view wx:for="{{specialMap[currentTab+1][choose2Level1]}}"
+                          wx:key="key" wx:for-index="key"
+                          class="right-item" bindtap="chooseRight" data-ch="{{[current,choose2Level1,key]}}"
+                          style="background-color: {{backgroundColor.btnName==key?backgroundColor.color:white}}" bindtouchstart="start" bindtouchend="end">
+                        <text style="font-size: 24rpx">{{key}}</text>
+                    </view>
+                </view>
+            </scroll-view>
+        </swiper-item>
+    </swiper>
 
 </view>
-
-
-
-

@@ -1,32 +1,54 @@
 {
-  "pages":[
-    "pages/findSchool/findSchool",
-    "pages/provinceScore/provinceScore",
-    "pages/test/test",
+  "pages": [
+    "pages/schoolFirst/schoolFirst",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/test/test",
+    "pages/specials/special-1/special-1",
+    "pages/specials/special-2/special-2",
+    "pages/provinceScore/provinceScore",
+    "pages/inputInfo/inputInfo",
+    "pages/findSchool/findSchool",
+    "pages/scoreParagraph/scoreParagraph",
+    "pages/logs/logs",
+    "pages/remSpecial/remSpecial"
+
   ],
   "window":{
-    "backgroundTextStyle":"dark",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle":"black",
-    "enablePullDownRefresh": false
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "Gk志愿",
+    "backgroundColor": "#FF6347",
+    "backgroundTextStyle": "light"
   },
   "tabBar": {
-    "selectedColor": "#D81e06",
-    "list": [{
-      "pagePath": "pages/index/index",
-      "text": "首页",
-      "iconPath": "static/images/icon/首页.png",
-      "selectedIconPath": "static/images/icon/首页-1.png"
-    },
-    {
-      "pagePath": "pages/index/index",
-      "text": "我的",
-      "iconPath": "static/images/icon/我.png",
-      "selectedIconPath": "static/images/icon/我-1.png"
-    }]
+    "selectedColor": "#1888f7",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "static/images/icon/首页-1.png",
+        "selectedIconPath": "static/images/icon/首页-2.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "推荐",
+        "iconPath": "static/images/icon/指纹-1.png",
+        "selectedIconPath": "static/images/icon/指纹-2.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "查数据",
+        "iconPath": "static/images/icon/查数据-1.png",
+        "selectedIconPath": "static/images/icon/查数据-2.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "我的",
+        "iconPath": "static/images/icon/我的-1.png",
+        "selectedIconPath": "static/images/icon/我的-2.png"
+      }
+    ]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

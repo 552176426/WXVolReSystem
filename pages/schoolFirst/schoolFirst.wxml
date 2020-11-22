@@ -1,0 +1,294 @@
+<view class="container">
+    <view class="header">
+        <!--冲稳保-->
+        <view class="header-line1">
+            <view class="{{current==0?'chong-view-2':'chong-view-1'}} margin-small" data-current="0" bindtap="switchTab">
+                <text  class="type-text">冲</text>
+                <text wx:if="{{current==0}}" class="type-text1">{{schools.chongList.length}}所</text>
+            </view>
+            <view class="{{current==1?'wen-view-2':'wen-view-1'}} margin-small" data-current="1" bindtap="switchTab">
+                <text  class="type-text">稳</text>
+                <text wx:if="{{current==1}}" class="type-text1">{{schools.wenList.length}}所</text>
+            </view>
+            <view class="{{current==2?'bao-view-2':'bao-view-1'}} margin-small" data-current="2" bindtap="switchTab">
+                <text  class="type-text">保</text>
+                <text wx:if="{{current==2}}" class="type-text1">{{schools.baoList.length}}所</text>
+            </view>
+
+            <view class="{{current==3?'more-view-2':'more-view-1'}} margin-small" data-current="2" bindtap="switchTab">
+                <text  class="type-text">更多</text>
+                <text wx:if="{{current==3}}" class="type-text1">{{schools.sortedList.length}}所</text>
+            </view>
+        </view>
+        <!--修改和筛选-->
+        <view class="header-line2">
+            <view style="display: flex;flex-direction: row">
+                <view class="header-line2-text2">600分 / 理科</view>
+                <view class="edit-image">
+                    <i-icon type="brush" size="15" color="black"/>
+                </view>
+            </view>
+            <view style="display: flex;flex-direction: row">
+                <view class="header-line2-text2">本科一批</view>
+                <view class="edit-image">
+                    <i-icon type="brush" size="15" color="black"/>
+                </view>
+            </view>
+            <view style="display: flex;flex-direction: row">
+                <view class="header-line2-text3">筛选</view>
+                <image style="width: 20rpx;height: 20rpx;margin-top: 23rpx" src="../../static/images/icon/筛选.svg"></image>
+            </view>
+
+
+        </view>
+    </view>
+
+    <swiper style="height: {{windowHeight}}rpx" class="swiper-box" current="{{current}}" duration="300"
+            bindchange="bindChange">
+        <!--冲-->
+        <swiper-item class="swiper-item">
+            <view class="swiper-item-view" wx:for="{{schools.chongList}}" wx:key="index">
+                <!--上-->
+                <view class="swiper-item-view-up">
+                    <view class="left">
+                        <view class="mark-view" style="background-color: rgb(220,82,77)">
+                            <text>冲</text>
+                        </view>
+                    </view>
+                    <view class="right">
+                        <view class="right-line1">{{item.school_name}}</view>
+                        <view wx:if="{{item.admissionList[0].f985==1||item.admissionList[0].f211==1||item.admissionList[0].nature==38000||item.admissionList[0].nature==38001}}" class="right-line2">
+                            <view wx:if="{{item.admissionList[0].f985==1}}" class="right-line2-view" style="background-color: #1888f7">985</view>
+                            <view wx:if="{{item.admissionList[0].f211==1}}" class="right-line2-view" style="background-color: rgb(238, 172, 77)">211</view>
+                            <view wx:if="{{item.admissionList[0].nature==38000||item.admissionList[0].nature==38001}}" class="right-line2-view" style="background-color: rgb(220,82,77)">双一流</view>
+                        </view>
+                        <view class="right-line3">
+                            <view>{{item.admissionList[0].type}}</view>
+                            <view>|</view>
+                            <view>{{item.admissionList[0].city}}</view>
+                            <view>|</view>
+                            <view>{{item.admissionList[0].nature}}</view>
+                            <view>|</view>
+                            <view>{{item.admissionList[0].school_type}}</view>
+                        </view>
+
+                        <view class="reasons">
+                            <view style="margin-bottom: 20rpx;display: flex;flex-direction: row;align-items: center;width: 100%">
+                                <view style="width: 70%">
+                                    {{item.admissionList[item.admissionList.length-1].year}}年最低分 <text>{{item.admissionList[item.admissionList.length-1].min_score}}</text> 分
+                                </view>
+                                <view style="width: 30%;color: dodgerblue">展开历年分数线>></view>
+                            </view>
+
+                            <view class="reason">{{item.admissionList[item.admissionList.length-1].year}}年最低位次 <text>{{item.admissionList[item.admissionList.length-1].min_score_order}}</text> 位</view>
+                            <view style="margin-top: 12rpx;display: flex;flex-direction: row;align-items: center;">
+                                <view>
+                                    {{item.admissionList[item.admissionList.length-1].year+1}}年预测位次 <text>{{item.aveScoreOrder}}</text> 位
+                                </view>
+                                <view style="align-items: center;font-size: 20rpx;opacity: 0.5;margin-left: 20rpx;margin-top: 5rpx">仅供参考</view>
+                            </view>
+<!--                            <view class="reason">2019年招生计划 <text>254</text> 人</view>-->
+                        </view>
+
+
+                    </view>
+
+                </view>
+
+                <!--下-->
+                <view class="list-special">
+                    <text>展开专业列表</text>
+                </view>
+            </view>
+        </swiper-item>
+
+        <!--稳-->
+        <swiper-item class="swiper-item">
+            <view class="swiper-item-view" wx:for="{{schools.wenList}}" wx:key="index">
+                <!--上-->
+                <view class="swiper-item-view-up">
+                    <view class="left">
+                        <view class="mark-view" style="background-color: rgb(238, 172, 77)">
+                            <text>稳</text>
+                        </view>
+                    </view>
+                    <view class="right">
+                        <view class="right-line1">{{item.school_name}}</view>
+                        <view wx:if="{{item.admissionList[0].f985==1||item.admissionList[0].f211==1||item.admissionList[0].nature==38000||item.admissionList[0].nature==38001}}" class="right-line2">
+                            <view wx:if="{{item.admissionList[0].f985==1}}" class="right-line2-view" style="background-color: #1888f7">985</view>
+                            <view wx:if="{{item.admissionList[0].f211==1}}" class="right-line2-view" style="background-color: rgb(238, 172, 77)">211</view>
+                            <view wx:if="{{item.admissionList[0].nature==38000||item.admissionList[0].nature==38001}}" class="right-line2-view" style="background-color: rgb(220,82,77)">双一流</view>
+                        </view>
+                        <view class="right-line3">
+                            <view>{{item.admissionList[0].type}}</view>
+                            <view>|</view>
+                            <view>{{item.admissionList[0].city}}</view>
+                            <view>|</view>
+                            <view>{{item.admissionList[0].nature}}</view>
+                            <view>|</view>
+                            <view>{{item.admissionList[0].school_type}}</view>
+                        </view>
+
+                        <view class="reasons">
+                            <view style="margin-bottom: 20rpx;display: flex;flex-direction: row;align-items: center;width: 100%">
+                                <view style="width: 70%">
+                                    {{item.admissionList[item.admissionList.length-1].year}}年最低分 <text>{{item.admissionList[item.admissionList.length-1].min_score}}</text> 分
+                                </view>
+                                <view style="width: 30%;color: dodgerblue">展开历年分数线>></view>
+                            </view>
+
+                            <view class="reason">{{item.admissionList[item.admissionList.length-1].year}}年最低位次 <text>{{item.admissionList[item.admissionList.length-1].min_score_order}}</text> 位</view>
+                            <view style="margin-top: 12rpx;display: flex;flex-direction: row;align-items: center;">
+                                <view>
+                                    {{item.admissionList[item.admissionList.length-1].year+1}}年预测位次 <text>{{item.aveScoreOrder}}</text> 位
+                                </view>
+                                <view style="align-items: center;font-size: 20rpx;opacity: 0.5;margin-left: 20rpx;margin-top: 5rpx">仅供参考</view>
+                            </view>
+                            <!--                            <view class="reason">2019年招生计划 <text>254</text> 人</view>-->
+                        </view>
+
+
+                    </view>
+
+                </view>
+
+                <!--下-->
+                <view class="list-special">
+                    <text>展开专业列表</text>
+                </view>
+            </view>
+        </swiper-item>
+
+
+        <!--保-->
+        <swiper-item class="swiper-item">
+            <view class="swiper-item-view" wx:for="{{schools.baoList}}" wx:key="index">
+                <!--上-->
+                <view class="swiper-item-view-up">
+                    <view class="left">
+                        <view class="mark-view" style="background-color: rgb(24, 188, 105)">
+                            <text>保</text>
+                        </view>
+                    </view>
+                    <view class="right">
+                        <view class="right-line1">{{item.school_name}}</view>
+                        <view wx:if="{{item.admissionList[0].f985==1||item.admissionList[0].f211==1||item.admissionList[0].nature==38000||item.admissionList[0].nature==38001}}" class="right-line2">
+                            <view wx:if="{{item.admissionList[0].f985==1}}" class="right-line2-view" style="background-color: #1888f7">985</view>
+                            <view wx:if="{{item.admissionList[0].f211==1}}" class="right-line2-view" style="background-color: rgb(238, 172, 77)">211</view>
+                            <view wx:if="{{item.admissionList[0].nature==38000||item.admissionList[0].nature==38001}}" class="right-line2-view" style="background-color: rgb(220,82,77)">双一流</view>
+                        </view>
+                        <view class="right-line3">
+                            <view>{{item.admissionList[0].type}}</view>
+                            <view>|</view>
+                            <view>{{item.admissionList[0].city}}</view>
+                            <view>|</view>
+                            <view>{{item.admissionList[0].nature}}</view>
+                            <view>|</view>
+                            <view>{{item.admissionList[0].school_type}}</view>
+                        </view>
+
+                        <view class="reasons">
+                            <view style="margin-bottom: 20rpx;display: flex;flex-direction: row;align-items: center;width: 100%">
+                                <view style="width: 70%">
+                                    {{item.admissionList[item.admissionList.length-1].year}}年最低分 <text>{{item.admissionList[item.admissionList.length-1].min_score}}</text> 分
+                                </view>
+                                <view style="width: 30%;color: dodgerblue">展开历年分数线>></view>
+                            </view>
+
+                            <view class="reason">{{item.admissionList[item.admissionList.length-1].year}}年最低位次 <text>{{item.admissionList[item.admissionList.length-1].min_score_order}}</text> 位</view>
+                            <view style="margin-top: 12rpx;display: flex;flex-direction: row;align-items: center;">
+                                <view>
+                                    {{item.admissionList[item.admissionList.length-1].year+1}}年预测位次 <text>{{item.aveScoreOrder}}</text> 位
+                                </view>
+                                <view style="align-items: center;font-size: 20rpx;opacity: 0.5;margin-left: 20rpx;margin-top: 5rpx">仅供参考</view>
+                            </view>
+                            <!--                            <view class="reason">2019年招生计划 <text>254</text> 人</view>-->
+                        </view>
+
+
+                    </view>
+
+                </view>
+
+                <!--下-->
+                <view class="list-special">
+                    <text>展开专业列表</text>
+                </view>
+            </view>
+        </swiper-item>
+
+
+        <!--更多-->
+          <swiper-item class="swiper-item">
+            <view class="swiper-item-view" wx:for="{{schools.sortedList}}" wx:key="index">
+                <!--上-->
+                <view class="swiper-item-view-up">
+                    <view class="left">
+                        <!--<view class="mark-view" style="background-color: #1888f7">
+                            <text>更多</text>
+                        </view>-->
+                    </view>
+                    <view class="right">
+                        <view class="right-line1">{{item.school_name}}</view>
+                        <view wx:if="{{item.admissionList[0].f985==1||item.admissionList[0].f211==1||item.admissionList[0].nature==38000||item.admissionList[0].nature==38001}}" class="right-line2">
+                            <view wx:if="{{item.admissionList[0].f985==1}}" class="right-line2-view" style="background-color: #1888f7">985</view>
+                            <view wx:if="{{item.admissionList[0].f211==1}}" class="right-line2-view" style="background-color: rgb(238, 172, 77)">211</view>
+                            <view wx:if="{{item.admissionList[0].nature==38000||item.admissionList[0].nature==38001}}" class="right-line2-view" style="background-color: rgb(220,82,77)">双一流</view>
+                        </view>
+                        <view class="right-line3">
+                            <view>{{item.admissionList[0].type}}</view>
+                            <view>|</view>
+                            <view>{{item.admissionList[0].city}}</view>
+                            <view>|</view>
+                            <view>{{item.admissionList[0].nature}}</view>
+                            <view>|</view>
+                            <view>{{item.admissionList[0].school_type}}</view>
+                        </view>
+
+                        <view class="reasons">
+                            <view style="margin-bottom: 20rpx;display: flex;flex-direction: row;align-items: center;width: 100%">
+                                <view style="width: 70%">
+                                    {{item.admissionList[item.admissionList.length-1].year}}年最低分 <text>{{item.admissionList[item.admissionList.length-1].min_score}}</text> 分
+                                </view>
+                                <view style="width: 30%;color: dodgerblue">展开历年分数线>></view>
+                            </view>
+
+                            <view class="reason">{{item.admissionList[item.admissionList.length-1].year}}年最低位次 <text>{{item.admissionList[item.admissionList.length-1].min_score_order}}</text> 位</view>
+                            <view style="margin-top: 12rpx;display: flex;flex-direction: row;align-items: center;">
+                                <view>
+                                    {{item.admissionList[item.admissionList.length-1].year+1}}年预测位次 <text>{{item.aveScoreOrder}}</text> 位
+                                </view>
+                                <view style="align-items: center;font-size: 20rpx;opacity: 0.5;margin-left: 20rpx;margin-top: 5rpx">仅供参考</view>
+                            </view>
+                            <!--                            <view class="reason">2019年招生计划 <text>254</text> 人</view>-->
+                        </view>
+
+
+                    </view>
+
+                </view>
+
+                <!--下-->
+                <view class="list-special">
+                    <text>展开专业列表</text>
+                </view>
+            </view>
+        </swiper-item>
+
+    </swiper>
+
+
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
