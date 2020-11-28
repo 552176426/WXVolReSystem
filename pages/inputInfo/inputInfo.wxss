@@ -2,4 +2,20 @@
     width: 100%;
     height: 100%;
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.item-line{
+    display: flex;
+    flex-direction: row;
+    border-top: 1rpx solid rgb(210,210,210);
+    height: 100rpx;
+    align-items: center;
+}
+.item-line view{
+    margin-left: 10rpx;
+    width: 33%;
 }

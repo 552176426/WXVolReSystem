@@ -2,7 +2,7 @@
     width: 100%;
     height: 100%;
     position: absolute;
-    background-color: rgb(247,247,247);
+    background-color: rgb(247, 247, 247);
 }
 
 
@@ -22,12 +22,13 @@
     align-items: center;
     border-bottom: 1rpx solid rgb(240, 240, 240);
 }
+
 /*冲 稳 保*/
-.margin-small{
+.margin-small {
     margin-right: 20rpx;
 }
 
-.chong-view-1{
+.chong-view-1 {
     width: 50rpx;
     height: 50rpx;
     border-radius: 100%;
@@ -35,9 +36,10 @@
     align-items: center;
     margin-left: 5%;
     justify-content: center;
-    background-color: rgb(220,82,77);
+    background-color: rgb(220, 82, 77);
 }
-.chong-view-2{
+
+.chong-view-2 {
     width: 170rpx;
     height: 50rpx;
     border-radius: 30rpx;
@@ -45,9 +47,10 @@
     align-items: center;
     margin-left: 5%;
     justify-content: center;
-    background-color: rgb(220,82,77);
+    background-color: rgb(220, 82, 77);
 }
-.wen-view-1{
+
+.wen-view-1 {
     width: 50rpx;
     height: 50rpx;
     border-radius: 100%;
@@ -56,7 +59,8 @@
     justify-content: center;
     background-color: rgb(238, 172, 77);
 }
-.wen-view-2{
+
+.wen-view-2 {
     width: 170rpx;
     height: 50rpx;
     border-radius: 30rpx;
@@ -65,7 +69,8 @@
     justify-content: center;
     background-color: rgb(238, 172, 77);
 }
-.bao-view-1{
+
+.bao-view-1 {
     width: 50rpx;
     height: 50rpx;
     border-radius: 100%;
@@ -74,7 +79,8 @@
     justify-content: center;
     background-color: rgb(24, 188, 105);
 }
-.bao-view-2{
+
+.bao-view-2 {
     width: 170rpx;
     height: 50rpx;
     border-radius: 30rpx;
@@ -84,7 +90,7 @@
     background-color: rgb(24, 188, 105);
 }
 
-.more-view-1{
+.more-view-1 {
     width: 50rpx;
     height: 50rpx;
     border-radius: 100%;
@@ -93,7 +99,8 @@
     justify-content: center;
     background-color: #1888f7;
 }
-.more-view-2{
+
+.more-view-2 {
     width: 170rpx;
     height: 50rpx;
     border-radius: 30rpx;
@@ -102,11 +109,13 @@
     justify-content: center;
     background-color: #1888f7;
 }
-.type-text{
+
+.type-text {
     font-size: 20rpx;
     color: white;
 }
-.type-text1{
+
+.type-text1 {
     font-size: 20rpx;
     color: white;
     margin-left: 10rpx;
@@ -124,24 +133,28 @@
     align-items: center;
     font-size: 27rpx;
 }
+
 .header-line2-text1 {
     height: 60rpx;
     align-items: center;
     display: flex;
     padding-right: 25rpx;
 }
+
 .header-line2-text2 {
     height: 60rpx;
     align-items: center;
     display: flex;
     padding-right: 10rpx;
 }
+
 .header-line2-text3 {
     height: 60rpx;
     align-items: center;
     display: flex;
     padding-right: 10rpx;
 }
+
 .edit-image {
     margin-top: 10rpx;
     width: 26rpx;
@@ -156,6 +169,7 @@
     top: 130rpx;
     width: 100%;
 }
+
 .swiper-item {
     overflow: scroll;
     display: flex;
@@ -163,28 +177,38 @@
     align-items: center;
     width: 100%;
 }
-.swiper-item-view{
+
+.scroll-view {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.swiper-item-view {
     width: 95%;
     background-color: white;
     margin-top: 20rpx;
     border-radius: 20rpx;
 }
 
-.mark-view{
-    margin-top: 20rpx;
+.mark-view {
     width: 60rpx;
     height: 35rpx;
     display: flex;
     align-items: center;
-    border-top-right-radius: 30rpx;
-    border-bottom-right-radius: 30rpx;
+    border-top-left-radius: 30rpx;
+    border-bottom-left-radius: 30rpx;
     font-size: 23rpx;
     color: white;
+    margin-top: 25rpx;
 }
-.mark-view text{
-    margin-left: 15rpx;
+
+.mark-view text {
+    margin-left: 25rpx;
 }
-.list-special{
+
+.list-special {
     display: flex;
     justify-content: center;
     font-size: 27rpx;
@@ -192,71 +216,290 @@
     margin-bottom: 10rpx;
     margin-top: 30rpx;
 }
-.swiper-item-view-up{
+
+.swiper-item-view-up {
     width: 100%;
     display: flex;
     flex-direction: row;
 }
-.left{
-    width:20%;
+
+.left {
+    width: 20%;
 
 }
 
-.right{
+.badge {
+    margin-top: 30rpx;
+    margin-left: 20%;
+}
+
+.right {
     width: 80%;
     display: flex;
     flex-direction: column;
 
 }
-.right-line1{
+
+.right-line1 {
+    width: 80%;
     font-size: 30rpx;
     font-weight: bold;
     margin-top: 30rpx;
 }
-.right-line2{
+
+.right-line2 {
     display: flex;
     flex-direction: row;
     margin-top: 12rpx;
 }
-.right-line3{
+
+.right-line3 {
     display: flex;
     flex-direction: row;
     margin-top: 12rpx;
     font-size: 20rpx;
-    color: rgb(110,110,110);
+    color: rgb(110, 110, 110);
     opacity: 0.8;
 }
-.right-line3 view{
+
+.right-line3 view {
     margin-right: 12rpx;
 }
-.reasons{
+
+.reasons {
     font-size: 20rpx;
     margin-top: 20rpx;
-    color: rgb(110,110,110);
+    color: rgb(110, 110, 110);
     width: 100%;
 }
-.reason{
+
+.reason {
     margin-top: 12rpx;
 }
-.reasons text{
-    color:rgb(24, 188, 105) ;
+
+.reasons text {
+    color: rgb(24, 188, 105);
     font-size: 25rpx;
 }
-.right-line2-view{
+
+.right-line2-view {
     border-radius: 20rpx;
     height: 20rpx;
     margin-right: 15rpx;
     font-size: 17rpx;
     color: white;
-    padding:2rpx 20rpx;
+    padding: 2rpx 20rpx;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 /*隐藏滚动条*/
 ::-webkit-scrollbar {
     width: 0;
     height: 0;
     color: transparent;
+}
+
+.loadMore {
+    display: flex;
+    justify-content: center;
+    font-size: 25rpx;
+    opacity: 0.5;
+    margin-bottom: 5rpx;
+    margin-top: 10rpx;
+}
+
+/*遮罩层*/
+.shadow {
+    position: absolute;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 2;
+}
+.batchShadow{
+    position: absolute;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
+.admissionShadow{
+    position: absolute;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
+
+/*筛选*/
+
+.condition-view {
+    border-top: 5rpx solid rgb(248,248,248);
+    margin-left: 25%;
+    position: absolute;
+    background-color: white;
+    z-index: 3;
+    width: 75%;
+}
+
+.title {
+    font-size: 25rpx;
+}
+
+.title-1 {
+    font-size: 20rpx;
+    opacity: 0.6;
+    margin-left: 15rpx;
+}
+.chooseList{
+    margin-top: 15rpx;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.choose-item{
+    margin-bottom: 15rpx;
+    border-radius: 10rpx;
+    width: 30%;
+    height: 60rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 13rpx;
+}
+.choose-item text{
+    font-size: 22rpx;
+}
+.condition-bottom{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 110rpx;
+    background-color: white;
+    display: flex;
+}
+.bottom-btn1{
+    width: 170rpx;
+    border-top-left-radius: 30rpx;
+    border-bottom-left-radius: 30rpx;
+    border: 1rpx solid #1888f7;
+    height: 60rpx;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin-top: 35rpx;
+    margin-left: 180rpx;
+}
+.bottom-btn1 text{
+    color: #1888f7;
+    font-size: 25rpx;
+}
+.bottom-btn2{
+    background-color: #1888f7;
+    width: 170rpx;
+    border-top-right-radius: 30rpx;
+    border-bottom-right-radius: 30rpx;
+    border: 1rpx solid #1888f7;
+    height: 60rpx;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin-top: 35rpx;
+}
+.bottom-btn2 text{
+    color: white;
+    font-size: 25rpx;
+}
+.batchGroup{
+    border-top-left-radius: 40rpx;
+    border-top-right-radius: 40rpx;
+    border-top: 5rpx solid rgb(248,248,248);
+    position: absolute;
+    background-color: white;
+    z-index: 3;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.admissionData{
+    border-top-left-radius: 40rpx;
+    border-top-right-radius: 40rpx;
+    border-top: 5rpx solid rgb(248,248,248);
+    position: absolute;
+    background-color: white;
+    z-index: 3;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.admission-view{
+    width: 90%;
+
+}
+.admission-view-header{
+    margin-top: 30rpx;
+}
+.admission-view-table-header{
+    display: flex;
+    flex-direction: row;
+    margin-top: 30rpx;
+}
+.admission-view-table-header view{
+    color: rgb(100, 100, 100);
+    font-size: 25rpx;
+}
+.admission-table-box{
+    margin-top: 20rpx;
+    border-top: 1rpx solid rgba(0,0,0,0.2);
+    border-bottom: 5rpx solid rgb(240,240,240);
+}
+.admission-table-item{
+    height: 60rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 23rpx;
+    color: rgb(100, 100, 100);
+}
+.admission-bottom{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.admission-bottom view{
+    height: 60rpx;
+    width: 260rpx;
+    font-size: 25rpx;
+    color: white;
+    background-color: #1888f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30rpx;
+    margin-top: 40rpx;
+    margin-bottom: 40rpx;
+}
+.batch-item{
+    margin-bottom: 20rpx;
+    width: 100%;
+    border-bottom: 2rpx solid rgb(250,250,250);
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50rpx;
+}
+.batch-top{
+    border-radius: 10rpx;
+    background-color: #1888f7;
+    width: 50rpx;
+    height: 10rpx;
+    margin-bottom: 30rpx;
+    margin-top: 15rpx;
 }
 

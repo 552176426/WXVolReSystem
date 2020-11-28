@@ -1,8 +1,7 @@
 {
   "usingComponents": {
-    "i-row": "../../iviewWeapp/dist//row/index",
-    "i-col": "../../iviewWeapp/dist//col/index",
-    "i-icon":"../../iviewWeapp/dist/icon/index"
+    "i-icon":"../../iviewWeapp/dist/icon/index",
+    "i-action-sheet": "../../iviewWeapp/dist/action-sheet/index"
   },
   "navigationBarTitleText": "学校优先"
 }

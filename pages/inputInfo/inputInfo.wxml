@@ -1,4 +1,50 @@
 <view class="content-container">
-    <view bind:tap="remSchools">推荐学校</view>
+
+    <view style="margin-top: 15rpx;font-weight: bold;font-size: 35rpx">今日还可修改 <text
+            style="color: brown;font-size: 35rpx">1</text> 次
+    </view>
+    <view style="font-size: 30rpx;margin-top: 35rpx">填写预估或真实高考分数</view>
+
+    <view style="width: 90%;margin-top: 60rpx;border-bottom: 1rpx solid rgb(210,210,210);">
+
+        <picker bindchange="bindPickerChange1" value="{{pIndex}}" range="{{provinceArray}}">
+            <view class="item-line">
+                <view>省份</view>
+                <view>{{provinceArray[pIndex]}}</view>
+                <view>
+                    <image style="float: right;width: 30rpx;height: 30rpx;margin-top: 10rpx"
+                           src="../../static/images/icon/右.svg"></image>
+                </view>
+            </view>
+        </picker>
+
+        <view class="item-line">
+            <view>分数</view>
+            <input value="{{paramsMap.score}}" bind:input="scoreInput" style="margin-left: 5rpx" placeholder="输入高考分数"></input>
+        </view>
+        <view class="item-line">
+            <view>省排名</view>
+            <input value="{{paramsMap.scoreOrder}}" bind:input="scoreOrderInput" style="margin-left: 5rpx" placeholder="省排名(非必填)"></input>
+
+        </view>
+        <picker bindchange="bindPickerChange2" value="{{cIndex}}" range="{{curriculumArray}}">
+            <view class="item-line">
+                <view>文理科</view>
+                <view>{{curriculumArray[cIndex]}}</view>
+                <view>
+                    <image style="float: right;width: 30rpx;height: 30rpx;margin-top: 10rpx"
+                           src="../../static/images/icon/右.svg"></image>
+                </view>
+            </view>
+
+        </picker>
+    </view>
+
+    <view style="font-size: 25rpx;color: rgba(110,110,110,0.8);margin-top: 80rpx;">成绩决定推荐结果及录取概率，请准确填写</view>
+
+    <view bind:tap="save" style="background-color: #1888f7;border-radius: 30rpx;display: flex;justify-content: center;align-items: center;margin-top: 60rpx;width: 250rpx;height: 60rpx">
+        <text style="color: white;font-weight: bold" >保存</text>
+    </view>
 
 </view>
+

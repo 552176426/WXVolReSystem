@@ -8,25 +8,25 @@
     <view style="display: flex;margin-right: 20rpx">
         <text class="info-name">分数</text>
         <view class="info">
-            <text class="info-value">600</text>
+            <text class="info-value">{{paramsMap.score}}</text>
         </view>
     </view>
 
     <view style="display: flex;margin-right: 20rpx">
         <text class="info-name">名次</text>
         <view class="info">
-            <text class="info-value">10000</text>
+            <text class="info-value">{{paramsMap.scoreOrder==null?'':paramsMap.scoreOrder}}</text>
         </view>
     </view>
 
     <view style="display: flex;margin-right: 20rpx">
         <text class="info-name">省份</text>
         <view class="info">
-            <text class="info-value">江西</text>
+            <text class="info-value">{{paramsMap.provinceName}}</text>
         </view>
     </view>
 
-    <view style="display: flex;margin-right: 20rpx">
+    <view style="display: flex;margin-right: 20rpx" bind:tap="editInfo">
         <view class="info-image">
             <i-icon type="brush" size="18" color="white"/>
         </view>
@@ -36,12 +36,12 @@
 
 <view class="two-button">
     <view class="btn">
-        <view class="btn-1">
+        <view class="btn-1" bind:tap="goSchoolFirst">
             <text>智能推荐</text>
         </view>
-        <view class="btn-2">
+       <!-- <view class="btn-2">
             <text>个性推荐</text>
-        </view>
+        </view>-->
     </view>
 </view>
 <view class="bg-view"></view>

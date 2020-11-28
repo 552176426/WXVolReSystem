@@ -75,6 +75,7 @@ ec-canvas {
     height: 70rpx;
     border-radius: 30rpx;
     display: flex;
+    justify-content: center;
 }
 
 .btn text {
@@ -82,8 +83,7 @@ ec-canvas {
 }
 
 .btn-1 {
-    border-top-left-radius: 30rpx;
-    border-bottom-left-radius: 30rpx;
+    border-radius: 30rpx;
     background-color: whitesmoke;
     width: 65%;
     display: flex;
