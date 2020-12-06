@@ -99,7 +99,12 @@
                         </view>
                     </view>
 
-                    <view class="inner-container-line2">
+                    <view wx:if="{{special.content==null}}"  style="background-color: white;display: flex;flex-direction: row;justify-content: center;align-items: center;width: 100%;border-radius: 15rpx;height: 50rpx;font-size: 27rpx;opacity: 0.7;margin-bottom: 50rpx;margin-top: 50rpx">
+                        <text>暂无数据~</text>
+                    </view>
+
+
+                    <view wx:if="{{special.content!=null}}" class="inner-container-line2">
                         <text class="{{!infoOpen?'content-class':''}}">{{special.baseInfo.content}}</text>
                     </view>
 
@@ -120,7 +125,12 @@
                             <text>第一印象</text>
                         </view>
                     </view>
-                    <view style="display: flex;flex-direction: row;justify-content: space-around">
+
+                    <view wx:if="{{special.impress==null}}"  style="background-color: white;display: flex;flex-direction: row;justify-content: center;align-items: center;width: 100%;border-radius: 15rpx;height: 50rpx;font-size: 27rpx;opacity: 0.7;margin-bottom: 50rpx;margin-top: 50rpx">
+                        <text>暂无数据~</text>
+                    </view>
+
+                    <view wx:if="{{special.impress!=null}}"  style="margin-top: 20rpx;margin-bottom: 20rpx;display: flex;flex-direction: row;justify-content: space-around">
                         <view class="impress-content" wx:for="{{special.impress}}" wx:key="idx">
                             <image style="width: 60rpx;height: 60rpx" src="{{item.image_url}}"></image>
                             <text>{{item.key_word}}</text>
@@ -137,7 +147,12 @@
                             <text>主要课程</text>
                         </view>
                     </view>
-                    <view class="inner-container-line2" style="margin-bottom: 30rpx">
+
+                    <view wx:if="{{special.learns==null}}"  style="background-color: white;display: flex;flex-direction: row;justify-content: center;align-items: center;width: 100%;border-radius: 15rpx;height: 50rpx;font-size: 27rpx;opacity: 0.7;margin-bottom: 50rpx;margin-top: 50rpx">
+                        <text>暂无数据~</text>
+                    </view>
+
+                    <view wx:if="{{special.learns!=null}}" class="inner-container-line2" style="margin-bottom: 30rpx">
                         <view style="background-color: rgb(245,245,245);margin-right: 30rpx;margin-bottom: 20rpx;border-radius: 15rpx;width: auto;height: 50rpx;display: flex;align-items: center;justify-content: center"
                               wx:for="{{special.baseInfo.learns}}" wx:key="idx">
                             <text style="margin-left: 15rpx;margin-right: 15rpx;font-size: 22rpx">{{item}}</text>
@@ -447,7 +462,12 @@
                             <text>相似专业</text>
                         </view>
                     </view>
-                    <view>
+
+                    <view wx:if="{{special.similarSpecial==null}}"  style="background-color: white;display: flex;flex-direction: row;justify-content: center;align-items: center;width: 100%;border-radius: 15rpx;height: 50rpx;font-size: 27rpx;opacity: 0.7;margin-bottom: 50rpx;margin-top: 50rpx">
+                        <text>未找到相似专业~</text>
+                    </view>
+
+                    <view wx:if="{{special.similarSpecial!=null}}">
                         <view wx:for="{{special.similarSpecial}}" class="similarSpecial" wx:key="idx" data-id="{{[item.special_id,item.name]}}" bind:tap="goSpecial">
                             <view style="margin-left: 50rpx;width: 85%">{{item.name}}</view>
                             <image style="width: 20rpx;height: 20rpx" src="../../../static/images/icon/右.svg"></image>
@@ -463,7 +483,12 @@
                             <text>开设该专业的学校</text>
                         </view>
                     </view>
-                    <view wx:for="{{schoolList}}" class="school-item" data-id="{{item.id}}" bindtap="findSchoolById"
+
+                    <view wx:if="{{schoolList==null}}"  style="background-color: white;display: flex;flex-direction: row;justify-content: center;align-items: center;width: 100%;border-radius: 15rpx;height: 50rpx;font-size: 27rpx;opacity: 0.7;margin-bottom: 50rpx;margin-top: 50rpx">
+                        <text>未找到相关学校~</text>
+                    </view>
+
+                    <view wx:if="{{schoolList!=null}}" wx:for="{{schoolList}}" class="school-item" data-id="{{item.id}}" bindtap="findSchoolById"
                           wx:key="index">
                         <view class="school-left">
                             <view>

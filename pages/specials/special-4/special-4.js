@@ -7,7 +7,7 @@ Page({
         special: {},
         infoOpen: false,
         schoolList: [],
-        page: 5,
+        page: 1,
         pageCount: 10,
         moreData: true,
 
@@ -93,6 +93,11 @@ Page({
                 this.setData({
                     schoolList: res.data
                 })
+                if (res.data.length<this.data.pageCount){
+                    this.setData({
+                        moreData: false
+                    })
+                }
                 resolve()
             })
         })
