@@ -463,11 +463,11 @@
                         </view>
                     </view>
 
-                    <view wx:if="{{special.similarSpecial==null}}"  style="background-color: white;display: flex;flex-direction: row;justify-content: center;align-items: center;width: 100%;border-radius: 15rpx;height: 50rpx;font-size: 27rpx;opacity: 0.7;margin-bottom: 50rpx;margin-top: 50rpx">
+                    <view wx:if="{{special.similarSpecial.length==0}}"  style="background-color: white;display: flex;flex-direction: row;justify-content: center;align-items: center;width: 100%;border-radius: 15rpx;height: 50rpx;font-size: 27rpx;opacity: 0.7;margin-bottom: 50rpx;margin-top: 50rpx">
                         <text>未找到相似专业~</text>
                     </view>
 
-                    <view wx:if="{{special.similarSpecial!=null}}">
+                    <view wx:if="{{special.similarSpecial.length!=0}}">
                         <view wx:for="{{special.similarSpecial}}" class="similarSpecial" wx:key="idx" data-id="{{[item.special_id,item.name]}}" bind:tap="goSpecial">
                             <view style="margin-left: 50rpx;width: 85%">{{item.name}}</view>
                             <image style="width: 20rpx;height: 20rpx" src="../../../static/images/icon/右.svg"></image>
@@ -484,11 +484,11 @@
                         </view>
                     </view>
 
-                    <view wx:if="{{schoolList==null}}"  style="background-color: white;display: flex;flex-direction: row;justify-content: center;align-items: center;width: 100%;border-radius: 15rpx;height: 50rpx;font-size: 27rpx;opacity: 0.7;margin-bottom: 50rpx;margin-top: 50rpx">
+                    <view wx:if="{{schoolList.length==0}}"  style="background-color: white;display: flex;flex-direction: row;justify-content: center;align-items: center;width: 100%;border-radius: 15rpx;height: 50rpx;font-size: 27rpx;opacity: 0.7;margin-bottom: 50rpx;margin-top: 50rpx">
                         <text>未找到相关学校~</text>
                     </view>
 
-                    <view wx:if="{{schoolList!=null}}" wx:for="{{schoolList}}" class="school-item" data-id="{{item.id}}" bindtap="findSchoolById"
+                    <view wx:if="{{schoolList.length!=0}}" wx:for="{{schoolList}}" class="school-item" data-id="{{item.id}}" bindtap="findSchoolById"
                           wx:key="index">
                         <view class="school-left">
                             <view>
