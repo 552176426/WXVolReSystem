@@ -21,7 +21,7 @@ Page({
         ec: {
             lazyLoad: true,
         },
-        chart:'',
+        chart: '',
         remCounts: 280,
         endAngle: 160,
         splitNumber: 1,
@@ -155,7 +155,7 @@ Page({
                     height: height,
                     devicePixelRatio: dpr // new
                 })
-                chart.setOption(that.getOption(),true);
+                chart.setOption(that.getOption(), true);
                 return chart;
             }
         )
@@ -169,9 +169,9 @@ Page({
 
     onShow() {
         let paramsMap = wx.getStorageSync('paramsMap')
-        if (paramsMap!=''){
+        if (paramsMap != '') {
             this.setData({
-                paramsMap:paramsMap
+                paramsMap: paramsMap
             })
         }
 
@@ -183,14 +183,10 @@ Page({
             })
             return
         }
-        if (wx.getStorageSync('flag')) {
-            wx.showToast({title: '修改成功', duration: 1000})
-            wx.removeStorageSync('flag')
-        }
 
         let remCounts = wx.getStorageSync('length')
         this.setData({
-            remCounts:remCounts
+            remCounts: remCounts
         })
         this.init()
         let endAngle = (1 - this.data.remCounts / 2934) * 180
@@ -200,6 +196,36 @@ Page({
             endAngle: endAngle,
             splitNumber: splitNumber
         })
+
+        if (wx.getStorageSync('flag')) {
+            wx.showToast({title: '修改成功', duration: 1000})
+            wx.removeStorageSync('flag')
+
+            let remCounts = this.data.remCounts
+            //刷新数据
+            let start = 0;
+            let that = this
+            let i = setInterval(function () {
+                if (start<remCounts){
+                    start=start+31>remCounts?remCounts:start+31
+                    that.setData({
+                        remCounts:start
+                    })
+                    that.init()
+                    let endAngle = (1 - that.data.remCounts / 2934) * 180
+                    endAngle = Math.round(endAngle / 3) * 3
+                    let splitNumber = (180 - endAngle) / 3
+                    that.setData({
+                        endAngle: endAngle,
+                        splitNumber: splitNumber
+                    })
+                } else if (start>=remCounts){
+                    clearInterval(i)
+                }
+            }, 1)
+
+        }
+
     },
 
 
@@ -317,9 +343,9 @@ Page({
     },
 
 
-    goSchoolFirst(){
+    goSchoolFirst() {
         wx.navigateTo({
-            url:"/pages/schoolFirst/schoolFirst"
+            url: "/pages/schoolFirst/schoolFirst"
         })
     }
 })

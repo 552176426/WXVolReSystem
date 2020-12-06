@@ -14,7 +14,7 @@
 
 
     <view class="down" wx:if="{{current==1}}" wx:for="{{type1Map[choose1][choose2]}}" wx:key="name">
-        <view class="header-lines">
+        <view class="header-lines" data-id="{{[item.special_id,item.name]}}" bind:tap="goSpecial">
             <view class="down-line1">{{item.name}}</view>
             <view class="header-line2">
                 <view style="width: 70%;display: flex;flex-direction: row">
@@ -31,8 +31,8 @@
     </view>
 
     <view class="down" wx:if="{{current==2}}" wx:for="{{type2Map[choose1][choose2]}}" wx:key="name">
-        <view class="header-lines">
-            <view class="down-line1">{{item.name}}</view>
+        <view class="header-lines" data-id="{{item.special_id}}" bind:tap="goSpecial">
+            <view class="down-line1">{{[item.special_id,item.name]}}</view>
             <view class="header-line2">
                 <view style="width: 70%;display: flex;flex-direction: row">
                     <text style="margin-right: 35rpx">学制：{{item.limit_year}}</text>

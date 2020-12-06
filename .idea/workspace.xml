@@ -10,26 +10,175 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b6aa566-a68d-4f74-91b6-4d4918eb0655" name="Default Changelist" comment="11-22">
-      <change afterPath="$PROJECT_DIR$/static/images/icon/筛选-1.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Volresystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Volresystem.iml" afterDir="false" />
+    <list default="true" id="2b6aa566-a68d-4f74-91b6-4d4918eb0655" name="Default Changelist" comment="11-28">
+      <change afterPath="$PROJECT_DIR$/pages/specials/special-3/special-3.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/specials/special-3/special-3.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/specials/special-3/special-3.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/specials/special-3/special-3.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/specials/special-4/special-4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/specials/special-4/special-4.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/specials/special-4/special-4.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/specials/special-4/special-4.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/test1/test1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/test1/test1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/test1/test1.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/test1/test1.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/00.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/01.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/02.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/03.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/04.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/05.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/06.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/07.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/08.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/09.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/10.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/100.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/101.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/102.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/103.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/104.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/105.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/106.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/107.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/108.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/109.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/11.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/110.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/111.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/112.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/113.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/114.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/115.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/116.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/117.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/118.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/119.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/12.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/120.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/121.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/122.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/123.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/124.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/125.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/126.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/127.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/128.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/129.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/13.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/130.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/131.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/132.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/133.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/134.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/14.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/15.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/16.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/17.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/18.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/19.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/20.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/21.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/22.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/23.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/24.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/25.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/26.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/27.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/28.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/29.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/30.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/31.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/32.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/33.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/34.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/35.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/36.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/37.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/38.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/39.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/40.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/41.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/42.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/43.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/44.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/45.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/46.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/47.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/48.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/49.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/50.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/51.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/52.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/53.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/54.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/55.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/56.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/57.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/58.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/59.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/60.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/61.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/62.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/63.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/64.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/65.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/66.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/67.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/68.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/69.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/70.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/71.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/72.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/73.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/74.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/75.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/76.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/77.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/78.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/79.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/80.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/81.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/82.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/83.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/84.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/85.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/86.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/87.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/88.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/89.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/90.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/91.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/92.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/93.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/94.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/95.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/96.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/97.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/98.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/emojis/99.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/html2json.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/htmlparser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/showdown.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/wxDiscode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/wxParse.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/wxParse.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/wxParse/wxParse.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/icon/下.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VolReSystem.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/findSchool/findSchool.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/findSchool/findSchool.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/app.wxss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index/index.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index/index.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index/index.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/inputInfo/inputInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/inputInfo/inputInfo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/inputInfo/inputInfo.json" beforeDir="false" afterPath="$PROJECT_DIR$/pages/inputInfo/inputInfo.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/inputInfo/inputInfo.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/inputInfo/inputInfo.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/inputInfo/inputInfo.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/pages/inputInfo/inputInfo.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/schoolFirst/schoolFirst.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/schoolFirst/schoolFirst.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/schoolFirst/schoolFirst.json" beforeDir="false" afterPath="$PROJECT_DIR$/pages/schoolFirst/schoolFirst.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/schoolFirst/schoolFirst.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/schoolFirst/schoolFirst.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/schoolFirst/schoolFirst.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/pages/schoolFirst/schoolFirst.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/project.config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/specials/special-2/special-2.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/specials/special-2/special-2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/specials/special-2/special-2.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/specials/special-2/special-2.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/test/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/test/test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/test/test.json" beforeDir="false" afterPath="$PROJECT_DIR$/pages/test/test.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/test/test.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/test/test.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/test/test.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/pages/test/test.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/icon/右.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/icon/右.svg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +190,8 @@
       <list>
         <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="Wechat mini program component js file" />
+        <option value="Wechat mini program component json file" />
         <option value="Wechat mini program page js file(Page API)" />
         <option value="Wechat mini program page json file(Page API)" />
       </list>
@@ -81,20 +232,21 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/static/images/icon" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.CommitDialog" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Develop\IdeaProjects\Volresystem\static\images\icon" />
+      <recent name="D:\Develop\IdeaProjects\Volresystem\pages" />
+      <recent name="D:\Develop\IdeaProjects\Volresystem" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Develop\IdeaProjects\Volresystem\pages" />
       <recent name="D:\Develop\IdeaProjects\Volresystem\pages\specials\special-1" />
       <recent name="D:\Develop\IdeaProjects\Volresystem\static\images\icon" />
       <recent name="D:\Develop\IdeaProjects\Volresystem\pages\test" />
       <recent name="D:\Develop\IdeaProjects\Volresystem\static\icons" />
-      <recent name="D:\Develop\IdeaProjects\Volresystem\pages\scoreParagraph" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Develop\IdeaProjects\Volresystem\static\images\icon" />
-      <recent name="D:\Develop\IdeaProjects\Volresystem" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -118,7 +270,8 @@
       <workItem from="1606276482271" duration="4249000" />
       <workItem from="1606285229639" duration="209000" />
       <workItem from="1606285482559" duration="53000" />
-      <workItem from="1606285548412" duration="64350000" />
+      <workItem from="1606285548412" duration="96631000" />
+      <workItem from="1607049071165" duration="53770000" />
     </task>
     <task id="LOCAL-00001" summary="第一次">
       <created>1603542104880</created>
@@ -148,7 +301,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606040843105</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="11-28">
+      <created>1606542367731</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1606542367731</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,17 +332,18 @@
     <MESSAGE value="找大学初页和批次线" />
     <MESSAGE value="基本功能实现" />
     <MESSAGE value="11-22" />
-    <option name="LAST_COMMIT_MESSAGE" value="11-22" />
+    <MESSAGE value="11-28" />
+    <option name="LAST_COMMIT_MESSAGE" value="11-28" />
   </component>
   <component name="WindowStateProjectService">
     <state x="462" y="283" key="#Notifications" timestamp="1606285493843">
       <screen x="0" y="0" width="1440" height="920" />
     </state>
     <state x="462" y="283" key="#Notifications/0.0.1440.920@0.0.1440.920" timestamp="1606285493843" />
-    <state x="214" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1605835253832">
+    <state x="214" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1607056507654">
       <screen x="0" y="0" width="1440" height="920" />
     </state>
-    <state x="214" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1440.920@0.0.1440.920" timestamp="1605835253832" />
+    <state x="214" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1440.920@0.0.1440.920" timestamp="1607056507654" />
     <state x="451" y="207" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605511744117">
       <screen x="0" y="0" width="1440" height="920" />
     </state>
@@ -191,14 +352,14 @@
       <screen x="0" y="0" width="1440" height="920" />
     </state>
     <state x="501" y="215" key="FileChooserDialogImpl/0.0.1440.920@0.0.1440.920" timestamp="1603542873764" />
-    <state x="335" y="201" key="SettingsEditor" timestamp="1606285249538">
+    <state x="335" y="201" key="SettingsEditor" timestamp="1607049243565">
       <screen x="0" y="0" width="1440" height="920" />
     </state>
-    <state x="335" y="201" key="SettingsEditor/0.0.1440.920@0.0.1440.920" timestamp="1606285249538" />
-    <state x="313" y="193" key="Vcs.Push.Dialog.v2" timestamp="1606040970098">
+    <state x="335" y="201" key="SettingsEditor/0.0.1440.920@0.0.1440.920" timestamp="1607049243565" />
+    <state x="313" y="193" key="Vcs.Push.Dialog.v2" timestamp="1606542377663">
       <screen x="0" y="0" width="1440" height="920" />
     </state>
-    <state x="313" y="193" key="Vcs.Push.Dialog.v2/0.0.1440.920@0.0.1440.920" timestamp="1606040970098" />
+    <state x="313" y="193" key="Vcs.Push.Dialog.v2/0.0.1440.920@0.0.1440.920" timestamp="1606542377663" />
     <state x="528" y="373" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603543225923">
       <screen x="0" y="0" width="1440" height="920" />
     </state>
@@ -207,13 +368,13 @@
       <screen x="0" y="0" width="1440" height="920" />
     </state>
     <state x="489" y="359" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1440.920@0.0.1440.920" timestamp="1603543674393" />
-    <state x="377" y="211" key="run.anything.popup" timestamp="1605851925095">
+    <state x="377" y="211" key="run.anything.popup" timestamp="1607053234009">
       <screen x="0" y="0" width="1440" height="920" />
     </state>
-    <state x="377" y="211" key="run.anything.popup/0.0.1440.920@0.0.1440.920" timestamp="1605851925095" />
-    <state x="383" y="195" width="672" height="678" key="search.everywhere.popup" timestamp="1606532464786">
+    <state x="377" y="211" key="run.anything.popup/0.0.1440.920@0.0.1440.920" timestamp="1607053234009" />
+    <state x="383" y="195" width="672" height="678" key="search.everywhere.popup" timestamp="1607233864564">
       <screen x="0" y="0" width="1440" height="920" />
     </state>
-    <state x="383" y="195" width="672" height="678" key="search.everywhere.popup/0.0.1440.920@0.0.1440.920" timestamp="1606532464786" />
+    <state x="383" y="195" width="672" height="678" key="search.everywhere.popup/0.0.1440.920@0.0.1440.920" timestamp="1607233864564" />
   </component>
 </project>

@@ -29,5 +29,11 @@ Page({
             }
         })
         console.log(this.data.current+":"+this.data.choose1+":"+this.data.choose2)
+    },
+
+    goSpecial(e){
+        wx.navigateTo({
+            url: "/pages/specials/special-4/special-4?name="+e.currentTarget.dataset.id[1]+"&id="+e.currentTarget.dataset.id[0]
+        })
     }
 });

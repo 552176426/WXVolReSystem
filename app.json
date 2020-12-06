@@ -1,9 +1,12 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/specials/special-4/special-4",
+    "pages/specials/special-3/special-3",
+    "pages/test/test",
+    "pages/test1/test1",
     "pages/schoolFirst/schoolFirst",
     "pages/inputInfo/inputInfo",
-    "pages/test/test",
     "pages/specials/special-1/special-1",
     "pages/specials/special-2/special-2",
     "pages/provinceScore/provinceScore",

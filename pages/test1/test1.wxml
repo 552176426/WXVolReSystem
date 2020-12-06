@@ -1,0 +1,102 @@
+<view class="header">
+    <view class="left1">
+        <view class="left">
+            <view class="rectangle"></view>
+            <view style="display: flex;flex-direction: row">
+                <view class="triangle-topleft"></view>
+                <view class="triangle-topright"></view>
+            </view>
+        </view>
+    </view>
+    <view class="right column">
+        <view class="line1">
+            <text style="font-weight: bold;font-size: 30rpx">哲学</text>
+        </view>
+        <view class="line2">
+            <text style="color: rgba(43,43,43,0.5);font-size: 20rpx">专业层次：{{special.baseInfo.level1_name}}</text>
+            <text style="color: rgba(43,43,43,0.5);font-size: 20rpx;margin-left: 25rpx">学制年限：{{special.baseInfo.limit_year}}</text>
+        </view>
+    </view>
+</view>
+
+<view style="background-color: rgb(247,247,247);width: 100%;height: 25rpx"></view>
+<view class="navbar-wrap">
+    <view class="column {{isFixedTop?'fixed':''}}" id="navbar">
+        <view data-current="0" bind:tap="switchTab" style="display: flex;flex-direction: column" class="center2">
+            <view style="font-weight: bold;margin-top: 20rpx;font-size: 25rpx;" class="{{current==0?'bar-text':''}}">
+                基本信息
+            </view>
+            <view wx:if="{{current==0}}" class="bar"></view>
+        </view>
+        <view data-current="1" bind:tap="switchTab" style="display: flex;flex-direction: column" class="center2">
+            <view style="font-weight: bold;margin-top: 20rpx;font-size: 25rpx;" class="{{current==1?'bar-text':''}}">
+                就业前景
+            </view>
+            <view wx:if="{{current==1}}" class="bar"></view>
+        </view>
+        <view data-current="2" bind:tap="switchTab" style="display: flex;flex-direction: column" class="center2">
+            <view style="font-weight: bold;margin-top: 20rpx;font-size: 25rpx;" class="{{current==2?'bar-text':''}}">
+                相关推荐
+            </view>
+            <view wx:if="{{current==2}}" class="bar"></view>
+        </view>
+    </view>
+    <!-- 用于吸顶后 占位用的 -->
+    <view class="column" wx:if="{{isFixedTop}}"></view>
+</view>
+
+
+
+
+<view class="canvas-container">
+    <ec-canvas id="mychart-dom-gauge" canvas-id="mychart-gauge" ec="{{ ec }}"></ec-canvas>
+    <!--                <ec-canvas id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas>-->
+</view>
+
+
+<view>123</view>
+<view>123</view>
+<view>123</view>
+<view>123</view>
+<view>123</view>
+<view>123</view>
+<view>123</view>
+<view>123</view>
+<view>123</view>
+<view>123</view>
+<view>123</view>
+<view>123</view>
+<view>123</view>
+<view>123</view>
+<view>123</view>
+<view>123</view>
+<view>123</view>
+<view>123</view>
+<view>123</view>
+<view>123</view>
+<view>123</view>
+<view>123</view>
+<view>123</view>
+<view>123</view>
+<view>123</view>
+<view>123</view>
+<view>123</view>
+<view>123</view>
+<view>123</view>
+<view>123</view>
+<view>123</view>
+<view>123</view>
+<view>123</view>
+<view>123</view>
+<view>123</view>
+<view>123</view>
+<view>123</view>
+<view>123</view>
+<view>123</view>
+<view>123</view>
+<view>123</view>
+<view>123</view>
+
+
+
+
