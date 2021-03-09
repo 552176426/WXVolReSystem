@@ -10,6 +10,8 @@ Page({
         page: 1,
         pageCount: 10,
         moreData: true,
+        navbarInitTop: 0, //导航栏初始化距顶部的距离
+        isFixedTop: false, //是否固定顶部
 
     },
 
@@ -40,7 +42,7 @@ Page({
             })
             let special = this.data.special
             let job = special.jobDetail['type2']
-            if (job!=null){
+            if (job != null) {
                 for (let i = 0; i < job.length; i++) {
                     if (i == 0) {
                         job[i].checked = true
@@ -56,20 +58,21 @@ Page({
             })
             console.log(this.data.special)
             wx.hideLoading()
-            this.findSchool(options.id).then(res => {
+            this.findSchool(1).then(res => {
+            // this.findSchool(options.id).then(res => {
 
             })
+
         })
 
 
     },
 
-    goSpecial(e){
+    goSpecial(e) {
         wx.navigateTo({
-            url: "/pages/specials/special-4/special-4?name="+e.currentTarget.dataset.id[1]+"&id="+e.currentTarget.dataset.id[0]
+            url: "/pages/specials/special-4/special-4?name=" + e.currentTarget.dataset.id[1] + "&id=" + e.currentTarget.dataset.id[0]
         })
     },
-
 
 
     switchCheck(e) {
@@ -93,7 +96,7 @@ Page({
                 this.setData({
                     schoolList: res.data
                 })
-                if (res.data.length<this.data.pageCount){
+                if (res.data.length < this.data.pageCount) {
                     this.setData({
                         moreData: false
                     })
@@ -102,7 +105,6 @@ Page({
             })
         })
     },
-
 
 
     /**
@@ -157,10 +159,10 @@ Page({
         })
     },
 
-    toCurrent(e){
+    toCurrent(e) {
 
         this.setData({
-            current:++e.currentTarget.dataset.current,
+            current: ++e.currentTarget.dataset.current,
         })
     },
 
@@ -201,6 +203,7 @@ Page({
         returnText = returnText.replace(/&gt;/gi, '>');
 
         return returnText;
-    }
+    },
+
 
 })

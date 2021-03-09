@@ -54,7 +54,7 @@
             <scroll-view enable-flex scroll-y bind:scrolltolower="loadMore" class="scroll-view">
                 <view class="swiper-item-view" wx:for="{{typeList[0].data.list}}" wx:key="index">
                     <!--上-->
-                    <view class="swiper-item-view-up">
+                    <view class="swiper-item-view-up" bind:tap="goSchoolDetail" data-param="{{[item.school_id,item.school_name]}}">
                         <view class="left">
                             <view class="badge">
                                 <image style="height: 80rpx;width: 80rpx"
@@ -98,7 +98,7 @@
                                     <view style="width: 70%">
                                         {{item.admissionList[item.admissionList.length - 1].year}}年最低分 <text>{{item.admissionList[item.admissionList.length - 1].min_score}}</text> 分
                                     </view>
-                                    <view style="width: 30%;color: dodgerblue" data-name="{{item.school_name}}" bind:tap="admissionActionSheet">展开历年分数线>></view>
+                                    <view style="width: 30%;color: dodgerblue" data-name="{{item.school_name}}" catchtap="admissionActionSheet">展开历年分数线>></view>
                                 </view>
 
                                 <view class="reason">{{item.admissionList[item.admissionList.length - 1].year}}年最低位次 <text>{{item.admissionList[item.admissionList.length - 1].min_score_order}}</text> 位
@@ -138,7 +138,7 @@
             <scroll-view enable-flex scroll-y bind:scrolltolower="loadMore" class="scroll-view">
                 <view class="swiper-item-view" wx:for="{{typeList[1].data.list}}" wx:key="index">
                     <!--上-->
-                    <view class="swiper-item-view-up">
+                    <view class="swiper-item-view-up" bind:tap="goSchoolDetail" data-param="{{[item.school_id,item.school_name]}}">
                         <view class="left">
                             <view class="badge">
                                 <image style="height: 80rpx;width: 80rpx"
@@ -181,7 +181,7 @@
                                     <view style="width: 70%">
                                         {{item.admissionList[item.admissionList.length - 1].year}}年最低分 <text>{{item.admissionList[item.admissionList.length - 1].min_score}}</text> 分
                                     </view>
-                                    <view style="width: 30%;color: dodgerblue" data-name="{{item.school_name}}" bind:tap="admissionActionSheet">展开历年分数线>></view>
+                                    <view style="width: 30%;color: dodgerblue" data-name="{{item.school_name}}" catchtap="admissionActionSheet">展开历年分数线>></view>
                                 </view>
 
                                 <view class="reason">{{item.admissionList[item.admissionList.length - 1].year}}年最低位次 <text>{{item.admissionList[item.admissionList.length - 1].min_score_order}}</text> 位
@@ -220,7 +220,7 @@
             <scroll-view enable-flex scroll-y bind:scrolltolower="loadMore" class="scroll-view">
                 <view class="swiper-item-view" wx:for="{{typeList[2].data.list}}" wx:key="index">
                     <!--上-->
-                    <view class="swiper-item-view-up">
+                    <view class="swiper-item-view-up" bind:tap="goSchoolDetail" data-param="{{[item.school_id,item.school_name]}}">
                         <view class="left">
                             <view class="badge">
                                 <image style="height: 80rpx;width: 80rpx"
@@ -263,7 +263,7 @@
                                     <view style="width: 70%">
                                         {{item.admissionList[item.admissionList.length - 1].year}}年最低分 <text>{{item.admissionList[item.admissionList.length - 1].min_score}}</text> 分
                                     </view>
-                                    <view style="width: 30%;color: dodgerblue" data-name="{{item.school_name}}" bind:tap="admissionActionSheet">展开历年分数线>></view>
+                                    <view style="width: 30%;color: dodgerblue" data-name="{{item.school_name}}" catchtap="admissionActionSheet">展开历年分数线>></view>
                                 </view>
 
                                 <view class="reason">{{item.admissionList[item.admissionList.length - 1].year}}年最低位次 <text>{{item.admissionList[item.admissionList.length - 1].min_score_order}}</text> 位
@@ -299,7 +299,7 @@
             <scroll-view enable-flex scroll-y bind:scrolltolower="loadMore" class="scroll-view">
                 <view class="swiper-item-view" wx:for="{{typeList[3].data.list}}" wx:key="index">
                     <!--上-->
-                    <view class="swiper-item-view-up">
+                    <view class="swiper-item-view-up" bind:tap="goSchoolDetail" data-param="{{[item.school_id,item.school_name]}}">
                         <view class="left">
                             <view class="badge">
                                 <image style="height: 80rpx;width: 80rpx"
@@ -335,7 +335,7 @@
                                     <view style="width: 70%">
                                         {{item.admissionList[item.admissionList.length - 1].year}}年最低分 <text>{{item.admissionList[item.admissionList.length - 1].min_score}}</text> 分
                                     </view>
-                                    <view style="width: 30%;color: dodgerblue" data-name="{{item.school_name}}" bind:tap="admissionActionSheet">展开历年分数线>></view>
+                                    <view style="width: 30%;color: dodgerblue" data-name="{{item.school_name}}" catchtap="admissionActionSheet">展开历年分数线>></view>
                                 </view>
 
                                 <view class="reason">{{item.admissionList[item.admissionList.length - 1].year}}年最低位次 <text>{{item.admissionList[item.admissionList.length - 1].min_score_order}}</text> 位

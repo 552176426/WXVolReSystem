@@ -1,0 +1,49 @@
+<view class='abox'>
+    <view style="margin-top: 10rpx;font-size: 25rpx;font-weight: bold" wx:for="{{title}}" class='{{currentIndex==index?"tabTrue":""}}' bindtap='changeTab'
+          data-index="{{index}}" wx:key="idx">
+        {{item}}
+    </view>
+    <view class='b' style="left:{{left}}px"></view>
+</view>
+
+
+
+<scroll-view bind:scrolltolower="loadMore" scroll-y enable-flex
+             style="height: {{windowHeight-70}}rpx;position: absolute;top: 70rpx">
+    <view style="font-size: 20rpx;opacity: 0.5;margin-top: 30rpx;margin-bottom: 30rpx;margin-left: 30rpx">当前所有数据仅供参考
+    </view>
+    <view class="title">
+        <view class="title-first">排名</view>
+        <view style="margin-left: 8%">学校</view>
+        <view style="position: absolute;right: 5%;display: flex;align-items: center">
+            <image style="margin-right: 10rpx;width: 30rpx;height: 30rpx;" src="../../../static/images/icon/热度.svg"></image>
+            <text>热度</text>
+        </view>
+    </view>
+
+    <view bind:tap="goSchoolDetail" data-param="{{[item.id,item.name]}}" class="special-item"
+          wx:for="{{specialVW}}" wx:key="idx" wx:for-index="idx">
+        <view class="title-first">
+            <view wx:if="{{idx==0}}" class="index index-1">{{idx + 1}}</view>
+            <view wx:elif="{{idx==1}}" class="index index-2">{{idx + 1}}</view>
+            <view wx:elif="{{idx==2}}" class="index index-3">{{idx + 1}}</view>
+            <view wx:else class="index index-4">{{idx + 1}}</view>
+        </view>
+
+        <view style="margin-left: 8%;font-weight: bold;font-size: 28rpx;display: flex;align-items: center">
+            <image style="width: 70rpx;height: 70rpx;margin-right: 20rpx" src="{{item.badge_url}}"></image>
+            <text>{{item.name}}</text>
+        </view>
+        <view wx:if="{{currentIndex==0}}" style="color: red;position: absolute;right: 5%">{{item.view_total}}</view>
+        <view wx:elif="{{currentIndex==1}}" style="color: red;position: absolute;right: 5%">{{item.view_month}}</view>
+        <view wx:else style="color: red;position: absolute;right: 5%;font-size: 28rpx">{{item.view_week}}</view>
+    </view>
+
+    <view class="loadMore">
+        <text wx:if="{{moreData}}">加载中...</text>
+        <text wx:if="{{!moreData}}">无更多数据了~</text>
+    </view>
+
+</scroll-view>
+
+

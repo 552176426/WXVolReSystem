@@ -542,4 +542,11 @@ Page({
         }
         return true;
     },
+
+    goSchoolDetail(e){
+        console.log("/pages/schoolDetail/schoolDetail?id=" + e.currentTarget.dataset.param[0]+"&name="+e.currentTarget.dataset.param[1])
+        wx.navigateTo({
+            url: "/pages/schoolDetail/schoolDetail?id=" + e.currentTarget.dataset.param[0]+"&name="+e.currentTarget.dataset.param[1]
+        })
+    },
 });

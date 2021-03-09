@@ -3,8 +3,8 @@
 
     <view class="header">
         <!--搜索-->
-        <view class='search'>
-            <input type='text' placeholder='输入大学名称' confirm-type='search' value="{{inputValue}}" bindinput='inputBind'
+        <view class='search' bind:tap="goSearch">
+            <input disabled="true" type='text' placeholder='输入大学名称' confirm-type='search' value="{{inputValue}}" bindinput='inputBind'
                    bindconfirm='query'></input>
             <i-icon size="16" type="search"></i-icon>
         </view>
@@ -139,7 +139,7 @@
     <scroll-view enable-flex scroll-y class="school-container" bindscrolltolower="loadMore" scroll-top="{{page == 1}}">
         <view style="width: 90%">
             <!--学校item -->
-            <view wx:for="{{schoolList}}" class="school-item" data-id="{{item.id}}" bindtap="findSchoolById" wx:key="index">
+            <view wx:for="{{schoolList}}" class="school-item" data-param="{{[item.id,item.name]}}" bindtap="findSchoolById" wx:key="index">
                 <!--左图-->
                 <view class="school-left">
                     <view>

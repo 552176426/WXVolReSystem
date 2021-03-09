@@ -1,0 +1,58 @@
+
+<view style="display: flex;flex-direction: column;justify-content: center;align-items: center">
+    <view style="width: 90%;display: flex;align-items: center;justify-content: center;margin-bottom: 20rpx">
+        <view class="search-container">
+            <image style="width: 35rpx;height: 35rpx;margin-left: 20rpx"
+                   src="../../../static/images/icon/搜索.png"></image>
+            <input style="margin-left: 20rpx;font-size: 25rpx" bindinput="changeStr" bind:confirm="searchSchool" value="{{searchStr}}" placeholder="请输入院校名称"></input>
+        </view>
+        <view wx:if="{{searchStr==''}}" bind:tap="navigateBack" style="height: 70rpx;color: rgb(203,89,89);margin-left: 15rpx;font-size: 24rpx;display: flex;align-items: center">
+            取消
+        </view>
+        <view wx:else bind:tap="searchSchool" style="height: 70rpx;color: rgb(203,89,89);margin-left: 15rpx;font-size: 24rpx;display: flex;align-items: center">
+            搜索
+        </view>
+    </view>
+</view>
+
+
+<scroll-view enable-flex scroll-y style="height: {{windowHeight-100}}rpx;width: 100%;background-color: rgb(240,240,240);display: flex;">
+
+    <view style="width: 94%;margin-left: 3%;display: flex;flex-direction: column;">
+        <view bind:tap="goSchoolDetail" data-param="{{[item.id,item.name]}}" wx:for="{{schoolList}}" wx:key="idx"
+              class="school-item">
+            <view style="width: 90%;height: 130rpx;display: flex;align-items: center">
+                <image style="width: 70rpx;height: 70rpx" src="{{item.badge_url}}"></image>
+                <view style="margin-left: 30rpx;width: 80%">{{item.name}}</view>
+                <image style="width: 25rpx;height: 25rpx" src="../../../static/images/icon/右.svg"></image>
+            </view>
+        </view>
+
+
+        <view wx:if="{{schoolList.length==0}}"
+              style="height: 400rpx;display: flex;flex-direction: column;justify-content: center;align-items: center">
+            <image style=";width: 30%;height: 30%;" src="../../../static/images/icon/无数据.svg">
+            </image>
+            <view style="margin-top: 15rpx;width: 100%;display: flex;justify-content: center;font-size: 22rpx;opacity: 0.4;">
+                暂无数据
+            </view>
+        </view>
+
+
+        <view style="margin-top: 80rpx;display: flex;">
+            <view style="font-weight: bold;font-size: 35rpx;width: 95%">历史记录</view>
+            <image bind:tap="clearHistory" style="width: 30rpx;height: 30rpx;margin-top:12rpx;" src="../../../static/images/icon/清除.svg"></image>
+        </view>
+
+        <view style="margin-top: 30rpx;width: 100%;display: flex;flex-direction: row;flex-wrap: wrap;margin-bottom: 30rpx">
+            <view bind:tap="searchSch" data-str="{{item}}" class="history-item"  wx:for="{{historySch}}" wx:key="idx">{{item}}</view>
+        </view>
+    </view>
+
+
+</scroll-view>
+
+
+
+
+

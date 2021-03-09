@@ -1,20 +1,25 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/searchData/index/searchData",
+    "pages/searchData/hotSpecialRank/hotSpecialRank",
+    "pages/searchData/specialJob/specialJob",
+    "pages/search/search-2/search",
+    "pages/search/search-1/search",
+    "pages/findSchool/findSchool",
+    "pages/schoolDetail/schoolDetail",
     "pages/specials/special-4/special-4",
     "pages/specials/special-3/special-3",
-    "pages/test/test",
-    "pages/test1/test1",
     "pages/schoolFirst/schoolFirst",
     "pages/inputInfo/inputInfo",
     "pages/specials/special-1/special-1",
     "pages/specials/special-2/special-2",
     "pages/provinceScore/provinceScore",
-    "pages/findSchool/findSchool",
     "pages/scoreParagraph/scoreParagraph",
     "pages/logs/logs",
-    "pages/remSpecial/remSpecial"
-
+    "pages/remSpecial/remSpecial",
+    "pages/searchData/hotSchoolRank/hotSchoolRank",
+    "pages/searchData/schoolHistoryRank/schoolHistoryRank"
   ],
   "window":{
     "navigationBarBackgroundColor": "#ffffff",
@@ -40,7 +45,13 @@
         "selectedIconPath": "static/images/icon/指纹-2.png"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/search/search-2/search",
+        "text": "搜索",
+        "iconPath": "static/images/icon/搜索-1.png",
+        "selectedIconPath": "static/images/icon/搜索-2.png"
+      },
+      {
+        "pagePath": "pages/searchData/index/searchData",
         "text": "查数据",
         "iconPath": "static/images/icon/查数据-1.png",
         "selectedIconPath": "static/images/icon/查数据-2.png"

@@ -1,0 +1,112 @@
+<view style="position: fixed;border: 1rpx solid rgb(220, 220, 220);width: 100%"></view>
+<view class="view-container" style="height: {{windowHeight}}rpx">
+    <view style="width: 90%">
+
+        <view class="menu-view">
+            <view bind:tap="goSearch" data-type="{{2}}" class="menu-item">
+                <image style="width: 70rpx;height: 70rpx" src="../../../static/images/icon/招生计划.svg"></image>
+                <text style="font-size: 20rpx;margin-top: 15rpx">招生计划</text>
+            </view>
+
+            <view bind:tap="goSearch" data-type="{{1}}" class="menu-item">
+                <image style="width: 80rpx;height: 80rpx" src="../../../static/images/icon/分数线.svg"></image>
+                <text style="font-size: 20rpx;margin-top: 15rpx">分数线</text>
+            </view>
+
+            <view class="menu-item">
+                <image style="width: 70rpx;height: 70rpx" src="../../../static/images/icon/排行榜.svg"></image>
+                <text style="font-size: 20rpx;margin-top: 15rpx">大学排行榜</text>
+            </view>
+
+            <view class="menu-item">
+                <image style="width: 78rpx;height: 78rpx" src="../../../static/images/icon/位次查询.svg"></image>
+                <text style="font-size: 20rpx;margin-top: 15rpx">位次查询</text>
+            </view>
+
+            <view bind:tap="goSearch" data-type="{{3}}" class="menu-item">
+                <image style="width: 60rpx;height: 60rpx" src="../../../static/images/icon/高校就业数据.svg"></image>
+                <text style="font-size: 20rpx;margin-top: 15rpx">高校就业数据</text>
+            </view>
+
+            <view bind:tap="goSpecialJob" data-type="{{1}}" class="menu-item">
+                <image style="width: 60rpx;height: 60rpx" src="../../../static/images/icon/高校就业数据.svg"></image>
+                <text style="font-size: 20rpx;margin-top: 15rpx">专业就业数据</text>
+            </view>
+        </view>
+
+        <view style="font-weight: bold;font-size: 25rpx;margin-top: 40rpx;margin-bottom: 40rpx">榜单</view>
+
+        <scroll-view  scroll-x="true" style="width: 100%;display: flex;white-space: nowrap">
+            <view style="width: 80%;display: inline-block;margin-right: 25rpx">
+                <view style="background-color: white;border-radius: 15rpx;width: 100%">
+                    <view class="rankTitle">热门学校</view>
+                    <view bind:tap="goSchoolDetail" data-param="{{[item.id,item.name]}}" wx:for="{{schoolVW}}" wx:for-index="idx" wx:key="idx" style="margin-left: 5%;display: flex;flex-direction: row;align-items: center;margin-bottom: 40rpx">
+                        <view wx:if="{{idx==0}}" class="index-1">{{idx+1}}</view>
+                        <view wx:if="{{idx==1}}" class="index-3">{{idx+1}}</view>
+                        <view wx:if="{{idx==2}}" class="index-2">{{idx+1}}</view>
+                        <view class="item-view">
+                            <view style="display: flex;align-items: center">
+                                <image style="width: 70rpx;height: 70rpx" src="{{item.badge_url}}"></image>
+                                <view class="item-name">{{item.name}}</view>
+                            </view>
+                            <view style="position: absolute;right: 5%;color: red">{{item.view_week}}</view>
+                        </view>
+                    </view>
+                    <view class="seeMore" bind:tap="seeMore" data-type="{{1}}">查看更多</view>
+                </view>
+                <view style="background-color: white;border-radius: 15rpx;margin-top: 25rpx">
+                    <view class="rankTitle">热门专业</view>
+                    <view bind:tap="goSpecialDetail" data-param="{{[item.special_id,item.name]}}" wx:for="{{specialVW}}" wx:for-index="idx" wx:key="idx" style="margin-left: 5%;display: flex;flex-direction: row;align-items: center;margin-bottom: 40rpx">
+                        <view wx:if="{{idx==0}}" class="index-1">{{idx+1}}</view>
+                        <view wx:if="{{idx==1}}" class="index-3">{{idx+1}}</view>
+                        <view wx:if="{{idx==2}}" class="index-2">{{idx+1}}</view>
+                        <view class="item-view">
+                            <view style="display: flex;align-items: center">
+                                <view class="item-name">{{item.name}}</view>
+                            </view>
+                            <view style="position: absolute;right: 5%;color: red">{{item.view_week}}</view>
+                        </view>
+                    </view>
+                    <view class="seeMore" bind:tap="seeMore" data-type="{{2}}">查看更多</view>
+                </view>
+            </view>
+
+            <view style="width: 80%;display: inline-block;margin-right: 25rpx">
+                <view style="background-color: white;border-radius: 15rpx">
+                    <view class="rankTitle">学校历史排行</view>
+                    <view bind:tap="goSchoolDetail" data-param="{{[item.id,item.name]}}"  wx:for="{{schoolCD}}" wx:for-index="idx" wx:key="idx" style="margin-left: 5%;display: flex;flex-direction: row;align-items: center;margin-bottom: 40rpx">
+                        <view wx:if="{{idx==0}}" class="index-1">{{idx+1}}</view>
+                        <view wx:if="{{idx==1}}" class="index-3">{{idx+1}}</view>
+                        <view wx:if="{{idx==2}}" class="index-2">{{idx+1}}</view>
+                        <view class="item-view">
+                            <view style="display: flex;align-items: center">
+                                <image style="width: 70rpx;height: 70rpx" src="{{item.badge_url}}"></image>
+                                <view class="item-name">{{item.name}}</view>
+                            </view>
+                            <view style="position: absolute;right: 5%;color: red">{{item.create_date}}年</view>
+                        </view>
+                    </view>
+
+                    <view class="seeMore" bind:tap="seeMore" data-type="{{3}}">查看更多</view>
+                </view>
+                <view  style="background-color: white;border-radius: 15rpx;margin-top: 25rpx">
+                    <view class="rankTitle">专业薪酬排行</view>
+                    <view bind:tap="goSpecialDetail" data-param="{{[item.special_id,item.name]}}" wx:for="{{specialSal}}" wx:for-index="idx" wx:key="idx" style="margin-left: 5%;display: flex;flex-direction: row;align-items: center;margin-bottom: 40rpx">
+                        <view wx:if="{{idx==0}}" class="index-1">{{idx+1}}</view>
+                        <view wx:if="{{idx==1}}" class="index-3">{{idx+1}}</view>
+                        <view wx:if="{{idx==2}}" class="index-2">{{idx+1}}</view>
+                        <view class="item-view">
+                            <view style="display: flex;align-items: center">
+                                <view class="item-name">{{item.name}}</view>
+                            </view>
+                            <view style="position: absolute;right: 5%;color: red">¥ {{item.salary}}</view>
+                        </view>
+                    </view>
+                    <view class="seeMore" bind:tap="goSpecialJob" data-type="{{2}}">查看更多</view>
+                </view>
+            </view>
+        </scroll-view>
+
+
+    </view>
+</view>

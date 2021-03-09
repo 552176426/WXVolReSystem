@@ -342,10 +342,21 @@ Page({
         return option;
     },
 
+    findSchoolById(e){
+        wx.navigateTo({
+            url: "/pages/schoolDetail/schoolDetail?id="+e.currentTarget.dataset.param[0]+"&name="+e.currentTarget.dataset.param[1]
+        })
+    },
+
 
     goSchoolFirst() {
         wx.navigateTo({
             url: "/pages/schoolFirst/schoolFirst"
+        })
+    },
+    goMore(){
+        wx.switchTab({
+            url: "/pages/searchData/index/searchData"
         })
     }
 })

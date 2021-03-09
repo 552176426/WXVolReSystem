@@ -1,347 +1,398 @@
-<view wx:if="{{current==0}}" class="header" style="background-color: white">
-    <view class="left1">
-        <view class="left">
-            <view class="rectangle"></view>
-            <view style="display: flex;flex-direction: row">
-                <view class="triangle-topleft"></view>
-                <view class="triangle-topright"></view>
+
+    <view wx:if="{{current==0}}" class="header" style="background-color: white">
+        <view class="left1">
+            <view class="left">
+                <view class="rectangle"></view>
+                <view style="display: flex;flex-direction: row">
+                    <view class="triangle-topleft"></view>
+                    <view class="triangle-topright"></view>
+                </view>
+            </view>
+        </view>
+        <view class="right column">
+            <view class="line1">
+                <text style="font-weight: bold;font-size: 30rpx" id="comment0">{{special.baseInfo.name}}</text>
+            </view>
+            <view class="line2">
+                <text style="color: rgba(43,43,43,0.5);font-size: 20rpx">专业层次：{{special.baseInfo.level1_name}}</text>
+                <text style="color: rgba(43,43,43,0.5);font-size: 20rpx;margin-left: 25rpx">学制年限：{{special.baseInfo.limit_year}}</text>
             </view>
         </view>
     </view>
-    <view class="right column">
-        <view class="line1">
-            <text style="font-weight: bold;font-size: 30rpx" id="comment0">{{special.baseInfo.name}}</text>
+
+    <view class="navbar-wrap">
+        <view class="column {{isFixedTop?'fixed':''}}" id="navbar">
+            <view data-current="0" bind:tap="switchTab" style="display: flex;flex-direction: column"
+                  class="center2">
+                <view style="font-weight: bold;margin-top: 20rpx;font-size: 25rpx;"
+                      class="{{current==0?'bar-text':''}}">
+                    基本信息
+                </view>
+                <view wx:if="{{current==0}}" class="bar"></view>
+            </view>
+            <view data-current="1" bind:tap="switchTab" style="display: flex;flex-direction: column"
+                  class="center2">
+                <view style="font-weight: bold;margin-top: 20rpx;font-size: 25rpx;"
+                      class="{{current==1?'bar-text':''}}">
+                    就业前景
+                </view>
+                <view wx:if="{{current==1}}" class="bar"></view>
+            </view>
+            <view data-current="2" bind:tap="switchTab" style="display: flex;flex-direction: column"
+                  class="center2">
+                <view style="font-weight: bold;margin-top: 20rpx;font-size: 25rpx;"
+                      class="{{current==2?'bar-text':''}}">
+                    相关推荐
+                </view>
+                <view wx:if="{{current==2}}" class="bar"></view>
+            </view>
         </view>
-        <view class="line2">
-            <text style="color: rgba(43,43,43,0.5);font-size: 20rpx">专业层次：{{special.baseInfo.level1_name}}</text>
-            <text style="color: rgba(43,43,43,0.5);font-size: 20rpx;margin-left: 25rpx">学制年限：{{special.baseInfo.limit_year}}</text>
-        </view>
+        <!-- 用于吸顶后 占位用的 -->
+        <view class="column" wx:if="{{isFixedTop}}"></view>
     </view>
-</view>
-
-<view class="navbar-wrap">
-    <view class="column {{isFixedTop?'fixed':''}}" id="navbar">
-        <view data-current="0" bind:tap="switchTab" style="display: flex;flex-direction: column"
-                    class="center2">
-            <view style="font-weight: bold;margin-top: 20rpx;font-size: 25rpx;"
-                        class="{{current==0?'bar-text':''}}">
-                基本信息
-            </view>
-            <view wx:if="{{current==0}}" class="bar"></view>
-        </view>
-        <view data-current="1" bind:tap="switchTab" style="display: flex;flex-direction: column"
-                    class="center2">
-            <view style="font-weight: bold;margin-top: 20rpx;font-size: 25rpx;"
-                        class="{{current==1?'bar-text':''}}">
-                就业前景
-            </view>
-            <view wx:if="{{current==1}}" class="bar"></view>
-        </view>
-        <view data-current="2" bind:tap="switchTab" style="display: flex;flex-direction: column"
-                    class="center2">
-            <view style="font-weight: bold;margin-top: 20rpx;font-size: 25rpx;"
-                        class="{{current==2?'bar-text':''}}">
-                相关推荐
-            </view>
-            <view wx:if="{{current==2}}" class="bar"></view>
-        </view>
-    </view>
-    <!-- 用于吸顶后 占位用的 -->
-    <view class="column" wx:if="{{isFixedTop}}"></view>
-</view>
 
 
-<swiper style="height: {{current==0?windowHeight-225:windowHeight-75}}rpx;top: {{current==0?'225rpx':'75rpx'}}"  class="swiper-box" current="{{current}}" duration="300"
-        bindchange="bindChange">
-    <swiper-item class="swiper-item">
-        <scroll-view enable-flex scroll-y class="scroll-view">
-            <view style="width: 92%;display: flex;justify-content: center;flex-direction: column;align-items: center">
-                <view class="title">
-                    <text>≈ 基本信息 ≈</text>
-                </view>
+    <swiper style=";height: {{current==0?windowHeight-225:windowHeight-75}}rpx; top: {{current==0?'225rpx':'75rpx'}}"  class="swiper-box" current="{{current}}" duration="300"
+            bindchange="bindChange">
+        <swiper-item class="swiper-item">
+            <scroll-view enable-flex scroll-y class="scroll-view">
+                <view style="width: 92%;display: flex;justify-content: center;flex-direction: column;align-items: center">
+                    <view class="title">
+                        <text>≈ 基本信息 ≈</text>
+                    </view>
 
 
-                <!--基本信息-->
-                <view class="inner-container">
-                    <view class="inner-container-line1">
-                        <view class="smallRec"></view>
-                        <view style="margin-left: 20rpx">
-                            <text>基本信息</text>
+                    <!--基本信息-->
+                    <view class="inner-container">
+                        <view class="inner-container-line1">
+                            <view class="smallRec"></view>
+                            <view style="margin-left: 20rpx">
+                                <text>基本信息</text>
+                            </view>
                         </view>
-                    </view>
-                    <view class="info-item" style="background-color: rgb(247,247,247)">
-                        <text>专业代码：{{special.baseInfo.spcode}}</text>
-                    </view>
-                    <view class="info-item">
-                        <text>专业类别：{{special.baseInfo.level2_name}}</text>
-                    </view>
-                    <view class="info-item" style="background-color: rgb(247,247,247)">
-                        <text>学科门类：{{special.baseInfo.level3_name}}</text>
-                    </view>
-                    <view class="info-item">
-                        <text>授予学位：{{special.baseInfo.degree}}</text>
-                    </view>
-                    <view class="info-item" style="background-color: rgb(247,247,247)">
-                        <text>选课建议：{{special.baseInfo.sel_adv}}</text>
-                    </view>
-                    <view class="info-item">
-                        <text>男女比例：{{special.baseInfo.rate}}</text>
-                    </view>
-                </view>
-
-
-                <!--专业介绍-->
-                <view class="inner-container">
-                    <view class="inner-container-line1">
-                        <view class="smallRec"></view>
-                        <view style="margin-left: 20rpx">
-                            <text>专业介绍</text>
+                        <view class="info-item" style="background-color: rgb(247,247,247)">
+                            <text>专业代码：{{special.baseInfo.spcode}}</text>
                         </view>
-                    </view>
-
-                    <view wx:if="{{special.content==null}}"  style="background-color: white;display: flex;flex-direction: row;justify-content: center;align-items: center;width: 100%;border-radius: 15rpx;height: 50rpx;font-size: 27rpx;opacity: 0.7;margin-bottom: 50rpx;margin-top: 50rpx">
-                        <text>暂无数据~</text>
-                    </view>
-
-
-                    <view wx:if="{{special.content!=null}}" class="inner-container-line2">
-                        <text class="{{!infoOpen?'content-class':''}}">{{special.baseInfo.content}}</text>
-                    </view>
-
-                    <view bind:tap="infoOpen" class="open-container">
-                        <view class="open-view">
-                            <text wx:if="{{!infoOpen}}" class="open-btn">展开</text>
-                            <text wx:if="{{infoOpen}}" class="open-btn">收起</text>
+                        <view class="info-item">
+                            <text>专业类别：{{special.baseInfo.level2_name}}</text>
                         </view>
-                    </view>
-                </view>
-
-
-                <!--第一印象-->
-                <view class="inner-container">
-                    <view class="inner-container-line1">
-                        <view class="smallRec"></view>
-                        <view style="margin-left: 20rpx">
-                            <text>第一印象</text>
+                        <view class="info-item" style="background-color: rgb(247,247,247)">
+                            <text>学科门类：{{special.baseInfo.level3_name}}</text>
                         </view>
-                    </view>
-
-                    <view wx:if="{{special.impress==null}}"  style="background-color: white;display: flex;flex-direction: row;justify-content: center;align-items: center;width: 100%;border-radius: 15rpx;height: 50rpx;font-size: 27rpx;opacity: 0.7;margin-bottom: 50rpx;margin-top: 50rpx">
-                        <text>暂无数据~</text>
-                    </view>
-
-                    <view wx:if="{{special.impress!=null}}"  style="margin-top: 20rpx;margin-bottom: 20rpx;display: flex;flex-direction: row;justify-content: space-around">
-                        <view class="impress-content" wx:for="{{special.impress}}" wx:key="idx">
-                            <image style="width: 60rpx;height: 60rpx" src="{{item.image_url}}"></image>
-                            <text>{{item.key_word}}</text>
+                        <view class="info-item">
+                            <text>授予学位：{{special.baseInfo.degree}}</text>
                         </view>
-                    </view>
-                </view>
-
-
-                <!--专业课程-->
-                <view class="inner-container">
-                    <view class="inner-container-line1">
-                        <view class="smallRec"></view>
-                        <view style="margin-left: 20rpx">
-                            <text>主要课程</text>
+                        <view class="info-item" style="background-color: rgb(247,247,247)">
+                            <text>选课建议：{{special.baseInfo.sel_adv}}</text>
                         </view>
-                    </view>
-
-                    <view wx:if="{{special.learns==null}}"  style="background-color: white;display: flex;flex-direction: row;justify-content: center;align-items: center;width: 100%;border-radius: 15rpx;height: 50rpx;font-size: 27rpx;opacity: 0.7;margin-bottom: 50rpx;margin-top: 50rpx">
-                        <text>暂无数据~</text>
-                    </view>
-
-                    <view wx:if="{{special.learns!=null}}" class="inner-container-line2" style="margin-bottom: 30rpx">
-                        <view style="background-color: rgb(245,245,245);margin-right: 30rpx;margin-bottom: 20rpx;border-radius: 15rpx;width: auto;height: 50rpx;display: flex;align-items: center;justify-content: center"
-                              wx:for="{{special.baseInfo.learns}}" wx:key="idx">
-                            <text style="margin-left: 15rpx;margin-right: 15rpx;font-size: 22rpx">{{item}}</text>
+                        <view class="info-item">
+                            <text>男女比例：{{special.baseInfo.rate}}</text>
                         </view>
                     </view>
 
 
-                </view>
-
-                <view bind:tap="toCurrent" data-current="{{current}}" style="background-color: white;display: flex;flex-direction: row;justify-content: center;align-items: center;width: 100%;border-radius: 15rpx;height: 50rpx;font-size: 27rpx">
-
-                    <text>查看更多</text>
-                    <image style="width: 15rpx;height: 15rpx;margin-left: 20rpx;margin-top: 5rpx"
-                           src="../../../static/images/icon/{{item.checked?'下':'右'}}.svg"></image>
-                </view>
-
-
-            </view>
-
-        </scroll-view>
-    </swiper-item>
-
-
-    <swiper-item class="swiper-item">
-        <scroll-view enable-flex scroll-y class="scroll-view">
-            <view style="width: 92%;display: flex;justify-content: center;flex-direction: column;align-items: center">
-                <view class="title" id="comment1">
-                    <text>≈ 就业前景 ≈</text>
-                </view>
-
-                <!--就业概况-->
-                <view class="inner-container">
-                    <view class="inner-container-line1">
-                        <view class="smallRec"></view>
-                        <view style="margin-left: 20rpx">
-                            <text>就业概况</text>
+                    <!--专业介绍-->
+                    <view class="inner-container">
+                        <view class="inner-container-line1">
+                            <view class="smallRec"></view>
+                            <view style="margin-left: 20rpx">
+                                <text>专业介绍</text>
+                            </view>
                         </view>
-                    </view>
 
-                    <view class="job-container">
-                        <view>
-                            <text style="font-size: 40rpx;color: darkorange;font-weight: bold">{{special.baseInfo.jobrate_1}}</text>
-                            <text style="font-size: 20rpx;color: darkorange">%</text>
-                            <text style="color: darkorange">~</text>
-
-                            <text style="font-size: 40rpx;color: darkorange;font-weight: bold">{{special.baseInfo.jobrate_2}}</text>
-                            <text style="font-size: 20rpx;color: darkorange">%</text>
+                        <view wx:if="{{special.baseInfo.content==null || special.baseInfo.content=='undefined'}}"  style="background-color: white;display: flex;flex-direction: row;justify-content: center;align-items: center;width: 100%;border-radius: 15rpx;height: 50rpx;font-size: 27rpx;opacity: 0.7;margin-bottom: 50rpx;margin-top: 50rpx">
+                            <text>暂无数据~</text>
                         </view>
-                        <view style="font-size: 25rpx;color: rgba(43,43,43,0.5);">就业率</view>
 
-                        <view class="job-info">
-                            <view class="job-info-item">
-                                <view><text
-                                        style="color: darkorange;font-weight: bold">{{special.baseInfo.salaryRank}}</text>名
+
+                        <view wx:if="{{special.baseInfo.content!=null && special.baseInfo.content!='undefined'}}" class="inner-container-line2" style="display: flex;flex-direction: column;justify-content: center">
+                            <text class="{{!infoOpen?'content-class':''}}">{{special.baseInfo.content}}</text>
+
+
+                            <view bind:tap="infoOpen" class="open-container">
+                                <view class="open-view">
+                                    <text wx:if="{{!infoOpen}}" class="open-btn">展开</text>
+                                    <text wx:if="{{infoOpen}}" class="open-btn">收起</text>
                                 </view>
-                                <view style="margin-top: 10rpx">专业薪酬排名</view>
                             </view>
-                            <view class="line"></view>
-                            <view class="job-info-item">
-                                <view>¥<text style="margin-left: 5rpx;color: darkorange;font-weight: bold">{{special.baseInfo.salary == null ? '--' : special.baseInfo.salary}}</text>
-                                </view>
-                                <view style="margin-top: 10rpx">毕业5年月薪</view>
+                        </view>
+
+
+                    </view>
+
+
+                    <!--第一印象-->
+                    <view class="inner-container">
+                        <view class="inner-container-line1">
+                            <view class="smallRec"></view>
+                            <view style="margin-left: 20rpx">
+                                <text>第一印象</text>
+                            </view>
+                        </view>
+
+                        <view wx:if="{{special.impress==null}}"  style="background-color: white;display: flex;flex-direction: row;justify-content: center;align-items: center;width: 100%;border-radius: 15rpx;height: 50rpx;font-size: 27rpx;opacity: 0.7;margin-bottom: 50rpx;margin-top: 50rpx">
+                            <text>暂无数据~</text>
+                        </view>
+
+                        <view wx:if="{{special.impress!=null}}"  style="margin-top: 20rpx;margin-bottom: 20rpx;display: flex;flex-direction: row;justify-content: space-around">
+                            <view class="impress-content" wx:for="{{special.impress}}" wx:key="idx">
+                                <image style="width: 60rpx;height: 60rpx" src="{{item.image_url}}"></image>
+                                <text>{{item.key_word}}</text>
                             </view>
                         </view>
                     </view>
+
+
+                    <!--专业课程-->
+                    <view class="inner-container">
+                        <view class="inner-container-line1">
+                            <view class="smallRec"></view>
+                            <view style="margin-left: 20rpx">
+                                <text>主要课程</text>
+                            </view>
+                        </view>
+
+                        <view wx:if="{{special.baseInfo.learns==null}}"  style="background-color: white;display: flex;flex-direction: row;justify-content: center;align-items: center;width: 100%;border-radius: 15rpx;height: 50rpx;font-size: 27rpx;opacity: 0.7;margin-bottom: 50rpx;margin-top: 50rpx">
+                            <text>暂无数据~</text>
+                        </view>
+
+                        <view wx:if="{{special.baseInfo.learns!=null}}" class="inner-container-line2" style="margin-bottom: 30rpx">
+                            <view style="background-color: rgb(245,245,245);margin-right: 30rpx;margin-bottom: 20rpx;border-radius: 15rpx;width: auto;height: 50rpx;display: flex;align-items: center;justify-content: center"
+                                  wx:for="{{special.baseInfo.learns}}" wx:key="idx">
+                                <text style="margin-left: 15rpx;margin-right: 15rpx;font-size: 22rpx">{{item}}</text>
+                            </view>
+                        </view>
+
+
+                    </view>
+
+                    <view bind:tap="toCurrent" data-current="{{current}}" style="margin-bottom: 20rpx;background-color: white;display: flex;flex-direction: row;justify-content: center;align-items: center;width: 100%;border-radius: 15rpx;height: 50rpx;font-size: 27rpx">
+
+                        <text>查看更多</text>
+                        <image style="width: 15rpx;height: 15rpx;margin-left: 20rpx;margin-top: 5rpx"
+                               src="../../../static/images/icon/{{item.checked?'下':'右'}}.svg"></image>
+                    </view>
+
+
                 </view>
 
+            </scroll-view>
+        </swiper-item>
 
-                <view class="inner-container">
-                    <view class="inner-container-line1">
-                        <view class="smallRec"></view>
-                        <view style="margin-left: 20rpx">
-                            <text>近十年就业薪酬数据</text>
-                        </view>
+
+        <swiper-item class="swiper-item" >
+            <scroll-view enable-flex scroll-y class="scroll-view">
+                <view style="width: 92%;display: flex;justify-content: center;flex-direction: column;align-items: center">
+                    <view class="title" id="comment1">
+                        <text>≈ 就业前景 ≈</text>
                     </view>
 
-                    <view wx:if="{{special.salary==null}}"  style="background-color: white;display: flex;flex-direction: row;justify-content: center;align-items: center;width: 100%;border-radius: 15rpx;height: 50rpx;font-size: 27rpx;opacity: 0.7;margin-bottom: 50rpx;margin-top: 50rpx">
-                        <text>暂无数据~</text>
-                    </view>
-
-                    <view wx:if="{{special.salary!=null}}" class="bar-container">
-                        <view style="width: 100%;display: flex;flex-direction:row;align-items: center;margin-bottom: 15rpx">
-                            <view class="bar-left">
-                                <text>1</text>
+                    <!--就业概况-->
+                    <view class="inner-container">
+                        <view class="inner-container-line1">
+                            <view class="smallRec"></view>
+                            <view style="margin-left: 20rpx">
+                                <text>就业概况</text>
                             </view>
-                            <view class="bar-mid">
-                                <view>应届生</view>
-                                <view>
-                                    <view class="line-bar-out">
-                                        <view class="line-bar-in4"
-                                              style="width: {{special.salary.year0/30*100}}%"></view>
+                        </view>
+
+                        <view class="job-container">
+                            <view>
+                                <text style="font-size: 40rpx;color: darkorange;font-weight: bold">{{special.baseInfo.jobrate_1}}</text>
+                                <text style="font-size: 20rpx;color: darkorange">%</text>
+                                <text style="color: darkorange">~</text>
+
+                                <text style="font-size: 40rpx;color: darkorange;font-weight: bold">{{special.baseInfo.jobrate_2}}</text>
+                                <text style="font-size: 20rpx;color: darkorange">%</text>
+                            </view>
+                            <view style="font-size: 25rpx;color: rgba(43,43,43,0.5);">就业率</view>
+
+                            <view class="job-info">
+                                <view class="job-info-item">
+                                    <view><text
+                                            style="color: darkorange;font-weight: bold">{{special.baseInfo.salaryRank}}</text>名
                                     </view>
+                                    <view style="margin-top: 10rpx">专业薪酬排名</view>
                                 </view>
-                            </view>
-                            <view class="bar-right">
-                                <view>{{special.salary.year0}}K</view>
-                            </view>
-                        </view>
-
-                        <view style="width: 100%;display: flex;flex-direction:row;align-items: center;margin-bottom: 15rpx">
-                            <view class="bar-left">
-                                <text>2</text>
-                            </view>
-                            <view class="bar-mid">
-                                <view>2年经验</view>
-                                <view>
-                                    <view class="line-bar-out">
-                                        <view class="line-bar-in4"
-                                              style="width: {{special.salary.year2/30*100}}%"></view>
+                                <view class="line"></view>
+                                <view class="job-info-item">
+                                    <view>¥<text style="margin-left: 5rpx;color: darkorange;font-weight: bold">{{special.baseInfo.salary == null ? '--' : special.baseInfo.salary}}</text>
                                     </view>
+                                    <view style="margin-top: 10rpx">毕业5年月薪</view>
                                 </view>
                             </view>
-                            <view class="bar-right">
-                                <view>{{special.salary.year2}}K</view>
-                            </view>
-                        </view>
-
-                        <view style="width: 100%;display: flex;flex-direction:row;align-items: center;margin-bottom: 15rpx">
-                            <view class="bar-left">
-                                <text>3</text>
-                            </view>
-                            <view class="bar-mid">
-                                <view>5年经验</view>
-                                <view>
-                                    <view class="line-bar-out">
-                                        <view class="line-bar-in4"
-                                              style="width: {{special.salary.year5/30*100}}%"></view>
-                                    </view>
-                                </view>
-                            </view>
-                            <view class="bar-right">
-                                <view>{{special.salary.year5}}K</view>
-                            </view>
-                        </view>
-
-                        <view style="width: 100%;display: flex;flex-direction:row;align-items: center;margin-bottom: 15rpx">
-                            <view class="bar-left">
-                                <text>4</text>
-                            </view>
-                            <view class="bar-mid">
-                                <view>10年经验</view>
-                                <view>
-                                    <view class="line-bar-out">
-                                        <view class="line-bar-in4"
-                                              style="width: {{special.salary.year10/30*100}}%"></view>
-                                    </view>
-                                </view>
-                            </view>
-                            <view class="bar-right">
-                                <view>{{special.salary.year10}}K</view>
-                            </view>
-                        </view>
-
-                    </view>
-
-                </view>
-
-
-                <view class="inner-container">
-                    <view class="inner-container-line1">
-                        <view class="smallRec"></view>
-                        <view style="margin-left: 20rpx">
-                            <text>就业岗位分布</text>
                         </view>
                     </view>
 
 
-                    <view wx:if="{{special.jobDetail.type3==null}}"  style="background-color: white;display: flex;flex-direction: row;justify-content: center;align-items: center;width: 100%;border-radius: 15rpx;height: 50rpx;font-size: 27rpx;opacity: 0.7;margin-bottom: 50rpx;margin-top: 50rpx">
-                        <text>暂无数据~</text>
-                    </view>
+                    <view class="inner-container">
+                        <view class="inner-container-line1">
+                            <view class="smallRec"></view>
+                            <view style="margin-left: 20rpx">
+                                <text>近十年就业薪酬数据</text>
+                            </view>
+                        </view>
 
-                    <view wx:if="{{special.jobDetail.type3!=null}}" class="bar-container">
-                        <view data-idx="{{idx}}" bind:tap="switchCheck" wx:for="{{special.jobDetail.type3}}" wx:key="idx"
-                              wx:for-index="idx"
-                              style="width: 100%;display: flex;flex-direction: column;">
+                        <view wx:if="{{special.salary==null}}"  style="background-color: white;display: flex;flex-direction: row;justify-content: center;align-items: center;width: 100%;border-radius: 15rpx;height: 50rpx;font-size: 27rpx;opacity: 0.7;margin-bottom: 50rpx;margin-top: 50rpx">
+                            <text>暂无数据~</text>
+                        </view>
+
+                        <view wx:if="{{special.salary!=null}}" class="bar-container">
                             <view style="width: 100%;display: flex;flex-direction:row;align-items: center;margin-bottom: 15rpx">
+                                <view class="bar-left">
+                                    <text>1</text>
+                                </view>
+                                <view class="bar-mid">
+                                    <view>应届生</view>
+                                    <view>
+                                        <view class="line-bar-out">
+                                            <view class="line-bar-in4"
+                                                  style="width: {{special.salary.year0/30*100}}%"></view>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="bar-right">
+                                    <view>{{special.salary.year0}}K</view>
+                                </view>
+                            </view>
+
+                            <view style="width: 100%;display: flex;flex-direction:row;align-items: center;margin-bottom: 15rpx">
+                                <view class="bar-left">
+                                    <text>2</text>
+                                </view>
+                                <view class="bar-mid">
+                                    <view>2年经验</view>
+                                    <view>
+                                        <view class="line-bar-out">
+                                            <view class="line-bar-in4"
+                                                  style="width: {{special.salary.year2/30*100}}%"></view>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="bar-right">
+                                    <view>{{special.salary.year2}}K</view>
+                                </view>
+                            </view>
+
+                            <view style="width: 100%;display: flex;flex-direction:row;align-items: center;margin-bottom: 15rpx">
+                                <view class="bar-left">
+                                    <text>3</text>
+                                </view>
+                                <view class="bar-mid">
+                                    <view>5年经验</view>
+                                    <view>
+                                        <view class="line-bar-out">
+                                            <view class="line-bar-in4"
+                                                  style="width: {{special.salary.year5/30*100}}%"></view>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="bar-right">
+                                    <view>{{special.salary.year5}}K</view>
+                                </view>
+                            </view>
+
+                            <view style="width: 100%;display: flex;flex-direction:row;align-items: center;margin-bottom: 15rpx">
+                                <view class="bar-left">
+                                    <text>4</text>
+                                </view>
+                                <view class="bar-mid">
+                                    <view>10年经验</view>
+                                    <view>
+                                        <view class="line-bar-out">
+                                            <view class="line-bar-in4"
+                                                  style="width: {{special.salary.year10/30*100}}%"></view>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="bar-right">
+                                    <view>{{special.salary.year10}}K</view>
+                                </view>
+                            </view>
+
+                        </view>
+
+                    </view>
+
+
+                    <view class="inner-container">
+                        <view class="inner-container-line1">
+                            <view class="smallRec"></view>
+                            <view style="margin-left: 20rpx">
+                                <text>就业岗位分布</text>
+                            </view>
+                        </view>
+
+
+                        <view wx:if="{{special.jobDetail.type3==null}}"  style="background-color: white;display: flex;flex-direction: row;justify-content: center;align-items: center;width: 100%;border-radius: 15rpx;height: 50rpx;font-size: 27rpx;opacity: 0.7;margin-bottom: 50rpx;margin-top: 50rpx">
+                            <text>暂无数据~</text>
+                        </view>
+
+                        <view wx:if="{{special.jobDetail.type3!=null}}" class="bar-container">
+                            <view data-idx="{{idx}}" bind:tap="switchCheck" wx:for="{{special.jobDetail.type3}}" wx:key="idx"
+                                  wx:for-index="idx"
+                                  style="width: 100%;display: flex;flex-direction: column;">
+                                <view style="width: 100%;display: flex;flex-direction:row;align-items: center;margin-bottom: 15rpx">
+                                    <view class="bar-left">
+                                        <text>{{idx + 1}}</text>
+                                    </view>
+                                    <view class="bar-mid">
+                                        <view style="display: flex;flex-direction: row">
+                                            <view>{{item.detail_pos}}</view>
+                                            <image style="width: 15rpx;height: 15rpx;margin-left: 20rpx;margin-top: 10rpx"
+                                                   src="../../../static/images/icon/{{item.checked?'下':'右'}}.svg"></image>
+                                        </view>
+
+                                        <view>
+                                            <view class="line-bar-out">
+                                                <view class="line-bar-in3" style="width: {{item.rate}}%"></view>
+                                            </view>
+                                        </view>
+                                    </view>
+                                    <view class="bar-right">
+                                        <view>{{item.rate}}%</view>
+                                    </view>
+                                </view>
+
+                                <view wx:if="{{item.checked}}" class="detail-job">
+
+                                    <view class="job-text">
+                                        <view>
+                                            <text>
+                                                <text style="font-weight: bold">岗位：</text> {{item.detail_job}}</text>
+                                        </view>
+                                    </view>
+
+                                </view>
+
+                            </view>
+
+
+                        </view>
+                    </view>
+                    <view class="inner-container">
+                        <view class="inner-container-line1">
+                            <view class="smallRec"></view>
+                            <view style="margin-left: 20rpx">
+                                <text>就业行业分布</text>
+                            </view>
+                        </view>
+
+                        <view wx:if="{{special.jobDetail.type1==null}}"  style="background-color: white;display: flex;flex-direction: row;justify-content: center;align-items: center;width: 100%;border-radius: 15rpx;height: 50rpx;font-size: 27rpx;opacity: 0.7;margin-bottom: 50rpx;margin-top: 50rpx">
+                            <text>暂无数据~</text>
+                        </view>
+
+                        <view wx:if="{{special.jobDetail.type1!=null}}" class="bar-container">
+                            <view wx:for="{{special.jobDetail.type1}}" wx:for-index="idx" wx:key="idx"
+                                  style="width: 100%;display: flex;flex-direction:row;align-items: center;margin-bottom: 15rpx">
                                 <view class="bar-left">
                                     <text>{{idx + 1}}</text>
                                 </view>
                                 <view class="bar-mid">
-                                    <view style="display: flex;flex-direction: row">
-                                        <view>{{item.detail_pos}}</view>
-                                        <image style="width: 15rpx;height: 15rpx;margin-left: 20rpx;margin-top: 10rpx"
-                                               src="../../../static/images/icon/{{item.checked?'下':'右'}}.svg"></image>
-                                    </view>
-
+                                    <view>{{item.name}}</view>
                                     <view>
                                         <view class="line-bar-out">
-                                            <view class="line-bar-in3" style="width: {{item.rate}}%"></view>
+                                            <view class="line-bar-in2" style="width: {{item.rate}}%"></view>
                                         </view>
                                     </view>
                                 </view>
@@ -349,207 +400,160 @@
                                     <view>{{item.rate}}%</view>
                                 </view>
                             </view>
+                        </view>
+                    </view>
 
-                            <view wx:if="{{item.checked}}" class="detail-job">
+                    <view class="inner-container">
+                        <view class="inner-container-line1">
+                            <view class="smallRec"></view>
+                            <view style="margin-left: 20rpx">
+                                <text>就业地区分布</text>
+                            </view>
+                        </view>
 
-                                <view class="job-text">
+                        <view wx:if="{{special.jobDetail.type2==null}}"  style="background-color: white;display: flex;flex-direction: row;justify-content: center;align-items: center;width: 100%;border-radius: 15rpx;height: 50rpx;font-size: 27rpx;opacity: 0.7;margin-bottom: 50rpx;margin-top: 50rpx">
+                            <text>暂无数据~</text>
+                        </view>
+
+                        <view wx:if="{{special.jobDetail.type2!=null}}" class="bar-container">
+                            <view wx:for="{{special.jobDetail.type2}}" wx:for-index="idx" wx:key="idx"
+                                  style="width: 100%;display: flex;flex-direction:row;align-items: center;margin-bottom: 15rpx">
+                                <view class="bar-left">
+                                    <text>{{idx + 1}}</text>
+                                </view>
+                                <view class="bar-mid">
+                                    <view>{{item.area}}</view>
                                     <view>
-                                        <text>
-                                            <text style="font-weight: bold">岗位：</text> {{item.detail_job}}</text>
+                                        <view class="line-bar-out">
+                                            <view class="line-bar-in1" style="width: {{item.rate}}%"></view>
+                                        </view>
                                     </view>
                                 </view>
-
+                                <view class="bar-right">
+                                    <view>{{item.rate}}%</view>
+                                </view>
                             </view>
-
                         </view>
 
 
                     </view>
+
+                    <view bind:tap="toCurrent" data-current="{{current}}" style="margin-bottom: 20rpx;background-color: white;display: flex;flex-direction: row;justify-content: center;align-items: center;width: 100%;border-radius: 15rpx;height: 50rpx;font-size: 27rpx">
+
+                        <text>查看更多</text>
+                        <image style="width: 15rpx;height: 15rpx;margin-left: 20rpx;margin-top: 5rpx"
+                               src="../../../static/images/icon/{{item.checked?'下':'右'}}.svg"></image>
+                    </view>
+
+
                 </view>
-                <view class="inner-container">
-                    <view class="inner-container-line1">
-                        <view class="smallRec"></view>
-                        <view style="margin-left: 20rpx">
-                            <text>就业行业分布</text>
+
+            </scroll-view>
+        </swiper-item>
+
+
+        <swiper-item class="swiper-item">
+            <scroll-view enable-flex scroll-y bind:scrolltolower="loadMore" class="scroll-view">
+                <view style="width: 92%;display: flex;justify-content: center;flex-direction: column;align-items: center">
+                    <view class="title">
+                        <text id="comment2">≈ 相关推荐 ≈</text>
+                    </view>
+                    <!--相似专业-->
+                    <view class="inner-container">
+                        <view class="inner-container-line1">
+                            <view class="smallRec"></view>
+                            <view style="margin-left: 20rpx">
+                                <text>相似专业</text>
+                            </view>
+                        </view>
+
+                        <view wx:if="{{special.similarSpecial.length==0}}"  style="background-color: white;display: flex;flex-direction: row;justify-content: center;align-items: center;width: 100%;border-radius: 15rpx;height: 50rpx;font-size: 27rpx;opacity: 0.7;margin-bottom: 50rpx;margin-top: 50rpx">
+                            <text>未找到相似专业~</text>
+                        </view>
+
+                        <view wx:if="{{special.similarSpecial.length!=0}}">
+                            <view wx:for="{{special.similarSpecial}}" class="similarSpecial" wx:key="idx" data-id="{{[item.special_id,item.name]}}" bind:tap="goSpecial">
+                                <view style="margin-left: 50rpx;width: 85%">{{item.name}}</view>
+                                <image style="width: 20rpx;height: 20rpx" src="../../../static/images/icon/右.svg"></image>
+                            </view>
                         </view>
                     </view>
 
-                    <view wx:if="{{special.jobDetail.type1==null}}"  style="background-color: white;display: flex;flex-direction: row;justify-content: center;align-items: center;width: 100%;border-radius: 15rpx;height: 50rpx;font-size: 27rpx;opacity: 0.7;margin-bottom: 50rpx;margin-top: 50rpx">
-                        <text>暂无数据~</text>
-                    </view>
-
-                    <view wx:if="{{special.jobDetail.type1!=null}}" class="bar-container">
-                        <view wx:for="{{special.jobDetail.type1}}" wx:for-index="idx" wx:key="idx"
-                              style="width: 100%;display: flex;flex-direction:row;align-items: center;margin-bottom: 15rpx">
-                            <view class="bar-left">
-                                <text>{{idx + 1}}</text>
+                    <!--专业学校-->
+                    <view class="inner-container">
+                        <view class="inner-container-line1">
+                            <view class="smallRec"></view>
+                            <view style="margin-left: 20rpx">
+                                <text>开设该专业的学校</text>
                             </view>
-                            <view class="bar-mid">
-                                <view>{{item.name}}</view>
+                        </view>
+
+                        <view wx:if="{{schoolList.length==0}}"  style="background-color: white;display: flex;flex-direction: row;justify-content: center;align-items: center;width: 100%;border-radius: 15rpx;height: 50rpx;font-size: 27rpx;opacity: 0.7;margin-bottom: 50rpx;margin-top: 50rpx">
+                            <text>未找到相关学校~</text>
+                        </view>
+
+                        <view wx:if="{{schoolList.length!=0}}" wx:for="{{schoolList}}" class="school-item" data-id="{{item.id}}" bindtap="findSchoolById"
+                              wx:key="index">
+                            <view class="school-left">
                                 <view>
-                                    <view class="line-bar-out">
-                                        <view class="line-bar-in2" style="width: {{item.rate}}%"></view>
-                                    </view>
+                                    <image class="school-left-image" src="{{item.badge_url}}"></image>
                                 </view>
                             </view>
-                            <view class="bar-right">
-                                <view>{{item.rate}}%</view>
-                            </view>
-                        </view>
-                    </view>
-                </view>
+                            <view class="school-right">
+                                <view class="school-right-line1">
+                                    <view style="font-size: 30rpx">{{item.school_name}}</view>
+                                </view>
+                                <view class="school-right-line3">
+                                    <view style="display: flex;">
+                                        <view>
+                                            <text>{{item.province}}</text>
+                                        </view>
 
-                <view class="inner-container">
-                    <view class="inner-container-line1">
-                        <view class="smallRec"></view>
-                        <view style="margin-left: 20rpx">
-                            <text>就业地区分布</text>
-                        </view>
-                    </view>
+                                        <text wx:if="{{item.nature!=''&&item.schoolType!=''}}"
+                                              style="margin-left: 10rpx;margin-right: 10rpx">|</text>
+                                        <view wx:if="{{item.nature!=''}}">
+                                            <text>{{item.nature}}</text>
+                                        </view>
 
-                    <view wx:if="{{special.jobDetail.type2==null}}"  style="background-color: white;display: flex;flex-direction: row;justify-content: center;align-items: center;width: 100%;border-radius: 15rpx;height: 50rpx;font-size: 27rpx;opacity: 0.7;margin-bottom: 50rpx;margin-top: 50rpx">
-                        <text>暂无数据~</text>
-                    </view>
+                                        <text wx:if="{{item.f985==1}}"
+                                              style="margin-left: 10rpx;margin-right: 10rpx">|</text>
+                                        <view wx:if="{{item.f985==1}}">
+                                            <text>985</text>
+                                        </view>
 
-                    <view wx:if="{{special.jobDetail.type2!=null}}" class="bar-container">
-                        <view wx:for="{{special.jobDetail.type2}}" wx:for-index="idx" wx:key="idx"
-                              style="width: 100%;display: flex;flex-direction:row;align-items: center;margin-bottom: 15rpx">
-                            <view class="bar-left">
-                                <text>{{idx + 1}}</text>
-                            </view>
-                            <view class="bar-mid">
-                                <view>{{item.area}}</view>
-                                <view>
-                                    <view class="line-bar-out">
-                                        <view class="line-bar-in1" style="width: {{item.rate}}%"></view>
+                                        <text wx:if="{{item.f211==1}}"
+                                              style="margin-left: 10rpx;margin-right: 10rpx">|</text>
+                                        <view wx:if="{{item.f211==1}}">
+                                            <text>985</text>
+                                        </view>
+
+                                        <text wx:if="{{item.dual_class!=''}}"
+                                              style="margin-left: 10rpx;margin-right: 10rpx">|</text>
+                                        <view wx:if="{{item.dual_class!=''}}">
+                                            <text>双一流</text>
+                                        </view>
+
+                                        <text wx:if="{{item.eol_rank!=''}}"
+                                              style="margin-left: 10rpx;margin-right: 10rpx">|</text>
+                                        <view wx:if="{{item.eol_rank!=''}}">
+                                            <text>排名</text>
+                                            <text style="font-weight: bold">{{item.eol_rank}}</text>
+                                        </view>
                                     </view>
                                 </view>
-                            </view>
-                            <view class="bar-right">
-                                <view>{{item.rate}}%</view>
+
                             </view>
                         </view>
                     </view>
 
 
-                </view>
-
-                <view bind:tap="toCurrent" data-current="{{current}}" style="background-color: white;display: flex;flex-direction: row;justify-content: center;align-items: center;width: 100%;border-radius: 15rpx;height: 50rpx;font-size: 27rpx">
-
-                    <text>查看更多</text>
-                    <image style="width: 15rpx;height: 15rpx;margin-left: 20rpx;margin-top: 5rpx"
-                           src="../../../static/images/icon/{{item.checked?'下':'右'}}.svg"></image>
-                </view>
-
-
-            </view>
-
-        </scroll-view>
-    </swiper-item>
-
-
-    <swiper-item class="swiper-item">
-        <scroll-view enable-flex scroll-y bind:scrolltolower="loadMore" class="scroll-view">
-            <view style="width: 92%;display: flex;justify-content: center;flex-direction: column;align-items: center">
-                <view class="title">
-                    <text id="comment2">≈ 相关推荐 ≈</text>
-                </view>
-                <!--相似专业-->
-                <view class="inner-container">
-                    <view class="inner-container-line1">
-                        <view class="smallRec"></view>
-                        <view style="margin-left: 20rpx">
-                            <text>相似专业</text>
-                        </view>
+                    <view class="loadMore">
+                        <text wx:if="{{moreData}}">加载中...</text>
+                        <text wx:if="{{!moreData}}">没有更多数据了~</text>
                     </view>
 
-                    <view wx:if="{{special.similarSpecial.length==0}}"  style="background-color: white;display: flex;flex-direction: row;justify-content: center;align-items: center;width: 100%;border-radius: 15rpx;height: 50rpx;font-size: 27rpx;opacity: 0.7;margin-bottom: 50rpx;margin-top: 50rpx">
-                        <text>未找到相似专业~</text>
-                    </view>
 
-                    <view wx:if="{{special.similarSpecial.length!=0}}">
-                        <view wx:for="{{special.similarSpecial}}" class="similarSpecial" wx:key="idx" data-id="{{[item.special_id,item.name]}}" bind:tap="goSpecial">
-                            <view style="margin-left: 50rpx;width: 85%">{{item.name}}</view>
-                            <image style="width: 20rpx;height: 20rpx" src="../../../static/images/icon/右.svg"></image>
-                        </view>
-                    </view>
                 </view>
-
-                <!--专业学校-->
-                <view class="inner-container">
-                    <view class="inner-container-line1">
-                        <view class="smallRec"></view>
-                        <view style="margin-left: 20rpx">
-                            <text>开设该专业的学校</text>
-                        </view>
-                    </view>
-
-                    <view wx:if="{{schoolList.length==0}}"  style="background-color: white;display: flex;flex-direction: row;justify-content: center;align-items: center;width: 100%;border-radius: 15rpx;height: 50rpx;font-size: 27rpx;opacity: 0.7;margin-bottom: 50rpx;margin-top: 50rpx">
-                        <text>未找到相关学校~</text>
-                    </view>
-
-                    <view wx:if="{{schoolList.length!=0}}" wx:for="{{schoolList}}" class="school-item" data-id="{{item.id}}" bindtap="findSchoolById"
-                          wx:key="index">
-                        <view class="school-left">
-                            <view>
-                                <image class="school-left-image" src="{{item.badge_url}}"></image>
-                            </view>
-                        </view>
-                        <view class="school-right">
-                            <view class="school-right-line1">
-                                <view style="font-size: 30rpx">{{item.school_name}}</view>
-                            </view>
-                            <view class="school-right-line3">
-                                <view style="display: flex;">
-                                    <view>
-                                        <text>{{item.province}}</text>
-                                    </view>
-
-                                    <text wx:if="{{item.nature!=''&&item.schoolType!=''}}"
-                                          style="margin-left: 10rpx;margin-right: 10rpx">|</text>
-                                    <view wx:if="{{item.nature!=''}}">
-                                        <text>{{item.nature}}</text>
-                                    </view>
-
-                                    <text wx:if="{{item.f985==1}}"
-                                          style="margin-left: 10rpx;margin-right: 10rpx">|</text>
-                                    <view wx:if="{{item.f985==1}}">
-                                        <text>985</text>
-                                    </view>
-
-                                    <text wx:if="{{item.f211==1}}"
-                                          style="margin-left: 10rpx;margin-right: 10rpx">|</text>
-                                    <view wx:if="{{item.f211==1}}">
-                                        <text>985</text>
-                                    </view>
-
-                                    <text wx:if="{{item.dual_class!=''}}"
-                                          style="margin-left: 10rpx;margin-right: 10rpx">|</text>
-                                    <view wx:if="{{item.dual_class!=''}}">
-                                        <text>双一流</text>
-                                    </view>
-
-                                    <text wx:if="{{item.eol_rank!=''}}"
-                                          style="margin-left: 10rpx;margin-right: 10rpx">|</text>
-                                    <view wx:if="{{item.eol_rank!=''}}">
-                                        <text>排名</text>
-                                        <text style="font-weight: bold">{{item.eol_rank}}</text>
-                                    </view>
-                                </view>
-                            </view>
-
-                        </view>
-                    </view>
-                </view>
-
-
-                <view class="loadMore">
-                    <text wx:if="{{moreData}}">加载中...</text>
-                    <text wx:if="{{!moreData}}">没有更多数据了~</text>
-                </view>
-
-
-            </view>
-        </scroll-view>
-    </swiper-item>
-</swiper>
+            </scroll-view>
+        </swiper-item>
+    </swiper>

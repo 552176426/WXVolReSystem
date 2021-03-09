@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "i-icon":"../../iviewWeapp/dist/icon/index"
+  }
+}

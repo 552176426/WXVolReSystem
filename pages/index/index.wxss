@@ -181,6 +181,7 @@ ec-canvas {
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow:0rpx 10rpx 1rpx rgb(235,235,235);
 }
 
 .group-item {

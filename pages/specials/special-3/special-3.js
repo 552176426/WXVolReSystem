@@ -43,17 +43,20 @@ Page({
             title: options.name
         })
 
-        getRequest("/special/findOne?id=" + options.id).then(res => {
+        // getRequest("/special/findOne?id=" + options.id).then(res => {
+        getRequest("/special/findOne?id=" + 1).then(res => {
             this.setData({
                 special: res.data
             })
             let special = this.data.special
-            let job = special.jobDetail[2]
-            for (let i = 0; i < job.length; i++) {
-                if (i == 0) {
-                    job[i].checked = true
-                } else {
-                    job[i].checked = false
+            let job = special.jobDetail['type2']
+            if (job != null) {
+                for (let i = 0; i < job.length; i++) {
+                    if (i == 0) {
+                        job[i].checked = true
+                    } else {
+                        job[i].checked = false
+                    }
                 }
             }
             special.baseInfo.content = this.convertHtmlToText(special.baseInfo.content)
@@ -63,9 +66,11 @@ Page({
             })
             console.log(this.data.special)
             wx.hideLoading()
-            this.findSchool(options.id).then(res => {
+            this.findSchool(1).then(res => {
+                // this.findSchool(options.id).then(res => {
                 this.getToTop()
             })
+
         })
 
 
@@ -305,34 +310,43 @@ Page({
      */
     onPageScroll: function (e) {
         let that = this;
-        setInterval(function () {
-            let scrollTop = parseInt(e.scrollTop) + 1; //滚动条距离顶部高度
 
-            //判断'滚动条'滚动的距离 和 '元素在初始时'距顶部的距离进行判断
-            let isSatisfy = scrollTop >= that.data.navbarInitTop ? true : false;
-            //为了防止不停的setData, 这儿做了一个等式判断。 只有处于吸顶的临界值才会不相等
+        let scrollTop = parseInt(e.scrollTop) + 1; //滚动条距离顶部高度
 
-            // console.log("scrollTop:"+scrollTop+"comment1Top:"+that.data.comment1Top+"comment2Top:"+that.data.comment2Top)
-            if (scrollTop >= 0 && (scrollTop) < that.data.comment1Top && (scrollTop) < that.data.comment2Top) {
-                that.setData({
-                    isFixedTop: isSatisfy,
-                    current: 0
-                });
+        //判断'滚动条'滚动的距离 和 '元素在初始时'距顶部的距离进行判断
+        let isSatisfy = scrollTop >= that.data.navbarInitTop ? true : false;
+        //为了防止不停的setData, 这儿做了一个等式判断。 只有处于吸顶的临界值才会不相等
 
-            } else if (scrollTop >= 0 && (scrollTop) >= that.data.comment1Top && (scrollTop) < that.data.comment2Top) {
-                that.setData({
-                    isFixedTop: isSatisfy,
-                    current: 1
-                });
+        console.log(scrollTop)
+        if (that.data.isFixedTop === isSatisfy) {
+            return false;
+        }
+        that.setData({
+            isFixedTop: isSatisfy,
+        });
 
-            } else if (scrollTop >= 0 && (scrollTop) >= that.data.comment1Top && (scrollTop) >= that.data.comment2Top) {
-                that.setData({
-                    isFixedTop: isSatisfy,
-                    current: 2
-                });
 
-            }
-        }, 1000)
+
+        // console.log("scrollTop:"+scrollTop+"comment1Top:"+that.data.comment1Top+"comment2Top:"+that.data.comment2Top)
+       /* if (scrollTop >= 0 && (scrollTop) < that.data.comment1Top && (scrollTop) < that.data.comment2Top) {
+            that.setData({
+                isFixedTop: isSatisfy,
+                current: 0
+            });
+
+        } else if (scrollTop >= 0 && (scrollTop) >= that.data.comment1Top && (scrollTop) < that.data.comment2Top) {
+            that.setData({
+                isFixedTop: isSatisfy,
+                current: 1
+            });
+
+        } else if (scrollTop >= 0 && (scrollTop) >= that.data.comment1Top && (scrollTop) >= that.data.comment2Top) {
+            that.setData({
+                isFixedTop: isSatisfy,
+                current: 2
+            });
+        }*/
+
 
     },
 

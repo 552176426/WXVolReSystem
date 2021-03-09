@@ -1,0 +1,43 @@
+<view class="header" bind:tap="schoolBatchActionSheet">
+    <text style="font-size: 20rpx">{{levels[choose-1]}}</text>
+    <image style="margin-left: 10rpx;width: 12rpx;height: 12rpx" src="../../../static/images/icon/下拉black.svg"></image>
+</view>
+
+<scroll-view bind:scrolltolower="loadMore" scroll-y enable-flex style="height: {{windowHeight-80}}rpx;position: absolute;top: 80rpx">
+    <view style="font-size: 20rpx;opacity: 0.5;margin-top: 30rpx;margin-bottom: 30rpx;margin-left: 30rpx">当前所有数据仅供参考</view>
+    <view class="title">
+        <view class="title-first">排名</view>
+        <view style="margin-left: 8%">专业</view>
+        <view style="position: absolute;right: 5%">毕业5年薪酬</view>
+    </view>
+
+    <view bind:tap="goSpecialDetail" data-param="{{[item.special_id,item.name]}}" class="special-item" wx:for="{{specialSal}}" wx:key="idx" wx:for-index="idx">
+        <view class="title-first">
+            <view wx:if="{{idx==0}}" class="index index-1">{{idx+1}}</view>
+            <view wx:elif="{{idx==1}}" class="index index-2">{{idx+1}}</view>
+            <view wx:elif="{{idx==2}}" class="index index-3">{{idx+1}}</view>
+            <view wx:else class="index index-4">{{idx+1}}</view>
+        </view>
+
+        <view style="margin-left: 8%;font-weight: bold;font-size: 28rpx">{{item.name}}</view>
+        <view style="color: red;position: absolute;right: 5%;font-size: 28rpx">¥ {{item.salary}}</view>
+    </view> 
+
+    <view class="loadMore">
+        <text wx:if="{{moreData}}">加载中...</text>
+        <text wx:if="{{!moreData}}">无更多数据了~</text>
+    </view>
+
+</scroll-view>
+
+
+<!--本专科-->
+<view bindtap="closeSchoolBatchShadow" wx:if="{{schoolBatchShadow}}" class="batchShadow"
+      style="height: 3000rpx"></view>
+<view class='batchGroup' wx:if="{{schoolBatchShadow}}" animation='{{animationData}}'>
+    <view class="batch-top"></view>
+    <view class="batch-item" wx:key="item" style="{{item==levels[choose-1]?'color:#1888f7':''}}" bindtap="changeSchoolBatch" data-batch="{{item}}" wx:for="{{levels}}">
+        {{item}}
+    </view>
+    <view class="batch-item" bindtap="closeSchoolBatchShadow">取消</view>
+</view>

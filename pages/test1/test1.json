@@ -1,9 +1,0 @@
-{
-  "usingComponents": {
-    "i-icon":"../../iviewWeapp/dist/icon/index",
-    "i-tabs": "../../iviewWeapp/dist/tabs/index",
-    "i-tab": "../../iviewWeapp/dist/tab/index",
-    "ec-canvas":"../../ec-canvas/ec-canvas"
-  }
-
-}

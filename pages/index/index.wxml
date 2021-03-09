@@ -69,7 +69,7 @@
         <text>批次线</text>
     </view>
 
-    <view class="group-item">
+    <view class="group-item" bind:tap="goMore">
         <view style="width: 60rpx;height: 60rpx">
             <image style="width: 55rpx;height: 55rpx" src="/static/images/icon/更多.svg"></image>
         </view>
@@ -86,7 +86,7 @@
             </view>
 
             <!--学校item -->
-            <view wx:for="{{schoolList}}" class="school-item" data-id="{{item.id}}" bindtap="findSchoolById"
+            <view wx:for="{{schoolList}}" class="school-item" data-param="{{[item.id,item.name]}}" bindtap="findSchoolById"
                   wx:key="index">
                 <!--左图-->
                 <view class="school-left">

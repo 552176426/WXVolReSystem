@@ -343,10 +343,11 @@ Page({
     },
 
     findSchoolById(e) {
-        let id = e.currentTarget.dataset.id
+        let id = e.currentTarget.dataset.param[0]
+        let name = e.currentTarget.dataset.param[1]
         console.log(id)
         wx.navigateTo({
-            url: "/pages/provinceScore/provinceScore?id=" + id
+            url: "/pages/schoolDetail/schoolDetail?id=" + id+"&name="+name
         })
     },
 
@@ -383,6 +384,11 @@ Page({
 
         }
         return schoolList
+    },
+    goSearch(){
+        wx.navigateTo({
+            url: "/pages/search/search-1/search"
+        })
     },
 
     /**

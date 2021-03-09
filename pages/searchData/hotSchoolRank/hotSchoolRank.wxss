@@ -1,0 +1,139 @@
+.abox{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 50rpx;
+    justify-content: space-around;
+    position: relative;
+    padding-bottom: 20rpx;
+    border-bottom: 1rpx solid rgb(240,240,240);
+}
+
+.tabTrue{
+    color: red;
+}
+.b{
+    background: red;
+    height: 4rpx;
+    width:50rpx;
+    position: absolute;
+    bottom: 0;
+    transition: all .3s ease;
+}
+
+page {
+    height: 100%;
+    width: 100%;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+}
+
+.header {
+    width: 100%;
+    height: 80rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 2rpx solid rgb(240, 240, 240);
+    border-bottom: 2rpx solid rgb(240, 240, 240);
+}
+
+.title {
+    position: relative;
+    font-size: 20rpx;
+    background-color: rgb(240, 240, 240);
+    height: 80rpx;
+    display: flex;
+    align-items: center;
+    opacity: 0.7;
+}
+
+.special-item {
+    height: 140rpx;
+    display: flex;
+    align-items: center;
+    border-bottom: 1rpx solid rgb(240, 240, 240);
+}
+
+.title-first {
+    margin-left: 5%;
+    width: 60rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50rpx;
+}
+
+.index {
+    font-weight: bold;
+    font-size: 28rpx;
+
+}
+
+.index-1 {
+    color: #FDC818;
+}
+
+.index-2 {
+    color: #FD9D3B;
+}
+
+.index-3 {
+    color: #93AEFC;
+}
+
+.index-4 {
+    color: black;
+}
+
+.batchShadow{
+    position: absolute;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
+
+.batchGroup{
+    border-top-left-radius: 40rpx;
+    border-top-right-radius: 40rpx;
+    border-top: 5rpx solid rgb(248,248,248);
+    position: fixed;
+    background-color: white;
+    z-index: 3;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.batch-item{
+    margin-bottom: 20rpx;
+    width: 100%;
+    border-bottom: 2rpx solid rgb(250,250,250);
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70rpx;
+}
+.batch-top{
+    border-radius: 10rpx;
+    background-color: #1888f7;
+    width: 50rpx;
+    height: 10rpx;
+    margin-bottom: 30rpx;
+    margin-top: 15rpx;
+}
+.loadMore{
+    display: flex;
+    justify-content: center;
+    font-size: 25rpx;
+    opacity: 0.5;
+    margin-bottom: 5rpx;
+    margin-top: 20rpx;
+}
